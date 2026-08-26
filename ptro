@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DrPerfumes | Perfumes & Decants</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0b0b;
+    color: white;
+}
+header {
+    background: #000;
+    padding: 25px 20px;
+    text-align: center;
+    border-bottom: 1px solid #292929;
+}
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.logo span {
+    color: #d4af37;
+}
+header p {
+    color: #aaa;
+    margin-top: 8px;
+    font-size: 14px;
+}
+.hero {
+    text-align: center;
+    padding: 55px 20px;
+    background: linear-gradient(135deg, #111, #050505);
+}
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+.hero h1 span {
+    color: #d4af37;
+}
+.hero p {
+    color: #bbb;
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.6;
+}
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 25px;
+    background: #d4af37;
+    color: #000;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+}
+.section {
+    padding: 45px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+.section h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 28px;
+}
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+.producto {
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+.producto:hover {
+    transform: translateY(-5px);
+    border-color: #d4af37;
+}
+.foto {
+    width: 100%;
+    height: 250px;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.info {
+    padding: 20px;
+}
+.info h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+.precio {
+    display: flex;
+    justify-content: space-between;
+    margin: 7px 0;
+    color: #ccc;
+}
+.precio strong {
+    color: #d4af37;
+}
+.comprar {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    background: #25d366;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+.descripcion {
+    text-align: center;
+    max-width: 750px;
+    margin: auto;
+    color: #bbb;
+    line-height: 1.7;
+}
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: #000;
+    color: #777;
+    margin-top: 30px;
+}
+footer strong {
+    color: #d4af37;
+}
+.whatsapp {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 58px;
+    height: 58px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-size: 27px;
+    box-shadow: 0 4px 15px #000;
+}
+</style>
+</head>
+<body>
+<header>
+    <div class="logo">Dr<span>Perfumes</span></div>
+    <p>Perfumes & Decants</p>
+</header>
+<section class="hero">
+    <h1>Encontrá tu <span>fragancia</span></h1>
+    <p>
+        Perfumes originales y decants para hombres y mujeres.
+        Probá diferentes aromas y elegí el que más vaya con vos.
+    </p>
+    <a class="btn" href="#productos">VER PERFUMES</a>
+</section>
+<section class="section">
+    <h2>Sobre DrPerfumes</h2>
+    <p class="descripcion">
+        DrPerfumes es un emprendimiento dedicado a la venta de perfumes
+        y decants, ofreciendo fragancias para hombres y mujeres a precios
+        accesibles. Buscamos brindar productos de calidad y una atención
+        personalizada, permitiendo conocer y probar diferentes aromas
+        antes de comprar.
+    </p>
+</section>
+<section class="section" id="productos">
+<h2>Nuestros perfumes</h2>
+<div class="productos">
+<!-- STRONGER -->
+<div class="producto">
+    <div class="foto">
+        <img src="imagenes/stronger.jpg" alt="Stronger With You Intensely">
+    </div>
+    <div class="info">
+        <h3>Stronger With You Intensely</h3>
+        <div class="precio">
+            <span>10 ml</span>
+            <strong>$850</strong>
+        </div>
+        <div class="precio">
+            <span>5 ml</span>
+            <strong>$490</strong>
+        </div>
+        <a class="comprar"
+        href="https://wa.me/59892033401?text=Hola!%20Quiero%20consultar%20por%20Stronger%20With%20You%20Intensely">
+        Comprar
+        </a>
+    </div>
+</div>
+<!-- ACQUA DI GIO -->
+<div class="producto">
+    <div class="foto">
+        <img src="imagenes/acqua-di-gio.jpg" alt="Acqua di Gio">
+    </div>
+    <div class="info">
+        <h3>Acqua di Giò</h3>
+        <div class="precio">
+            <span>10 ml</span>
+            <strong>$790</strong>
+        </div>
+        <div class="precio">
+            <span>5 ml</span>
+            <strong>$450</strong>
+        </div>
+        <a class="comprar"
+        href="https://wa.me/59892033401?text=Hola!%20Quiero%20consultar%20por%20Acqua%20di%20Gio">
+        Comprar
+        </a>
+    </div>
+</div>
+<!-- VALENTINO -->
+<div class="producto">
+    <div class="foto">
+        <img src="imagenes/valentino.jpg" alt="Valentino Uomo Intense">
+    </div>
+    <div class="info">
+        <h3>Valentino Uomo Intense</h3>
+        <div class="precio">
+            <span>10 ml</span>
+            <strong>$850</strong>
+        </div>
+        <div class="precio">
+            <span>5 ml</span>
+            <strong>$490</strong>
+        </div>
+        <a class="comprar"
+        href="https://wa.me/59892033401?text=Hola!%20Quiero%20consultar%20por%20Valentino%20Uomo%20Intense">
+        Comprar
+        </a>
+    </div>
+</div>
+<!-- JPG -->
+<div class="producto">
+    <div class="foto">
+        <img src="imagenes/jpg-le-beau.jpg" alt="JPG Le Beau Le Parfum">
+    </div>
+    <div class="info">
+        <h3>JPG Le Beau Le Parfum</h3>
+        <div class="precio">
+            <span>10 ml</span>
+            <strong>$850</strong>
+        </div>
+        <div class="precio">
+            <span>5 ml</span>
+            <strong>$490</strong>
+        </div>
+        <a class="comprar"
+        href="https://wa.me/59892033401?text=Hola!%20Quiero%20consultar%20por%20JPG%20Le%20Beau%20Le%20Parfum">
+        Comprar
+        </a>
+    </div>
+</div>
+<!-- 212 -->
+<div class="producto">
+    <div class="foto">
+        <img src="imagenes/212.jpg" alt="212 Carolina Herrera Hombre">
+    </div>
+    <div class="info">
+        <h3>212 Carolina Herrera Hombre</h3>
+        <div class="precio">
+            <span>10 ml</span>
+            <strong>$790</strong>
+        </div>
+        <div class="precio">
+            <span>5 ml</span>
+            <strong>$450</strong>
+        </div>
+        <a class="comprar"
+        href="https://wa.me/59892033401?text=Hola!%20Quiero%20consultar%20por%20212%20Carolina%20Herrera">
+        Comprar
+        </a>
+    </div>
+</div>
+<!-- EROS FLAME -->
+<div class="producto">
+    <div class="foto">
+        <img src="imagenes/eros-flame.jpg" alt="Versace Eros Flame">
+    </div>
+    <div class="info">
+        <h3>Versace Eros Flame</h3>
+        <div class="precio">
+            <span>10 ml</span>
+            <strong>$790</strong>
+        </div>
+        <div class="precio">
+            <span>5 ml</span>
+            <strong>$450</strong>
+        </div>
+        <a class="comprar"
+        href="https://wa.me/59892033401?text=Hola!%20Quiero%20consultar%20por%20Versace%20Eros%20Flame">
+        Comprar
+        </a>
+    </div>
+</div>
+<!-- ASAD -->
+<div class="producto">
+    <div class="foto">
+        <img src="imagenes/asad-bourbon.jpg" alt="Asad Bourbon">
+    </div>
+    <div class="info">
+        <h3>Asad Bourbon</h3>
+        <div class="precio">
+            <span>10 ml</span>
+            <strong>$590</strong>
+        </div>
+        <div class="precio">
+            <span>5 ml</span>
+            <strong>$390</strong>
+        </div>
+        <a class="comprar"
+        href="https://wa.me/59892033401?text=Hola!%20Quiero%20consultar%20por%20Asad%20Bourbon">
+        Comprar
+        </a>
+    </div>
+</div>
+<!-- SCANDAL -->
+<div class="producto">
+    <div class="foto">
+        <img src="imagenes/scandal.jpg" alt="Scandal Pour Homme">
+    </div>
+    <div class="info">
+        <h3>Scandal</h3>
+        <div class="precio">
+            <span>10 ml</span>
+            <strong>$850</strong>
+        </div>
+        <div class="precio">
+            <span>5 ml</span>
+            <strong>$490</strong>
+        </div>
+        <a class="comprar"
+        href="https://wa.me/59892033401?text=Hola!%20Quiero%20consultar%20por%20Scandal">
+        Comprar
+        </a>
+    </div>
+</div>
+</div>
+</section>
+<footer>
+    <p><strong>DrPerfumes</strong></p>
+    <p>Perfumes & Decants</p>
+    <p>Pedidos por WhatsApp: 092 033 401</p>
+    <br>
+    <p>© 2026 DrPerfumes. Todos los derechos reservados.</p>
+</footer>
+<a class="whatsapp"
+href="https://wa.me/59892033401?text=Hola!%20Quiero%20consultar%20por%20los%20perfumes"
+target="_blank">
+    ☎
+</a>
+</body>
+</html>
