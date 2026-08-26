@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DrPerfumes | Perfumes & Decants</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0b0b;
+    color: white;
+}
+header {
+    background: #000;
+    padding: 25px 20px;
+    text-align: center;
+    border-bottom: 1px solid #292929;
+}
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.logo span {
+    color: #d4af37;
+}
+header p {
+    color: #aaa;
+    margin-top: 8px;
+}
+.hero {
+    text-align: center;
+    padding: 55px 20px;
+    background: linear-gradient(135deg, #111, #050505);
+}
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+.hero h1 span {
+    color: #d4af37;
+}
+.hero p {
+    color: #bbb;
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.6;
+}
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 25px;
+    background: #d4af37;
+    color: #000;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+}
+.section {
+    padding: 45px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+.section h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 28px;
+}
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+.producto {
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+.producto:hover {
+    transform: translateY(-5px);
+    border-color: #d4af37;
+}
+.foto {
+    width: 100%;
+    height: 250px;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.info {
+    padding: 20px;
+}
+.info h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+/* OPCIONES DE TAMAÑO */
+.tamanos {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.tamano {
+    flex: 1;
+    padding: 10px 5px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    background: #222;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+}
+.tamano:hover {
+    border-color: #d4af37;
+}
+.tamano.activo {
+    background: #d4af37;
+    color: #000;
+    border-color: #d4af37;
+}
+.precio-seleccionado {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+.comprar {
+    display: block;
+    text-align: center;
+    padding: 11px;
+    background: #25d366;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+.descripcion {
+    text-align: center;
+    max-width: 750px;
+    margin: auto;
+    color: #bbb;
+    line-height: 1.7;
+}
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: #000;
+    color: #777;
+    margin-top: 30px;
+}
+footer strong {
+    color: #d4af37;
+}
+.whatsapp {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 58px;
+    height: 58px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-size: 27px;
+    box-shadow: 0 4px 15px #000;
+}
+</style>
+</head>
+<body>
+<header>
+    <div class="logo">Dr<span>Perfumes</span></div>
+    <p>Perfumes & Decants</p>
+</header>
+<section class="hero">
+    <h1>Encontrá tu <span>fragancia</span></h1>
+    <p>
+        Perfumes y decants para hombres y mujeres.
+        Elegí tu fragancia y el tamaño que querés.
+    </p>
+    <a class="btn" href="#productos">VER PERFUMES</a>
+</section>
+<section class="section">
+    <h2>Sobre DrPerfumes</h2>
+    <p class="descripcion">
+        DrPerfumes es un emprendimiento dedicado a la venta de perfumes
+        y decants, ofreciendo fragancias para hombres y mujeres a precios
+        accesibles. Buscamos brindar productos de calidad y una atención
+        personalizada, permitiendo conocer y probar diferentes aromas
+        antes de comprar.
+    </p>
+</section>
+<section class="section" id="productos">
+<h2>Nuestros perfumes</h2>
+<div class="productos">
+<!-- STRONGER -->
+<div class="producto">
+<div class="foto">
+<img src="imagenes/stronger.jpg" alt="Stronger With You Intensely">
+</div>
+<div class="info">
+<h3>Stronger With You Intensely</h3>
+<div class="tamanos">
+<button class="tamano activo"
+onclick="seleccionar(this, 'Stronger With You Intensely', '5 ml', '$490')">
+5 ml
+</button>
+<button class="tamano"
+onclick="seleccionar(this, 'Stronger With You Intensely', '10 ml', '$850')">
+10 ml
+</button>
+</div>
+<div class="precio-seleccionado">
+$490
+</div>
+<a class="comprar"
+href="#"
+onclick="enviarWhatsApp(this); return false;">
+Consultar por WhatsApp
+</a>
+</div>
+</div>
+<!-- ACQUA DI GIO -->
+<div class="producto">
+<div class="foto">
+<img src="imagenes/acqua-di-gio.jpg" alt="Acqua di Gio">
+</div>
+<div class="info">
+<h3>Acqua di Giò</h3>
+<div class="tamanos">
+<button class="tamano activo"
+onclick="seleccionar(this, 'Acqua di Giò', '5 ml', '$450')">
+5 ml
+</button>
+<button class="tamano"
+onclick="seleccionar(this, 'Acqua di Giò', '10 ml', '$790')">
+10 ml
+</button>
+</div>
+<div class="precio-seleccionado">
+$450
+</div>
+<a class="comprar"
+href="#"
+onclick="enviarWhatsApp(this); return false;">
+Consultar por WhatsApp
+</a>
+</div>
+</div>
+<!-- VALENTINO -->
+<div class="producto">
+<div class="foto">
+<img src="imagenes/valentino.jpg" alt="Valentino Uomo Intense">
+</div>
+<div class="info">
+<h3>Valentino Uomo Intense</h3>
+<div class="tamanos">
+<button class="tamano activo"
+onclick="seleccionar(this, 'Valentino Uomo Intense', '5 ml', '$490')">
+5 ml
+</button>
+<button class="tamano"
+onclick="seleccionar(this, 'Valentino Uomo Intense', '10 ml', '$850')">
+10 ml
+</button>
+</div>
+<div class="precio-seleccionado">
+$490
+</div>
+<a class="comprar"
+href="#"
+onclick="enviarWhatsApp(this); return false;">
+Consultar por WhatsApp
+</a>
+</div>
+</div>
+<!-- JPG -->
+<div class="producto">
+<div class="foto">
+<img src="imagenes/jpg-le-beau.jpg" alt="JPG Le Beau Le Parfum">
+</div>
+<div class="info">
+<h3>JPG Le Beau Le Parfum</h3>
+<div class="tamanos">
+<button class="tamano activo"
+onclick="seleccionar(this, 'JPG Le Beau Le Parfum', '5 ml', '$490')">
+5 ml
+</button>
+<button class="tamano"
+onclick="seleccionar(this, 'JPG Le Beau Le Parfum', '10 ml', '$850')">
+10 ml
+</button>
+</div>
+<div class="precio-seleccionado">
+$490
+</div>
+<a class="comprar"
+href="#"
+onclick="enviarWhatsApp(this); return false;">
+Consultar por WhatsApp
+</a>
+</div>
+</div>
+<!-- 212 -->
+<div class="producto">
+<div class="foto">
+<img src="imagenes/212.jpg" alt="212 Carolina Herrera Hombre">
+</div>
+<div class="info">
+<h3>212 Carolina Herrera Hombre</h3>
+<div class="tamanos">
+<button class="tamano activo"
+onclick="seleccionar(this, '212 Carolina Herrera Hombre', '5 ml', '$450')">
+5 ml
+</button>
+<button class="tamano"
+onclick="seleccionar(this, '212 Carolina Herrera Hombre', '10 ml', '$790')">
+10 ml
+</button>
+</div>
+<div class="precio-seleccionado">
+$450
+</div>
+<a class="comprar"
+href="#"
+onclick="enviarWhatsApp(this); return false;">
+Consultar por WhatsApp
+</a>
+</div>
+</div>
+<!-- EROS FLAME -->
+<div class="producto">
+<div class="foto">
+<img src="imagenes/eros-flame.jpg" alt="Versace Eros Flame">
+</div>
+<div class="info">
+<h3>Versace Eros Flame</h3>
+<div class="tamanos">
+<button class="tamano activo"
+onclick="seleccionar(this, 'Versace Eros Flame', '5 ml', '$450')">
+5 ml
+</button>
+<button class="tamano"
+onclick="seleccionar(this, 'Versace Eros Flame', '10 ml', '$790')">
+10 ml
+</button>
+</div>
+<div class="precio-seleccionado">
+$450
+</div>
+<a class="comprar"
+href="#"
+onclick="enviarWhatsApp(this); return false;">
+Consultar por WhatsApp
+</a>
+</div>
+</div>
+<!-- ASAD BOURBON -->
+<div class="producto">
+<div class="foto">
+<img src="imagenes/asad-bourbon.jpg" alt="Asad Bourbon">
+</div>
+<div class="info">
+<h3>Asad Bourbon</h3>
+<div class="tamanos">
+<button class="tamano activo"
+onclick="seleccionar(this, 'Asad Bourbon', '5 ml', '$390')">
+5 ml
+</button>
+<button class="tamano"
+onclick="seleccionar(this, 'Asad Bourbon', '10 ml', '$590')">
+10 ml
+</button>
+</div>
+<div class="precio-seleccionado">
+$390
+</div>
+<a class="comprar"
+href="#"
+onclick="enviarWhatsApp(this); return false;">
+Consultar por WhatsApp
+</a>
+</div>
+</div>
+<!-- SCANDAL -->
+<div class="producto">
+<div class="foto">
+<img src="imagenes/scandal.jpg" alt="Scandal">
+</div>
+<div class="info">
+<h3>Scandal</h3>
+<div class="tamanos">
+<button class="tamano activo"
+onclick="seleccionar(this, 'Scandal', '5 ml', '$490')">
+5 ml
+</button>
+<button class="tamano"
+onclick="seleccionar(this, 'Scandal', '10 ml', '$850')">
+10 ml
+</button>
+</div>
+<div class="precio-seleccionado">
+$490
+</div>
+<a class="comprar"
+href="#"
+onclick="enviarWhatsApp(this); return false;">
+Consultar por WhatsApp
+</a>
+</div>
+</div>
+</div>
+</section>
+<footer>
+<p><strong>DrPerfumes</strong></p>
+<p>Perfumes & Decants</p>
+<p>WhatsApp: 092 033 401</p>
+<br>
+<p>© 2026 DrPerfumes</p>
+</footer>
+<a class="whatsapp"
+href="https://wa.me/59892033401"
+target="_blank">
+☏
+</a>
+<script>
+function seleccionar(boton, perfume, tamano, precio) {
+    const producto = boton.closest(".producto");
+    const botones = producto.querySelectorAll(".tamano");
+    botones.forEach(function(btn) {
+        btn.classList.remove("activo");
+    });
+    boton.classList.add("activo");
+    producto.querySelector(".precio-seleccionado").textContent = precio;
+    producto.dataset.perfume = perfume;
+    producto.dataset.tamano = tamano;
+    producto.dataset.precio = precio;
+}
+function enviarWhatsApp(boton) {
+    const producto = boton.closest(".producto");
+    const perfume = producto.dataset.perfume;
+    const tamano = producto.dataset.tamano;
+    const precio = producto.dataset.precio;
+    const mensaje =
+        "Hola! Quiero consultar por " +
+        perfume +
+        " de " +
+        tamano +
+        " (" +
+        precio +
+        ").";
+    const url =
+        "https://wa.me/59892033401?text=" +
+        encodeURIComponent(mensaje);
+    window.open(url, "_blank");
+}
+document.querySelectorAll(".producto").forEach(function(producto) {
+    const botonInicial = producto.querySelector(".tamano.activo");
+    if (botonInicial) {
+        botonInicial.click();
+    }
+});
+</script>
+</body>
+</html>
