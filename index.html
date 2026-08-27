@@ -18,13 +18,13 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: #f7f5f5;
-    color: #222;
+    color: #292729;
 }
 
-/* ENCABEZADO */
+/* HEADER */
 
 header {
-    background: white;
+    background: #ffffff;
     padding: 25px 20px;
     text-align: center;
     border-bottom: 1px solid #e5e1e2;
@@ -45,8 +45,7 @@ header p {
     margin-top: 8px;
 }
 
-
-/* PORTADA */
+/* HERO */
 
 .hero {
     text-align: center;
@@ -79,12 +78,13 @@ header p {
     text-decoration: none;
     border-radius: 30px;
     font-weight: bold;
+    transition: 0.2s;
 }
 
 .btn:hover {
     background: #555;
+    transform: translateY(-2px);
 }
-
 
 /* SECCIONES */
 
@@ -108,8 +108,7 @@ header p {
     line-height: 1.7;
 }
 
-
-/* TITULO DE CATEGORIA */
+/* CATEGORIAS */
 
 .categoria {
     text-align: center;
@@ -125,7 +124,6 @@ header p {
     color: #999;
 }
 
-
 /* PRODUCTOS */
 
 .productos {
@@ -134,11 +132,10 @@ header p {
     gap: 24px;
 }
 
-
-/* TARJETA */
+/* TARJETAS */
 
 .producto {
-    background: white;
+    background: #ffffff;
     border: 1px solid #e3dfe0;
     border-radius: 18px;
     overflow: hidden;
@@ -151,8 +148,7 @@ header p {
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-
-/* IMAGEN */
+/* FOTOS */
 
 .foto {
     width: 100%;
@@ -161,14 +157,15 @@ header p {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .foto img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    display: block;
 }
-
 
 /* INFORMACION */
 
@@ -181,7 +178,6 @@ header p {
     margin-bottom: 15px;
     min-height: 43px;
 }
-
 
 /* TAMAÑOS */
 
@@ -200,13 +196,19 @@ header p {
     color: #444;
     cursor: pointer;
     font-weight: bold;
+    transition: 0.2s;
+}
+
+.tamano:hover {
+    border-color: #a8959a;
+    background: #eee8ea;
 }
 
 .tamano.activo {
     background: #d9cdd0;
+    color: #222;
     border-color: #b9a9ad;
 }
-
 
 /* PRECIO */
 
@@ -217,7 +219,6 @@ header p {
     color: #555;
     margin-bottom: 15px;
 }
-
 
 /* WHATSAPP */
 
@@ -230,24 +231,24 @@ header p {
     text-decoration: none;
     border-radius: 8px;
     font-weight: bold;
+    transition: 0.2s;
 }
 
 .comprar:hover {
     background: #1ebe5d;
+    transform: translateY(-2px);
 }
-
 
 /* SEPARADOR */
 
 .separador {
     height: 1px;
     background: #ded9da;
-    margin: 20px auto;
     max-width: 1100px;
+    margin: 55px auto;
 }
 
-
-/* PIE DE PAGINA */
+/* FOOTER */
 
 footer {
     text-align: center;
@@ -265,8 +266,7 @@ footer p {
     margin: 5px 0;
 }
 
-
-/* BOTON WHATSAPP */
+/* WHATSAPP FLOTANTE */
 
 .whatsapp {
     position: fixed;
@@ -283,9 +283,13 @@ footer p {
     text-decoration: none;
     font-size: 27px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    transition: 0.2s;
     z-index: 1000;
 }
 
+.whatsapp:hover {
+    transform: scale(1.08);
+}
 
 /* CELULAR */
 
@@ -306,7 +310,6 @@ footer p {
     .foto {
         height: 280px;
     }
-
 }
 
 </style>
@@ -314,7 +317,6 @@ footer p {
 
 
 <body>
-
 
 <header>
 
@@ -365,7 +367,7 @@ footer p {
 <section class="section" id="productos">
 
 
-<!-- HOMBRES -->
+<!-- ================= HOMBRES ================= -->
 
 <div class="categoria">
 
@@ -384,7 +386,7 @@ footer p {
 <div class="producto">
 
     <div class="foto">
-        <img src="imagenes/stronger.jpg.WEBP"
+        <img src="stronger.jpg.WEBP"
              alt="Stronger With You Intensely">
     </div>
 
@@ -395,12 +397,12 @@ footer p {
         <div class="tamanos">
 
             <button class="tamano activo"
-                onclick="seleccionar(this,'Stronger With You Intensely','5 ml','$490')">
+                onclick="seleccionar(this, 'Stronger With You Intensely', '5 ml', '$490')">
                 5 ml
             </button>
 
             <button class="tamano"
-                onclick="seleccionar(this,'Stronger With You Intensely','10 ml','$850')">
+                onclick="seleccionar(this, 'Stronger With You Intensely', '10 ml', '$850')">
                 10 ml
             </button>
 
@@ -423,7 +425,7 @@ footer p {
 <div class="producto">
 
     <div class="foto">
-        <img src="imagenes/acqua-di-gio.jpg.JPG"
+        <img src="acqua-di-gio.jpg.JPG"
              alt="Acqua di Giò">
     </div>
 
@@ -434,12 +436,12 @@ footer p {
         <div class="tamanos">
 
             <button class="tamano activo"
-                onclick="seleccionar(this,'Acqua di Giò','5 ml','$450')">
+                onclick="seleccionar(this, 'Acqua di Giò', '5 ml', '$450')">
                 5 ml
             </button>
 
             <button class="tamano"
-                onclick="seleccionar(this,'Acqua di Giò','10 ml','$790')">
+                onclick="seleccionar(this, 'Acqua di Giò', '10 ml', '$790')">
                 10 ml
             </button>
 
@@ -457,12 +459,12 @@ footer p {
 </div>
 
 
-<!-- VALENTINO UOMO -->
+<!-- VALENTINO -->
 
 <div class="producto">
 
     <div class="foto">
-        <img src="imagenes/valentino.jpg.JPG"
+        <img src="valentino.jpg.JPG"
              alt="Valentino Uomo Intense">
     </div>
 
@@ -473,12 +475,12 @@ footer p {
         <div class="tamanos">
 
             <button class="tamano activo"
-                onclick="seleccionar(this,'Valentino Uomo Intense','5 ml','$490')">
+                onclick="seleccionar(this, 'Valentino Uomo Intense', '5 ml', '$490')">
                 5 ml
             </button>
 
             <button class="tamano"
-                onclick="seleccionar(this,'Valentino Uomo Intense','10 ml','$850')">
+                onclick="seleccionar(this, 'Valentino Uomo Intense', '10 ml', '$850')">
                 10 ml
             </button>
 
@@ -501,7 +503,7 @@ footer p {
 <div class="producto">
 
     <div class="foto">
-        <img src="imagenes/jpg-le-beau.jpg.JPG"
+        <img src="jpg-le-beau.jpg.JPG"
              alt="JPG Le Beau Le Parfum">
     </div>
 
@@ -512,12 +514,12 @@ footer p {
         <div class="tamanos">
 
             <button class="tamano activo"
-                onclick="seleccionar(this,'JPG Le Beau Le Parfum','5 ml','$490')">
+                onclick="seleccionar(this, 'JPG Le Beau Le Parfum', '5 ml', '$490')">
                 5 ml
             </button>
 
             <button class="tamano"
-                onclick="seleccionar(this,'JPG Le Beau Le Parfum','10 ml','$850')">
+                onclick="seleccionar(this, 'JPG Le Beau Le Parfum', '10 ml', '$850')">
                 10 ml
             </button>
 
@@ -540,7 +542,7 @@ footer p {
 <div class="producto">
 
     <div class="foto">
-        <img src="imagenes/212.jpg.WEBP"
+        <img src="212.jpg.WEBP"
              alt="212 Carolina Herrera Hombre">
     </div>
 
@@ -551,12 +553,12 @@ footer p {
         <div class="tamanos">
 
             <button class="tamano activo"
-                onclick="seleccionar(this,'212 Carolina Herrera Hombre','5 ml','$450')">
+                onclick="seleccionar(this, '212 Carolina Herrera Hombre', '5 ml', '$450')">
                 5 ml
             </button>
 
             <button class="tamano"
-                onclick="seleccionar(this,'212 Carolina Herrera Hombre','10 ml','$790')">
+                onclick="seleccionar(this, '212 Carolina Herrera Hombre', '10 ml', '$790')">
                 10 ml
             </button>
 
@@ -579,7 +581,7 @@ footer p {
 <div class="producto">
 
     <div class="foto">
-        <img src="imagenes/eros-flame.jpg.AVIF"
+        <img src="eros-flame.jpg.AVIF"
              alt="Versace Eros Flame">
     </div>
 
@@ -590,12 +592,12 @@ footer p {
         <div class="tamanos">
 
             <button class="tamano activo"
-                onclick="seleccionar(this,'Versace Eros Flame','5 ml','$450')">
+                onclick="seleccionar(this, 'Versace Eros Flame', '5 ml', '$450')">
                 5 ml
             </button>
 
             <button class="tamano"
-                onclick="seleccionar(this,'Versace Eros Flame','10 ml','$790')">
+                onclick="seleccionar(this, 'Versace Eros Flame', '10 ml', '$790')">
                 10 ml
             </button>
 
@@ -618,7 +620,7 @@ footer p {
 <div class="producto">
 
     <div class="foto">
-        <img src="imagenes/asad-bourbon.jpg.AVIF"
+        <img src="asad-bourbon.jpg.AVIF"
              alt="Asad Bourbon">
     </div>
 
@@ -629,12 +631,12 @@ footer p {
         <div class="tamanos">
 
             <button class="tamano activo"
-                onclick="seleccionar(this,'Asad Bourbon','5 ml','$390')">
+                onclick="seleccionar(this, 'Asad Bourbon', '5 ml', '$390')">
                 5 ml
             </button>
 
             <button class="tamano"
-                onclick="seleccionar(this,'Asad Bourbon','10 ml','$590')">
+                onclick="seleccionar(this, 'Asad Bourbon', '10 ml', '$590')">
                 10 ml
             </button>
 
@@ -657,7 +659,7 @@ footer p {
 <div class="producto">
 
     <div class="foto">
-        <img src="imagenes/scandal.jpg.AVIF"
+        <img src="scandal.jpg.AVIF"
              alt="Scandal">
     </div>
 
@@ -668,12 +670,12 @@ footer p {
         <div class="tamanos">
 
             <button class="tamano activo"
-                onclick="seleccionar(this,'Scandal','5 ml','$490')">
+                onclick="seleccionar(this, 'Scandal', '5 ml', '$490')">
                 5 ml
             </button>
 
             <button class="tamano"
-                onclick="seleccionar(this,'Scandal','10 ml','$850')">
+                onclick="seleccionar(this, 'Scandal', '10 ml', '$850')">
                 10 ml
             </button>
 
@@ -697,9 +699,9 @@ footer p {
 <div class="separador"></div>
 
 
-<!-- MUJERES -->
+<!-- ================= MUJERES ================= -->
 
-<div class="categoria" style="margin-top:55px;">
+<div class="categoria">
 
     <h2>Perfumes para Mujer</h2>
 
@@ -716,7 +718,7 @@ footer p {
 <div class="producto">
 
     <div class="foto">
-        <img src="imagenes/noble-blush.jpg.AVIF"
+        <img src="noble-blush.jpg.AVIF"
              alt="Lattafa Noble Blush">
     </div>
 
@@ -727,12 +729,12 @@ footer p {
         <div class="tamanos">
 
             <button class="tamano activo"
-                onclick="seleccionar(this,'Lattafa Noble Blush','5 ml','$350')">
+                onclick="seleccionar(this, 'Lattafa Noble Blush', '5 ml', '$350')">
                 5 ml
             </button>
 
             <button class="tamano"
-                onclick="seleccionar(this,'Lattafa Noble Blush','10 ml','$590')">
+                onclick="seleccionar(this, 'Lattafa Noble Blush', '10 ml', '$590')">
                 10 ml
             </button>
 
@@ -755,7 +757,7 @@ footer p {
 <div class="producto">
 
     <div class="foto">
-        <img src="imagenes/la-vie-est-belle.jpg.AVIF"
+        <img src="la-vie-est-belle.jpg.AVIF"
              alt="La Vie Est Belle">
     </div>
 
@@ -766,12 +768,12 @@ footer p {
         <div class="tamanos">
 
             <button class="tamano activo"
-                onclick="seleccionar(this,'La Vie Est Belle','5 ml','$490')">
+                onclick="seleccionar(this, 'La Vie Est Belle', '5 ml', '$490')">
                 5 ml
             </button>
 
             <button class="tamano"
-                onclick="seleccionar(this,'La Vie Est Belle','10 ml','$850')">
+                onclick="seleccionar(this, 'La Vie Est Belle', '10 ml', '$850')">
                 10 ml
             </button>
 
@@ -794,7 +796,7 @@ footer p {
 <div class="producto">
 
     <div class="foto">
-        <img src="imagenes/calvin-klein.jpg.AVIF"
+        <img src="calvin-klein.jpg.AVIF"
              alt="Calvin Klein">
     </div>
 
@@ -805,12 +807,12 @@ footer p {
         <div class="tamanos">
 
             <button class="tamano activo"
-                onclick="seleccionar(this,'Calvin Klein','5 ml','$450')">
+                onclick="seleccionar(this, 'Calvin Klein', '5 ml', '$450')">
                 5 ml
             </button>
 
             <button class="tamano"
-                onclick="seleccionar(this,'Calvin Klein','10 ml','$790')">
+                onclick="seleccionar(this, 'Calvin Klein', '10 ml', '$790')">
                 10 ml
             </button>
 
@@ -833,7 +835,7 @@ footer p {
 <div class="producto">
 
     <div class="foto">
-        <img src="imagenes/valentino-coral-fantasy.jpg.AVIF"
+        <img src="valentino-coral-fantasy.jpg.AVIF"
              alt="Valentino Donna Coral Fantasy">
     </div>
 
@@ -844,12 +846,12 @@ footer p {
         <div class="tamanos">
 
             <button class="tamano activo"
-                onclick="seleccionar(this,'Valentino Donna Coral Fantasy','5 ml','$490')">
+                onclick="seleccionar(this, 'Valentino Donna Coral Fantasy', '5 ml', '$490')">
                 5 ml
             </button>
 
             <button class="tamano"
-                onclick="seleccionar(this,'Valentino Donna Coral Fantasy','10 ml','$850')">
+                onclick="seleccionar(this, 'Valentino Donna Coral Fantasy', '10 ml', '$850')">
                 10 ml
             </button>
 
@@ -872,20 +874,32 @@ footer p {
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
 
-    <p><strong>DrPerfumes</strong></p>
+    <p>
+        <strong>DrPerfumes</strong>
+    </p>
 
-    <p>Perfumes & Decants</p>
+    <p>
+        Perfumes & Decants
+    </p>
 
-    <p>WhatsApp: 092 033 401</p>
+    <p>
+        WhatsApp: 092 033 401
+    </p>
 
     <br>
 
-    <p>© 2026 DrPerfumes</p>
+    <p>
+        © 2026 DrPerfumes
+    </p>
 
 </footer>
 
+
+<!-- WHATSAPP FLOTANTE -->
 
 <a
     class="whatsapp"
@@ -901,9 +915,7 @@ function seleccionar(boton, perfume, tamano, precio) {
 
     const producto = boton.closest(".producto");
 
-    const botones = producto.querySelectorAll(".tamano");
-
-    botones.forEach(function(btn) {
+    producto.querySelectorAll(".tamano").forEach(function(btn) {
         btn.classList.remove("activo");
     });
 
@@ -944,10 +956,11 @@ function enviarWhatsApp(boton) {
 
 document.querySelectorAll(".producto").forEach(function(producto) {
 
-    const boton = producto.querySelector(".tamano.activo");
+    const botonInicial =
+        producto.querySelector(".tamano.activo");
 
-    if (boton) {
-        boton.click();
+    if (botonInicial) {
+        botonInicial.click();
     }
 
 });
