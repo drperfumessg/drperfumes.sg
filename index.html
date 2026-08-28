@@ -691,7 +691,8 @@ footer a:hover {
     cursor: pointer;
 }
 
-</style>
+<style>
+
 /* =========================
    CARRITO
 ========================= */
@@ -717,6 +718,7 @@ footer a:hover {
     top: -4px;
     right: -3px;
     background: #9b858a;
+    color: white;
     width: 22px;
     height: 22px;
     border-radius: 50%;
@@ -733,10 +735,10 @@ footer a:hover {
     width: 400px;
     max-width: 95%;
     height: 100vh;
-    background: white;
+    background: #ffffff;
     z-index: 1500;
     box-shadow: -5px 0 25px rgba(0,0,0,0.15);
-    transition: 0.3s;
+    transition: right 0.3s ease;
     padding: 20px;
     overflow-y: auto;
 }
@@ -754,11 +756,18 @@ footer a:hover {
     margin-bottom: 15px;
 }
 
+.carrito-header h2 {
+    margin: 0;
+    font-size: 22px;
+    color: #292729;
+}
+
 .carrito-header button {
     border: none;
     background: none;
     font-size: 28px;
     cursor: pointer;
+    color: #292729;
 }
 
 .item-carrito {
@@ -769,6 +778,7 @@ footer a:hover {
 .item-carrito strong {
     display: block;
     margin-bottom: 5px;
+    color: #292729;
 }
 
 .item-carrito small {
@@ -791,11 +801,22 @@ footer a:hover {
     cursor: pointer;
 }
 
+.controles button:hover {
+    background: #e9e5e6;
+}
+
+.controles span {
+    min-width: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
 .eliminar {
     border: none !important;
     background: none !important;
-    color: #a55;
+    color: #a55 !important;
     margin-left: auto;
+    width: auto !important;
 }
 
 .carrito-footer {
@@ -810,6 +831,7 @@ footer a:hover {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 15px;
+    color: #292729;
 }
 
 .whatsapp-pedido {
@@ -823,6 +845,10 @@ footer a:hover {
     cursor: pointer;
 }
 
+.whatsapp-pedido:hover {
+    background: #1ebe5d;
+}
+
 .vaciar {
     width: 100%;
     margin-top: 10px;
@@ -830,7 +856,12 @@ footer a:hover {
     border: none;
     border-radius: 8px;
     background: #eee;
+    color: #555;
     cursor: pointer;
+}
+
+.vaciar:hover {
+    background: #e2e2e2;
 }
 
 .overlay {
@@ -844,10 +875,27 @@ footer a:hover {
 .overlay.activo {
     display: block;
 }
-</head>
 
 
-<body>
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .carrito-panel {
+        width: 100%;
+        right: -100%;
+        padding: 18px;
+    }
+
+    .carrito-panel.abierto {
+        right: 0;
+    }
+
+}
+
+</style>
 
 
 <!-- =========================
