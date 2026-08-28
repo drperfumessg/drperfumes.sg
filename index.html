@@ -2321,21 +2321,56 @@ function cambiarFiltro(categoria, boton) {
    BUSCADOR + FILTROS
 ========================= */
 
+// =========================
+// FILTROS Y BUSCADOR
+// =========================
+
+let filtroActual = "todos";
+
+
+function aplicarFiltro(filtro) {
+
+    filtroActual = filtro;
+
+    const productos = document.querySelectorAll(
+        ".producto"
+    );
+
+    productos.forEach(function(producto) {
+
+        const categoria =
+            producto.dataset.categoria || "";
+
+        if (
+            filtro === "todos" ||
+            categoria === filtro
+        ) {
+            producto.style.display = "";
+        } else {
+            producto.style.display = "none";
+        }
+
+    });
+
+    // Actualizar buscador
+    filtrarPerfumes();
+}
+
+
 function filtrarPerfumes() {
 
     const buscador =
         document.getElementById("buscador");
 
+    if (!buscador) return;
+
     const texto =
         buscador.value
-        .toLowerCase()
-        .trim();
-
+            .toLowerCase()
+            .trim();
 
     const productos =
-    document.querySelectorAll(".producto");
-        );
-
+        document.querySelectorAll(".producto");
 
     productos.forEach(function(producto) {
 
@@ -2344,36 +2379,69 @@ function filtrarPerfumes() {
                 producto.dataset.nombre || ""
             ).toLowerCase();
 
-
         const categoria =
             producto.dataset.categoria || "";
 
-
         const coincideNombre =
             nombre.includes(texto);
-
 
         const coincideCategoria =
             filtroActual === "todos" ||
             categoria === filtroActual;
 
-
         if (
             coincideNombre &&
             coincideCategoria
         ) {
-
             producto.style.display = "";
-
         } else {
-
             producto.style.display = "none";
-
         }
 
     });
-
 }
+
+
+// =========================
+// BOTONES
+// =========================
+
+function mostrarTodos() {
+    aplicarFiltro("todos");
+}
+
+function mostrarHombre() {
+    aplicarFiltro("hombre");
+}
+
+function mostrarMujer() {
+    aplicarFiltro("mujer");
+}
+
+function mostrarStock() {
+    aplicarFiltro("stock");
+}
+
+
+// =========================
+// BUSCADOR
+// =========================
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    const buscador =
+        document.getElementById("buscador");
+
+    if (buscador) {
+
+        buscador.addEventListener(
+            "input",
+            filtrarPerfumes
+        );
+
+    }
+
+});
 
 
 /* =========================
