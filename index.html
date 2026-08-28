@@ -692,7 +692,158 @@ footer a:hover {
 }
 
 </style>
+/* =========================
+   CARRITO
+========================= */
 
+.carrito-btn {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 55px;
+    height: 55px;
+    border: none;
+    border-radius: 50%;
+    background: #292729;
+    color: white;
+    font-size: 23px;
+    cursor: pointer;
+    z-index: 1200;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.carrito-btn span {
+    position: absolute;
+    top: -4px;
+    right: -3px;
+    background: #9b858a;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrito-panel {
+    position: fixed;
+    top: 0;
+    right: -420px;
+    width: 400px;
+    max-width: 95%;
+    height: 100vh;
+    background: white;
+    z-index: 1500;
+    box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+    transition: 0.3s;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.carrito-panel.abierto {
+    right: 0;
+}
+
+.carrito-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.carrito-header button {
+    border: none;
+    background: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.item-carrito {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.item-carrito strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.item-carrito small {
+    color: #777;
+}
+
+.controles {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.controles button {
+    border: 1px solid #ddd;
+    background: #f5f3f3;
+    width: 28px;
+    height: 28px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.eliminar {
+    border: none !important;
+    background: none !important;
+    color: #a55;
+    margin-left: auto;
+}
+
+.carrito-footer {
+    border-top: 1px solid #eee;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.whatsapp-pedido {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: #25d366;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.vaciar {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #eee;
+    cursor: pointer;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 1400;
+    display: none;
+}
+
+.overlay.activo {
+    display: block;
+}
 </head>
 
 
@@ -866,49 +1017,35 @@ footer a:hover {
      HOMBRE
 ========================= -->
 
-<section
-    class="section"
-    id="hombre"
->
+<!-- =========================
+     PERFUMES PARA HOMBRE
+========================= -->
 
-    <div class="categoria">
+<section class="section" id="hombre">
 
-        <h2>
-            Perfumes para Hombre
-        </h2>
+    <h2>Perfumes para Hombre</h2>
 
-        <p>
-            Fragancias masculinas
-        </p>
-
-    </div>
-
+    <p class="descripcion">
+        Fragancias masculinas
+    </p>
 
     <div class="productos">
 
 
-        <!-- STRONGER -->
+        <!-- STRONGER WITH YOU -->
 
-        <div
-            class="producto"
-            data-nombre="Stronger With You Intensely"
-            data-categoria="hombre"
-        >
+        <div class="producto">
 
             <div class="foto">
-
                 <img
                     src="Stronger.jpg.AVIF"
                     alt="Stronger With You Intensely"
                 >
-
             </div>
 
             <div class="info">
 
-                <h3>
-                    Stronger With You Intensely
-                </h3>
+                <h3>Stronger With You Intensely</h3>
 
                 <div class="tamanos">
 
@@ -938,19 +1075,23 @@ footer a:hover {
 
                 </div>
 
-                <div class="precio">
+                <div class="precio-seleccionado">
                     $490
                 </div>
+
+                <button
+                    class="agregar"
+                    onclick="agregarProductoSeleccionado(this)"
+                >
+                    🛒 Agregar al carrito
+                </button>
 
                 <a
                     class="comprar"
                     href="#"
-                    onclick="
-                    enviarWhatsApp(this);
-                    return false;
-                    "
+                    onclick="enviarWhatsApp(this); return false;"
                 >
-                    💬 Pedir por WhatsApp
+                    Consultar por WhatsApp
                 </a>
 
             </div>
@@ -958,28 +1099,21 @@ footer a:hover {
         </div>
 
 
-        <!-- ACQUA -->
 
-        <div
-            class="producto"
-            data-nombre="Acqua di Gio"
-            data-categoria="hombre"
-        >
+        <!-- ACQUA DI GIO -->
+
+        <div class="producto">
 
             <div class="foto">
-
                 <img
                     src="acqua.jpg.AVIF"
                     alt="Acqua di Giò"
                 >
-
             </div>
 
             <div class="info">
 
-                <h3>
-                    Acqua di Giò
-                </h3>
+                <h3>Acqua di Giò</h3>
 
                 <div class="tamanos">
 
@@ -1009,19 +1143,23 @@ footer a:hover {
 
                 </div>
 
-                <div class="precio">
+                <div class="precio-seleccionado">
                     $450
                 </div>
+
+                <button
+                    class="agregar"
+                    onclick="agregarProductoSeleccionado(this)"
+                >
+                    🛒 Agregar al carrito
+                </button>
 
                 <a
                     class="comprar"
                     href="#"
-                    onclick="
-                    enviarWhatsApp(this);
-                    return false;
-                    "
+                    onclick="enviarWhatsApp(this); return false;"
                 >
-                    💬 Pedir por WhatsApp
+                    Consultar por WhatsApp
                 </a>
 
             </div>
@@ -1029,28 +1167,21 @@ footer a:hover {
         </div>
 
 
-        <!-- VALENTINO HOMBRE -->
 
-        <div
-            class="producto"
-            data-nombre="Valentino Uomo Intense"
-            data-categoria="hombre"
-        >
+        <!-- VALENTINO UOMO INTENSE -->
+
+        <div class="producto">
 
             <div class="foto">
-
                 <img
                     src="valentino.jpg.AVIF"
                     alt="Valentino Uomo Intense"
                 >
-
             </div>
 
             <div class="info">
 
-                <h3>
-                    Valentino Uomo Intense
-                </h3>
+                <h3>Valentino Uomo Intense</h3>
 
                 <div class="tamanos">
 
@@ -1080,19 +1211,23 @@ footer a:hover {
 
                 </div>
 
-                <div class="precio">
+                <div class="precio-seleccionado">
                     $490
                 </div>
+
+                <button
+                    class="agregar"
+                    onclick="agregarProductoSeleccionado(this)"
+                >
+                    🛒 Agregar al carrito
+                </button>
 
                 <a
                     class="comprar"
                     href="#"
-                    onclick="
-                    enviarWhatsApp(this);
-                    return false;
-                    "
+                    onclick="enviarWhatsApp(this); return false;"
                 >
-                    💬 Pedir por WhatsApp
+                    Consultar por WhatsApp
                 </a>
 
             </div>
@@ -1100,28 +1235,21 @@ footer a:hover {
         </div>
 
 
-        <!-- JPG -->
 
-        <div
-            class="producto"
-            data-nombre="JPG Le Beau Le Parfum"
-            data-categoria="hombre"
-        >
+        <!-- JPG LE BEAU -->
+
+        <div class="producto">
 
             <div class="foto">
-
                 <img
                     src="jpg.jpg.AVIF"
                     alt="JPG Le Beau Le Parfum"
                 >
-
             </div>
 
             <div class="info">
 
-                <h3>
-                    JPG Le Beau Le Parfum
-                </h3>
+                <h3>JPG Le Beau Le Parfum</h3>
 
                 <div class="tamanos">
 
@@ -1151,48 +1279,45 @@ footer a:hover {
 
                 </div>
 
-                <div class="precio">
+                <div class="precio-seleccionado">
                     $490
                 </div>
+
+                <button
+                    class="agregar"
+                    onclick="agregarProductoSeleccionado(this)"
+                >
+                    🛒 Agregar al carrito
+                </button>
 
                 <a
                     class="comprar"
                     href="#"
-                    onclick="
-                    enviarWhatsApp(this);
-                    return false;
-                    "
+                    onclick="enviarWhatsApp(this); return false;"
                 >
-                    💬 Pedir por WhatsApp
+                    Consultar por WhatsApp
                 </a>
 
             </div>
 
         </div>
+
 
 
         <!-- 212 -->
 
-        <div
-            class="producto"
-            data-nombre="212 Carolina Herrera Hombre"
-            data-categoria="hombre"
-        >
+        <div class="producto">
 
             <div class="foto">
-
                 <img
                     src="212.jpg.AVIF"
                     alt="212 Carolina Herrera Hombre"
                 >
-
             </div>
 
             <div class="info">
 
-                <h3>
-                    212 Carolina Herrera Hombre
-                </h3>
+                <h3>212 Carolina Herrera Hombre</h3>
 
                 <div class="tamanos">
 
@@ -1222,48 +1347,45 @@ footer a:hover {
 
                 </div>
 
-                <div class="precio">
+                <div class="precio-seleccionado">
                     $450
                 </div>
+
+                <button
+                    class="agregar"
+                    onclick="agregarProductoSeleccionado(this)"
+                >
+                    🛒 Agregar al carrito
+                </button>
 
                 <a
                     class="comprar"
                     href="#"
-                    onclick="
-                    enviarWhatsApp(this);
-                    return false;
-                    "
+                    onclick="enviarWhatsApp(this); return false;"
                 >
-                    💬 Pedir por WhatsApp
+                    Consultar por WhatsApp
                 </a>
 
             </div>
 
         </div>
+
 
 
         <!-- EROS FLAME -->
 
-        <div
-            class="producto"
-            data-nombre="Versace Eros Flame"
-            data-categoria="hombre"
-        >
+        <div class="producto">
 
             <div class="foto">
-
                 <img
                     src="eros-flame.jpg.AVIF"
                     alt="Versace Eros Flame"
                 >
-
             </div>
 
             <div class="info">
 
-                <h3>
-                    Versace Eros Flame
-                </h3>
+                <h3>Versace Eros Flame</h3>
 
                 <div class="tamanos">
 
@@ -1293,19 +1415,23 @@ footer a:hover {
 
                 </div>
 
-                <div class="precio">
+                <div class="precio-seleccionado">
                     $450
                 </div>
+
+                <button
+                    class="agregar"
+                    onclick="agregarProductoSeleccionado(this)"
+                >
+                    🛒 Agregar al carrito
+                </button>
 
                 <a
                     class="comprar"
                     href="#"
-                    onclick="
-                    enviarWhatsApp(this);
-                    return false;
-                    "
+                    onclick="enviarWhatsApp(this); return false;"
                 >
-                    💬 Pedir por WhatsApp
+                    Consultar por WhatsApp
                 </a>
 
             </div>
@@ -1313,28 +1439,21 @@ footer a:hover {
         </div>
 
 
-        <!-- ASAD -->
 
-        <div
-            class="producto"
-            data-nombre="Asad Bourbon"
-            data-categoria="hombre"
-        >
+        <!-- ASAD BOURBON -->
+
+        <div class="producto">
 
             <div class="foto">
-
                 <img
                     src="asad-bourbon.jpg.AVIF"
                     alt="Asad Bourbon"
                 >
-
             </div>
 
             <div class="info">
 
-                <h3>
-                    Asad Bourbon
-                </h3>
+                <h3>Asad Bourbon</h3>
 
                 <div class="tamanos">
 
@@ -1364,19 +1483,23 @@ footer a:hover {
 
                 </div>
 
-                <div class="precio">
+                <div class="precio-seleccionado">
                     $390
                 </div>
+
+                <button
+                    class="agregar"
+                    onclick="agregarProductoSeleccionado(this)"
+                >
+                    🛒 Agregar al carrito
+                </button>
 
                 <a
                     class="comprar"
                     href="#"
-                    onclick="
-                    enviarWhatsApp(this);
-                    return false;
-                    "
+                    onclick="enviarWhatsApp(this); return false;"
                 >
-                    💬 Pedir por WhatsApp
+                    Consultar por WhatsApp
                 </a>
 
             </div>
@@ -1384,28 +1507,21 @@ footer a:hover {
         </div>
 
 
+
         <!-- SCANDAL -->
 
-        <div
-            class="producto"
-            data-nombre="Scandal"
-            data-categoria="hombre"
-        >
+        <div class="producto">
 
             <div class="foto">
-
                 <img
                     src="scandal.jpg.AVIF"
                     alt="Scandal"
                 >
-
             </div>
 
             <div class="info">
 
-                <h3>
-                    Scandal
-                </h3>
+                <h3>Scandal</h3>
 
                 <div class="tamanos">
 
@@ -1435,19 +1551,382 @@ footer a:hover {
 
                 </div>
 
-                <div class="precio">
+                <div class="precio-seleccionado">
                     $490
                 </div>
+
+                <button
+                    class="agregar"
+                    onclick="agregarProductoSeleccionado(this)"
+                >
+                    🛒 Agregar al carrito
+                </button>
 
                 <a
                     class="comprar"
                     href="#"
-                    onclick="
-                    enviarWhatsApp(this);
-                    return false;
-                    "
+                    onclick="enviarWhatsApp(this); return false;"
                 >
-                    💬 Pedir por WhatsApp
+                    Consultar por WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PERFUMES PARA MUJER
+========================= -->
+
+<section class="section" id="mujer">
+
+    <h2>Perfumes para Mujer</h2>
+
+    <p class="descripcion">
+        Fragancias femeninas
+    </p>
+
+    <div class="productos">
+
+
+        <!-- NOBLE BLUSH -->
+
+        <div class="producto">
+
+            <div class="foto">
+                <img
+                    src="noble-blush.jpg.AVIF"
+                    alt="Lattafa Noble Blush"
+                >
+            </div>
+
+            <div class="info">
+
+                <h3>Lattafa Noble Blush</h3>
+
+                <div class="tamanos">
+
+                    <button
+                        class="tamano activo"
+                        onclick="seleccionar(
+                            this,
+                            'Lattafa Noble Blush',
+                            '5 ml',
+                            '$350'
+                        )"
+                    >
+                        5 ml
+                    </button>
+
+                    <button
+                        class="tamano"
+                        onclick="seleccionar(
+                            this,
+                            'Lattafa Noble Blush',
+                            '10 ml',
+                            '$590'
+                        )"
+                    >
+                        10 ml
+                    </button>
+
+                </div>
+
+                <div class="precio-seleccionado">
+                    $350
+                </div>
+
+                <button
+                    class="agregar"
+                    onclick="agregarProductoSeleccionado(this)"
+                >
+                    🛒 Agregar al carrito
+                </button>
+
+                <a
+                    class="comprar"
+                    href="#"
+                    onclick="enviarWhatsApp(this); return false;"
+                >
+                    Consultar por WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- LA VIE EST BELLE -->
+
+        <div class="producto">
+
+            <div class="foto">
+                <img
+                    src="la-vie-est-belle.jpg.AVIF"
+                    alt="La Vie Est Belle"
+                >
+            </div>
+
+            <div class="info">
+
+                <h3>La Vie Est Belle</h3>
+
+                <div class="tamanos">
+
+                    <button
+                        class="tamano activo"
+                        onclick="seleccionar(
+                            this,
+                            'La Vie Est Belle',
+                            '5 ml',
+                            '$490'
+                        )"
+                    >
+                        5 ml
+                    </button>
+
+                    <button
+                        class="tamano"
+                        onclick="seleccionar(
+                            this,
+                            'La Vie Est Belle',
+                            '10 ml',
+                            '$850'
+                        )"
+                    >
+                        10 ml
+                    </button>
+
+                </div>
+
+                <div class="precio-seleccionado">
+                    $490
+                </div>
+
+                <button
+                    class="agregar"
+                    onclick="agregarProductoSeleccionado(this)"
+                >
+                    🛒 Agregar al carrito
+                </button>
+
+                <a
+                    class="comprar"
+                    href="#"
+                    onclick="enviarWhatsApp(this); return false;"
+                >
+                    Consultar por WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CALVIN KLEIN -->
+
+        <div class="producto">
+
+            <div class="foto">
+                <img
+                    src="calvin-klein.jpg.AVIF"
+                    alt="Calvin Klein"
+                >
+            </div>
+
+            <div class="info">
+
+                <h3>Calvin Klein</h3>
+
+                <div class="tamanos">
+
+                    <button
+                        class="tamano activo"
+                        onclick="seleccionar(
+                            this,
+                            'Calvin Klein',
+                            '5 ml',
+                            '$450'
+                        )"
+                    >
+                        5 ml
+                    </button>
+
+                    <button
+                        class="tamano"
+                        onclick="seleccionar(
+                            this,
+                            'Calvin Klein',
+                            '10 ml',
+                            '$790'
+                        )"
+                    >
+                        10 ml
+                    </button>
+
+                </div>
+
+                <div class="precio-seleccionado">
+                    $450
+                </div>
+
+                <button
+                    class="agregar"
+                    onclick="agregarProductoSeleccionado(this)"
+                >
+                    🛒 Agregar al carrito
+                </button>
+
+                <a
+                    class="comprar"
+                    href="#"
+                    onclick="enviarWhatsApp(this); return false;"
+                >
+                    Consultar por WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- VALENTINO DONNA CORAL FANTASY -->
+
+        <div class="producto">
+
+            <div class="foto">
+                <img
+                    src="valentino-coral-fantasy.jpg.AVIF"
+                    alt="Valentino Donna Coral Fantasy"
+                >
+            </div>
+
+            <div class="info">
+
+                <h3>Valentino Donna Coral Fantasy</h3>
+
+                <div class="tamanos">
+
+                    <button
+                        class="tamano activo"
+                        onclick="seleccionar(
+                            this,
+                            'Valentino Donna Coral Fantasy',
+                            '5 ml',
+                            '$490'
+                        )"
+                    >
+                        5 ml
+                    </button>
+
+                    <button
+                        class="tamano"
+                        onclick="seleccionar(
+                            this,
+                            'Valentino Donna Coral Fantasy',
+                            '10 ml',
+                            '$850'
+                        )"
+                    >
+                        10 ml
+                    </button>
+
+                </div>
+
+                <div class="precio-seleccionado">
+                    $490
+                </div>
+
+                <button
+                    class="agregar"
+                    onclick="agregarProductoSeleccionado(this)"
+                >
+                    🛒 Agregar al carrito
+                </button>
+
+                <a
+                    class="comprar"
+                    href="#"
+                    onclick="enviarWhatsApp(this); return false;"
+                >
+                    Consultar por WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- VALENTINO BORN IN ROMA -->
+
+        <div class="producto">
+
+            <div class="foto">
+                <img
+                    src="mujer.jpg.AVIF"
+                    alt="Valentino Donna Born In Roma"
+                >
+            </div>
+
+            <div class="info">
+
+                <h3>Valentino Donna Born In Roma</h3>
+
+                <div class="tamanos">
+
+                    <button
+                        class="tamano activo"
+                        onclick="seleccionar(
+                            this,
+                            'Valentino Donna Born In Roma',
+                            '5 ml',
+                            '$490'
+                        )"
+                    >
+                        5 ml
+                    </button>
+
+                    <button
+                        class="tamano"
+                        onclick="seleccionar(
+                            this,
+                            'Valentino Donna Born In Roma',
+                            '10 ml',
+                            '$850'
+                        )"
+                    >
+                        10 ml
+                    </button>
+
+                </div>
+
+                <div class="precio-seleccionado">
+                    $490
+                </div>
+
+                <button
+                    class="agregar"
+                    onclick="agregarProductoSeleccionado(this)"
+                >
+                    🛒 Agregar al carrito
+                </button>
+
+                <a
+                    class="comprar"
+                    href="#"
+                    onclick="enviarWhatsApp(this); return false;"
+                >
+                    Consultar por WhatsApp
                 </a>
 
             </div>
@@ -1458,7 +1937,6 @@ footer a:hover {
     </div>
 
 </section>
-
 
 <div class="separador"></div>
 
@@ -2183,6 +2661,225 @@ footer a:hover {
 
 
 <script>
+let carrito = [];
+
+
+/* AGREGAR PRODUCTO */
+
+function agregarAlCarrito(nombre, tamano, precio) {
+
+    let existente = carrito.find(function(item) {
+
+        return item.nombre === nombre &&
+               item.tamano === tamano;
+
+    });
+
+    if (existente) {
+
+        existente.cantidad++;
+
+    } else {
+
+        carrito.push({
+            nombre: nombre,
+            tamano: tamano,
+            precio: precio,
+            cantidad: 1
+        });
+
+    }
+
+    actualizarCarrito();
+    abrirCarrito();
+}
+
+
+/* ACTUALIZAR CARRITO */
+
+function actualizarCarrito() {
+
+    const contenido =
+        document.getElementById("carritoContenido");
+
+    const contador =
+        document.getElementById("contador");
+
+    const totalElemento =
+        document.getElementById("total");
+
+    contenido.innerHTML = "";
+
+    let total = 0;
+    let cantidad = 0;
+
+    if (carrito.length === 0) {
+
+        contenido.innerHTML =
+            "<p>Tu carrito está vacío.</p>";
+
+    }
+
+    carrito.forEach(function(item, index) {
+
+        let subtotal =
+            item.precio * item.cantidad;
+
+        total += subtotal;
+        cantidad += item.cantidad;
+
+        contenido.innerHTML += `
+
+            <div class="item-carrito">
+
+                <strong>${item.nombre}</strong>
+
+                <small>
+                    ${item.tamano} · $${item.precio}
+                </small>
+
+                <div class="controles">
+
+                    <button onclick="cambiarCantidad(${index}, -1)">
+                        −
+                    </button>
+
+                    <span>${item.cantidad}</span>
+
+                    <button onclick="cambiarCantidad(${index}, 1)">
+                        +
+                    </button>
+
+                    <button
+                        class="eliminar"
+                        onclick="eliminarProducto(${index})">
+                        Eliminar
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+    contador.textContent = cantidad;
+    totalElemento.textContent = "$" + total;
+}
+
+
+/* CAMBIAR CANTIDAD */
+
+function cambiarCantidad(index, cambio) {
+
+    carrito[index].cantidad += cambio;
+
+    if (carrito[index].cantidad <= 0) {
+
+        carrito.splice(index, 1);
+
+    }
+
+    actualizarCarrito();
+}
+
+
+/* ELIMINAR */
+
+function eliminarProducto(index) {
+
+    carrito.splice(index, 1);
+
+    actualizarCarrito();
+}
+
+
+/* VACIAR */
+
+function vaciarCarrito() {
+
+    carrito = [];
+
+    actualizarCarrito();
+}
+
+
+/* ABRIR */
+
+function abrirCarrito() {
+
+    document
+        .getElementById("carritoPanel")
+        .classList.add("abierto");
+
+    document
+        .getElementById("overlay")
+        .classList.add("activo");
+}
+
+
+/* CERRAR */
+
+function cerrarCarrito() {
+
+    document
+        .getElementById("carritoPanel")
+        .classList.remove("abierto");
+
+    document
+        .getElementById("overlay")
+        .classList.remove("activo");
+}
+
+
+/* WHATSAPP */
+
+function enviarPedido() {
+
+    if (carrito.length === 0) {
+
+        alert("Tu carrito está vacío.");
+
+        return;
+
+    }
+
+    let mensaje =
+        "Hola! Quiero hacer este pedido en DrPerfumes:%0A%0A";
+
+    let total = 0;
+
+    carrito.forEach(function(item) {
+
+        let subtotal =
+            item.precio * item.cantidad;
+
+        total += subtotal;
+
+        mensaje +=
+            "• " +
+            item.nombre +
+            " - " +
+            item.tamano +
+            " x" +
+            item.cantidad +
+            " = $" +
+            subtotal +
+            "%0A";
+
+    });
+
+    mensaje +=
+        "%0A💰 Total: $" +
+        total;
+
+    let enlace =
+        "https://wa.me/59892033401?text=" +
+        mensaje;
+
+    window.open(enlace, "_blank");
+}
 
 /* =========================
    FILTRO
@@ -2461,7 +3158,48 @@ document
 
 </script>
 
+<!-- CARRITO -->
 
+<button class="carrito-btn" onclick="abrirCarrito()">
+    🛒
+    <span id="contador">0</span>
+</button>
+
+<div class="overlay" id="overlay" onclick="cerrarCarrito()"></div>
+
+<div class="carrito-panel" id="carritoPanel">
+
+    <div class="carrito-header">
+        <h2>🛒 Mi carrito</h2>
+
+        <button onclick="cerrarCarrito()">×</button>
+    </div>
+
+    <div id="carritoContenido">
+        <p>Tu carrito está vacío.</p>
+    </div>
+
+    <div class="carrito-footer">
+
+        <div class="total">
+            Total: <span id="total">$0</span>
+        </div>
+
+        <button
+            class="whatsapp-pedido"
+            onclick="enviarPedido()">
+            📱 Hacer pedido por WhatsApp
+        </button>
+
+        <button
+            class="vaciar"
+            onclick="vaciarCarrito()">
+            Vaciar carrito
+        </button>
+
+    </div>
+
+</div>
 </body>
 
 </html>
