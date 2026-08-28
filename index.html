@@ -1,62 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>DrPerfumes | Perfumes & Decants</title>
+
 <style>
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: #f7f5f5;
     color: #292729;
 }
-/* =========================
-   HEADER
-========================= */
+
+/* HEADER */
+
 header {
     background: #ffffff;
     padding: 25px 20px;
     text-align: center;
     border-bottom: 1px solid #e5e1e2;
 }
+
 .logo {
     font-size: 32px;
     font-weight: bold;
     letter-spacing: 2px;
 }
+
 .logo span {
     color: #9b858a;
 }
+
 header p {
     color: #888;
     margin-top: 8px;
 }
-/* =========================
-   HERO
-========================= */
+
+/* HERO */
+
 .hero {
     text-align: center;
     padding: 65px 20px;
     background: linear-gradient(135deg, #ffffff, #eee9ea);
 }
+
 .hero h1 {
     font-size: 40px;
     margin-bottom: 15px;
 }
+
 .hero h1 span {
     color: #9b858a;
 }
+
 .hero p {
     color: #777;
     max-width: 600px;
     margin: auto;
     line-height: 1.6;
 }
+
 .btn {
     display: inline-block;
     margin-top: 25px;
@@ -68,18 +80,20 @@ header p {
     font-weight: bold;
     transition: 0.2s;
 }
+
 .btn:hover {
     background: #555;
     transform: translateY(-2px);
 }
-/* =========================
-   SECCIONES
-========================= */
+
+/* SECCIONES */
+
 .section {
     padding: 55px 20px;
     max-width: 1200px;
     margin: auto;
 }
+
 .descripcion {
     text-align: center;
     max-width: 750px;
@@ -87,31 +101,33 @@ header p {
     color: #777;
     line-height: 1.7;
 }
-/* =========================
-   CATEGORIAS
-========================= */
+
+/* CATEGORIAS */
+
 .categoria {
     text-align: center;
     margin-bottom: 35px;
 }
+
 .categoria h2 {
     font-size: 30px;
     margin-bottom: 8px;
 }
+
 .categoria p {
     color: #999;
 }
-/* =========================
-   PRODUCTOS
-========================= */
+
+/* PRODUCTOS */
+
 .productos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 24px;
 }
-/* =========================
-   TARJETAS
-========================= */
+
+/* TARJETA */
+
 .producto {
     background: #ffffff;
     border: 1px solid #e3dfe0;
@@ -120,14 +136,15 @@ header p {
     transition: 0.3s;
     box-shadow: 0 5px 18px rgba(0,0,0,0.04);
 }
+
 .producto:hover {
     transform: translateY(-5px);
     border-color: #c9bbbe;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
-/* =========================
-   FOTOS
-========================= */
+
+/* FOTOS */
+
 .foto {
     width: 100%;
     height: 260px;
@@ -137,31 +154,34 @@ header p {
     justify-content: center;
     overflow: hidden;
 }
+
 .foto img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     display: block;
 }
-/* =========================
-   INFORMACION
-========================= */
+
+/* INFORMACION */
+
 .info {
     padding: 20px;
 }
+
 .info h3 {
     font-size: 18px;
     margin-bottom: 15px;
     min-height: 43px;
 }
-/* =========================
-   TAMAÑOS
-========================= */
+
+/* TAMAÑOS */
+
 .tamanos {
     display: flex;
     gap: 10px;
     margin-bottom: 15px;
 }
+
 .tamano {
     flex: 1;
     padding: 10px;
@@ -173,18 +193,20 @@ header p {
     font-weight: bold;
     transition: 0.2s;
 }
+
 .tamano:hover {
     border-color: #a8959a;
     background: #eee8ea;
 }
+
 .tamano.activo {
     background: #d9cdd0;
     color: #222;
     border-color: #b9a9ad;
 }
-/* =========================
-   PRECIO
-========================= */
+
+/* PRECIO */
+
 .precio {
     text-align: center;
     font-size: 22px;
@@ -192,9 +214,9 @@ header p {
     color: #555;
     margin-bottom: 15px;
 }
-/* =========================
-   WHATSAPP
-========================= */
+
+/* WHATSAPP */
+
 .comprar {
     display: block;
     text-align: center;
@@ -206,22 +228,23 @@ header p {
     font-weight: bold;
     transition: 0.2s;
 }
+
 .comprar:hover {
     background: #1ebe5d;
     transform: translateY(-2px);
 }
-/* =========================
-   SEPARADOR
-========================= */
+
+/* SEPARADOR */
+
 .separador {
     height: 1px;
     background: #ded9da;
     max-width: 1100px;
     margin: 60px auto;
 }
-/* =========================
-   FOOTER
-========================= */
+
+/* FOOTER */
+
 footer {
     text-align: center;
     padding: 35px 20px;
@@ -229,15 +252,17 @@ footer {
     color: #aaa;
     margin-top: 30px;
 }
+
 footer strong {
     color: #ffffff;
 }
+
 footer p {
     margin: 5px 0;
 }
-/* =========================
-   WHATSAPP FLOTANTE
-========================= */
+
+/* WHATSAPP FLOTANTE */
+
 .whatsapp {
     position: fixed;
     right: 20px;
@@ -256,497 +281,745 @@ footer p {
     transition: 0.2s;
     z-index: 1000;
 }
+
 .whatsapp:hover {
     transform: scale(1.08);
 }
-/* =========================
-   CELULAR
-========================= */
+
+/* CELULAR */
+
 @media (max-width: 600px) {
+
     .hero h1 {
         font-size: 32px;
     }
+
     .section {
         padding: 40px 15px;
     }
+
     .productos {
         grid-template-columns: 1fr;
     }
+
     .foto {
         height: 280px;
     }
+
 }
+
 </style>
 </head>
+
+
 <body>
-<!-- =========================
-     HEADER
-========================= -->
+
+
+<!-- HEADER -->
+
 <header>
+
     <div class="logo">
         Dr<span>Perfumes</span>
     </div>
+
     <p>Perfumes & Decants</p>
+
 </header>
-<!-- =========================
-     HERO
-========================= -->
+
+
+<!-- HERO -->
+
 <section class="hero">
+
     <h1>
         Encontrá tu <span>fragancia</span>
     </h1>
+
     <p>
         Perfumes y decants para hombres y mujeres.
         Elegí tu fragancia y el tamaño que querés.
     </p>
+
     <a class="btn" href="#productos">
         VER PERFUMES
     </a>
+
 </section>
-<!-- =========================
-     SOBRE DR PERFUMES
-========================= -->
+
+
+<!-- SOBRE DR PERFUMES -->
+
 <section class="section">
+
     <h2 style="text-align:center; margin-bottom:15px;">
         Sobre DrPerfumes
     </h2>
+
     <p class="descripcion">
+
         DrPerfumes es un emprendimiento dedicado a la venta de perfumes
         y decants, ofreciendo fragancias para hombres y mujeres a precios
         accesibles. Buscamos brindar productos de calidad y una atención
         personalizada, permitiendo conocer y probar diferentes aromas
         antes de comprar.
+
     </p>
+
 </section>
-<!-- =========================
-     PRODUCTOS
-========================= -->
+
+
+<!-- PRODUCTOS -->
+
 <section class="section" id="productos">
-<!-- =====================================================
+
+
+<!-- =========================
      HOMBRE
-===================================================== -->
+========================= -->
+
 <div class="categoria">
+
     <h2>Perfumes para Hombre</h2>
+
     <p>Fragancias masculinas</p>
+
 </div>
+
+
 <div class="productos">
+
+
 <!-- STRONGER WITH YOU -->
+
 <div class="producto">
+
     <div class="foto">
+
         <img
-            src="tú.jpg.AVIF"
+            src="you.jpg.AVIF"
             alt="Stronger With You Intensely"
         >
+
     </div>
+
     <div class="info">
+
         <h3>Stronger With You Intensely</h3>
+
         <div class="tamanos">
+
             <button
                 class="tamano activo"
                 onclick="seleccionar(this, 'Stronger With You Intensely', '5 ml', '$490')"
             >
                 5 ml
             </button>
+
             <button
                 class="tamano"
                 onclick="seleccionar(this, 'Stronger With You Intensely', '10 ml', '$850')"
             >
                 10 ml
             </button>
+
         </div>
+
         <div class="precio">$490</div>
+
         <a class="comprar"
            href="#"
            onclick="enviarWhatsApp(this); return false;">
             Consultar por WhatsApp
         </a>
+
     </div>
+
 </div>
+
+
 <!-- ACQUA DI GIO -->
+
 <div class="producto">
+
     <div class="foto">
+
         <img
             src="acqua.jpg.AVIF"
             alt="Acqua di Giò"
         >
+
     </div>
+
     <div class="info">
+
         <h3>Acqua di Giò</h3>
+
         <div class="tamanos">
+
             <button
                 class="tamano activo"
                 onclick="seleccionar(this, 'Acqua di Giò', '5 ml', '$450')"
             >
                 5 ml
             </button>
+
             <button
                 class="tamano"
                 onclick="seleccionar(this, 'Acqua di Giò', '10 ml', '$790')"
             >
                 10 ml
             </button>
+
         </div>
+
         <div class="precio">$450</div>
+
         <a class="comprar"
            href="#"
            onclick="enviarWhatsApp(this); return false;">
             Consultar por WhatsApp
         </a>
+
     </div>
+
 </div>
+
+
 <!-- VALENTINO UOMO INTENSE -->
+
 <div class="producto">
+
     <div class="foto">
+
         <img
-            src="Valentino.jpg.AVIF"
+            src="valentino.jpg.AVIF"
             alt="Valentino Uomo Intense"
         >
+
     </div>
+
     <div class="info">
+
         <h3>Valentino Uomo Intense</h3>
+
         <div class="tamanos">
+
             <button
                 class="tamano activo"
                 onclick="seleccionar(this, 'Valentino Uomo Intense', '5 ml', '$490')"
             >
                 5 ml
             </button>
+
             <button
                 class="tamano"
                 onclick="seleccionar(this, 'Valentino Uomo Intense', '10 ml', '$850')"
             >
                 10 ml
             </button>
+
         </div>
+
         <div class="precio">$490</div>
+
         <a class="comprar"
            href="#"
            onclick="enviarWhatsApp(this); return false;">
             Consultar por WhatsApp
         </a>
+
     </div>
+
 </div>
-<!-- JEAN PAUL GAULTIER -->
+
+
+<!-- JPG LE BEAU -->
+
 <div class="producto">
+
     <div class="foto">
+
         <img
             src="jpg.jpg.AVIF"
             alt="JPG Le Beau Le Parfum"
         >
+
     </div>
+
     <div class="info">
+
         <h3>JPG Le Beau Le Parfum</h3>
+
         <div class="tamanos">
+
             <button
                 class="tamano activo"
                 onclick="seleccionar(this, 'JPG Le Beau Le Parfum', '5 ml', '$490')"
             >
                 5 ml
             </button>
+
             <button
                 class="tamano"
                 onclick="seleccionar(this, 'JPG Le Beau Le Parfum', '10 ml', '$850')"
             >
                 10 ml
             </button>
+
         </div>
+
         <div class="precio">$490</div>
+
         <a class="comprar"
            href="#"
            onclick="enviarWhatsApp(this); return false;">
             Consultar por WhatsApp
         </a>
+
     </div>
+
 </div>
+
+
 <!-- 212 -->
+
 <div class="producto">
+
     <div class="foto">
+
         <img
             src="212.jpg.AVIF"
             alt="212 Carolina Herrera Hombre"
         >
+
     </div>
+
     <div class="info">
+
         <h3>212 Carolina Herrera Hombre</h3>
+
         <div class="tamanos">
+
             <button
                 class="tamano activo"
                 onclick="seleccionar(this, '212 Carolina Herrera Hombre', '5 ml', '$450')"
             >
                 5 ml
             </button>
+
             <button
                 class="tamano"
                 onclick="seleccionar(this, '212 Carolina Herrera Hombre', '10 ml', '$790')"
             >
                 10 ml
             </button>
+
         </div>
+
         <div class="precio">$450</div>
+
         <a class="comprar"
            href="#"
            onclick="enviarWhatsApp(this); return false;">
             Consultar por WhatsApp
         </a>
+
     </div>
+
 </div>
+
+
 <!-- EROS FLAME -->
+
 <div class="producto">
+
     <div class="foto">
+
         <img
             src="eros-flame.jpg.AVIF"
             alt="Versace Eros Flame"
         >
+
     </div>
+
     <div class="info">
+
         <h3>Versace Eros Flame</h3>
+
         <div class="tamanos">
+
             <button
                 class="tamano activo"
                 onclick="seleccionar(this, 'Versace Eros Flame', '5 ml', '$450')"
             >
                 5 ml
             </button>
+
             <button
                 class="tamano"
                 onclick="seleccionar(this, 'Versace Eros Flame', '10 ml', '$790')"
             >
                 10 ml
             </button>
+
         </div>
+
         <div class="precio">$450</div>
+
         <a class="comprar"
            href="#"
            onclick="enviarWhatsApp(this); return false;">
             Consultar por WhatsApp
         </a>
+
     </div>
+
 </div>
+
+
 <!-- ASAD BOURBON -->
+
 <div class="producto">
+
     <div class="foto">
+
         <img
             src="asad-bourbon.jpg.AVIF"
             alt="Asad Bourbon"
         >
+
     </div>
+
     <div class="info">
+
         <h3>Asad Bourbon</h3>
+
         <div class="tamanos">
+
             <button
                 class="tamano activo"
                 onclick="seleccionar(this, 'Asad Bourbon', '5 ml', '$390')"
             >
                 5 ml
             </button>
+
             <button
                 class="tamano"
                 onclick="seleccionar(this, 'Asad Bourbon', '10 ml', '$590')"
             >
                 10 ml
             </button>
+
         </div>
+
         <div class="precio">$390</div>
+
         <a class="comprar"
            href="#"
            onclick="enviarWhatsApp(this); return false;">
             Consultar por WhatsApp
         </a>
+
     </div>
+
 </div>
+
+
 <!-- SCANDAL -->
+
 <div class="producto">
+
     <div class="foto">
+
         <img
             src="scandal.jpg.AVIF"
             alt="Scandal"
         >
+
     </div>
+
     <div class="info">
+
         <h3>Scandal</h3>
+
         <div class="tamanos">
+
             <button
                 class="tamano activo"
                 onclick="seleccionar(this, 'Scandal', '5 ml', '$490')"
             >
                 5 ml
             </button>
+
             <button
                 class="tamano"
                 onclick="seleccionar(this, 'Scandal', '10 ml', '$850')"
             >
                 10 ml
             </button>
+
         </div>
+
         <div class="precio">$490</div>
+
         <a class="comprar"
            href="#"
            onclick="enviarWhatsApp(this); return false;">
             Consultar por WhatsApp
         </a>
+
     </div>
+
 </div>
+
+
 </div>
+
+
 <div class="separador"></div>
-<!-- =====================================================
+
+
+<!-- =========================
      MUJER
-===================================================== -->
+========================= -->
+
 <div class="categoria">
+
     <h2>Perfumes para Mujer</h2>
+
     <p>Fragancias femeninas</p>
+
 </div>
+
+
 <div class="productos">
+
+
 <!-- NOBLE BLUSH -->
+
 <div class="producto">
+
     <div class="foto">
+
         <img
             src="noble-blush.jpg.AVIF"
             alt="Lattafa Noble Blush"
         >
+
     </div>
+
     <div class="info">
+
         <h3>Lattafa Noble Blush</h3>
+
         <div class="tamanos">
+
             <button
                 class="tamano activo"
                 onclick="seleccionar(this, 'Lattafa Noble Blush', '5 ml', '$350')"
             >
                 5 ml
             </button>
+
             <button
                 class="tamano"
                 onclick="seleccionar(this, 'Lattafa Noble Blush', '10 ml', '$590')"
             >
                 10 ml
             </button>
+
         </div>
+
         <div class="precio">$350</div>
+
         <a class="comprar"
            href="#"
            onclick="enviarWhatsApp(this); return false;">
             Consultar por WhatsApp
         </a>
+
     </div>
+
 </div>
+
+
 <!-- LA VIE EST BELLE -->
+
 <div class="producto">
+
     <div class="foto">
+
         <img
             src="la-vie-est-belle.jpg.AVIF"
             alt="La Vie Est Belle"
         >
+
     </div>
+
     <div class="info">
+
         <h3>La Vie Est Belle</h3>
+
         <div class="tamanos">
+
             <button
                 class="tamano activo"
                 onclick="seleccionar(this, 'La Vie Est Belle', '5 ml', '$490')"
             >
                 5 ml
             </button>
+
             <button
                 class="tamano"
                 onclick="seleccionar(this, 'La Vie Est Belle', '10 ml', '$850')"
             >
                 10 ml
             </button>
+
         </div>
+
         <div class="precio">$490</div>
+
         <a class="comprar"
            href="#"
            onclick="enviarWhatsApp(this); return false;">
             Consultar por WhatsApp
         </a>
+
     </div>
+
 </div>
+
+
 <!-- CALVIN KLEIN -->
+
 <div class="producto">
+
     <div class="foto">
+
         <img
             src="calvin-klein.jpg.AVIF"
             alt="Calvin Klein"
         >
+
     </div>
+
     <div class="info">
+
         <h3>Calvin Klein</h3>
+
         <div class="tamanos">
+
             <button
                 class="tamano activo"
                 onclick="seleccionar(this, 'Calvin Klein', '5 ml', '$450')"
             >
                 5 ml
             </button>
+
             <button
                 class="tamano"
                 onclick="seleccionar(this, 'Calvin Klein', '10 ml', '$790')"
             >
                 10 ml
             </button>
+
         </div>
+
         <div class="precio">$450</div>
+
         <a class="comprar"
            href="#"
            onclick="enviarWhatsApp(this); return false;">
             Consultar por WhatsApp
         </a>
+
     </div>
+
 </div>
+
+
 <!-- VALENTINO DONNA -->
+
 <div class="producto">
+
     <div class="foto">
+
         <img
-            src="Mujer.jpg.AVIF"
+            src="mujer.jpg.AVIF"
             alt="Valentino Donna Born in Roma"
         >
+
     </div>
+
     <div class="info">
+
         <h3>Valentino Donna Born in Roma</h3>
+
         <div class="tamanos">
+
             <button
                 class="tamano activo"
                 onclick="seleccionar(this, 'Valentino Donna Born in Roma', '5 ml', '$490')"
             >
                 5 ml
             </button>
+
             <button
                 class="tamano"
                 onclick="seleccionar(this, 'Valentino Donna Born in Roma', '10 ml', '$850')"
             >
                 10 ml
             </button>
+
         </div>
+
         <div class="precio">$490</div>
+
         <a class="comprar"
            href="#"
            onclick="enviarWhatsApp(this); return false;">
             Consultar por WhatsApp
         </a>
+
     </div>
+
 </div>
+
+
 </div>
+
 </section>
-<!-- =========================
-     FOOTER
-========================= -->
+
+
+<!-- FOOTER -->
+
 <footer>
+
     <p>
         <strong>DrPerfumes</strong>
     </p>
+
     <p>
         Perfumes & Decants
     </p>
+
     <p>
         WhatsApp: 092 033 401
     </p>
+
     <br>
+
     <p>
         © 2026 DrPerfumes
     </p>
+
 </footer>
-<!-- =========================
-     WHATSAPP FLOTANTE
-========================= -->
+
+
+<!-- WHATSAPP FLOTANTE -->
+
 <a
     class="whatsapp"
     href="https://wa.me/59892033401"
@@ -754,23 +1027,36 @@ footer p {
 >
     ☏
 </a>
+
+
 <script>
+
 function seleccionar(boton, perfume, tamano, precio) {
+
     const producto = boton.closest(".producto");
+
     producto.querySelectorAll(".tamano").forEach(function(btn) {
         btn.classList.remove("activo");
     });
+
     boton.classList.add("activo");
+
     producto.querySelector(".precio").textContent = precio;
+
     producto.dataset.perfume = perfume;
     producto.dataset.tamano = tamano;
     producto.dataset.precio = precio;
 }
+
+
 function enviarWhatsApp(boton) {
+
     const producto = boton.closest(".producto");
+
     const perfume = producto.dataset.perfume;
     const tamano = producto.dataset.tamano;
     const precio = producto.dataset.precio;
+
     const mensaje =
         "Hola! Quiero consultar por " +
         perfume +
@@ -779,18 +1065,27 @@ function enviarWhatsApp(boton) {
         ": " +
         precio +
         ".";
+
     const enlace =
         "https://wa.me/59892033401?text=" +
         encodeURIComponent(mensaje);
+
     window.open(enlace, "_blank");
 }
+
+
 document.querySelectorAll(".producto").forEach(function(producto) {
+
     const botonInicial =
         producto.querySelector(".tamano.activo");
+
     if (botonInicial) {
         botonInicial.click();
     }
+
 });
+
 </script>
+
 </body>
 </html>
