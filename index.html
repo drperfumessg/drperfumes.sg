@@ -13,6 +13,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -21,17 +22,22 @@ body {
     color: #292729;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header {
     background: #ffffff;
-    padding: 25px 20px;
+    padding: 18px 20px;
     text-align: center;
     border-bottom: 1px solid #e5e1e2;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .logo {
-    font-size: 32px;
+    font-size: 30px;
     font-weight: bold;
     letter-spacing: 2px;
 }
@@ -42,14 +48,41 @@ header {
 
 header p {
     color: #888;
-    margin-top: 8px;
+    margin-top: 5px;
+    font-size: 14px;
 }
 
-/* HERO */
+/* =========================
+   MENU
+========================= */
+
+.menu {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #444;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.menu a:hover {
+    color: #9b858a;
+}
+
+/* =========================
+   HERO
+========================= */
 
 .hero {
     text-align: center;
-    padding: 65px 20px;
+    padding: 70px 20px;
     background: linear-gradient(135deg, #ffffff, #eee9ea);
 }
 
@@ -86,7 +119,9 @@ header p {
     transform: translateY(-2px);
 }
 
-/* SECCIONES */
+/* =========================
+   SECCIONES
+========================= */
 
 .section {
     padding: 55px 20px;
@@ -102,7 +137,9 @@ header p {
     line-height: 1.7;
 }
 
-/* CATEGORIAS */
+/* =========================
+   CATEGORIAS
+========================= */
 
 .categoria {
     text-align: center;
@@ -118,7 +155,9 @@ header p {
     color: #999;
 }
 
-/* PRODUCTOS */
+/* =========================
+   PRODUCTOS
+========================= */
 
 .productos {
     display: grid;
@@ -126,7 +165,9 @@ header p {
     gap: 24px;
 }
 
-/* TARJETA */
+/* =========================
+   TARJETA
+========================= */
 
 .producto {
     background: #ffffff;
@@ -143,7 +184,9 @@ header p {
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* FOTOS */
+/* =========================
+   FOTOS
+========================= */
 
 .foto {
     width: 100%;
@@ -162,7 +205,9 @@ header p {
     display: block;
 }
 
-/* INFORMACION */
+/* =========================
+   INFORMACION
+========================= */
 
 .info {
     padding: 20px;
@@ -174,7 +219,9 @@ header p {
     min-height: 43px;
 }
 
-/* TAMAÑOS */
+/* =========================
+   TAMAÑOS
+========================= */
 
 .tamanos {
     display: flex;
@@ -205,7 +252,9 @@ header p {
     border-color: #b9a9ad;
 }
 
-/* PRECIO */
+/* =========================
+   PRECIO
+========================= */
 
 .precio {
     text-align: center;
@@ -215,7 +264,9 @@ header p {
     margin-bottom: 15px;
 }
 
-/* WHATSAPP */
+/* =========================
+   WHATSAPP
+========================= */
 
 .comprar {
     display: block;
@@ -234,7 +285,9 @@ header p {
     transform: translateY(-2px);
 }
 
-/* SEPARADOR */
+/* =========================
+   SEPARADOR
+========================= */
 
 .separador {
     height: 1px;
@@ -243,7 +296,9 @@ header p {
     margin: 60px auto;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     text-align: center;
@@ -261,7 +316,9 @@ footer p {
     margin: 5px 0;
 }
 
-/* WHATSAPP FLOTANTE */
+/* =========================
+   WHATSAPP FLOTANTE
+========================= */
 
 .whatsapp {
     position: fixed;
@@ -286,9 +343,32 @@ footer p {
     transform: scale(1.08);
 }
 
-/* CELULAR */
+/* =========================
+   CELULAR
+========================= */
 
 @media (max-width: 600px) {
+
+    header {
+        padding: 15px 10px;
+    }
+
+    .logo {
+        font-size: 26px;
+    }
+
+    .menu {
+        gap: 18px;
+        margin-top: 12px;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 55px 20px;
+    }
 
     .hero h1 {
         font-size: 32px;
@@ -315,7 +395,9 @@ footer p {
 <body>
 
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER + MENU
+========================= -->
 
 <header>
 
@@ -325,12 +407,26 @@ footer p {
 
     <p>Perfumes & Decants</p>
 
+    <nav class="menu">
+
+        <a href="#inicio">Inicio</a>
+
+        <a href="#hombre">Hombre</a>
+
+        <a href="#mujer">Mujer</a>
+
+        <a href="#contacto">Contacto</a>
+
+    </nav>
+
 </header>
 
 
-<!-- HERO -->
+<!-- =========================
+     INICIO
+========================= -->
 
-<section class="hero">
+<section class="hero" id="inicio">
 
     <h1>
         Encontrá tu <span>fragancia</span>
@@ -341,14 +437,16 @@ footer p {
         Elegí tu fragancia y el tamaño que querés.
     </p>
 
-    <a class="btn" href="#productos">
+    <a class="btn" href="#hombre">
         VER PERFUMES
     </a>
 
 </section>
 
 
-<!-- SOBRE DR PERFUMES -->
+<!-- =========================
+     SOBRE DR PERFUMES
+========================= -->
 
 <section class="section">
 
@@ -369,631 +467,665 @@ footer p {
 </section>
 
 
-<!-- PRODUCTOS -->
-
-<section class="section" id="productos">
-
-
 <!-- =========================
-     HOMBRE
+     PERFUMES HOMBRE
 ========================= -->
 
-<div class="categoria">
+<section class="section" id="hombre">
 
-    <h2>Perfumes para Hombre</h2>
+    <div class="categoria">
 
-    <p>Fragancias masculinas</p>
+        <h2>Perfumes para Hombre</h2>
 
-</div>
-
-
-<div class="productos">
-
-
-<!-- STRONGER WITH YOU -->
-
-<div class="producto">
-
-    <div class="foto">
-
-        <img
-            src="you.jpg.AVIF"
-            alt="Stronger With You Intensely"
-        >
+        <p>Fragancias masculinas</p>
 
     </div>
 
-    <div class="info">
 
-        <h3>Stronger With You Intensely</h3>
+    <div class="productos">
 
-        <div class="tamanos">
 
-            <button
-                class="tamano activo"
-                onclick="seleccionar(this, 'Stronger With You Intensely', '5 ml', '$490')"
-            >
-                5 ml
-            </button>
+        <!-- STRONGER WITH YOU -->
 
-            <button
-                class="tamano"
-                onclick="seleccionar(this, 'Stronger With You Intensely', '10 ml', '$850')"
-            >
-                10 ml
-            </button>
+        <div class="producto">
+
+            <div class="foto">
+
+                <img
+                    src="you.jpg.AVIF"
+                    alt="Stronger With You Intensely"
+                >
+
+            </div>
+
+            <div class="info">
+
+                <h3>Stronger With You Intensely</h3>
+
+                <div class="tamanos">
+
+                    <button
+                        class="tamano activo"
+                        onclick="seleccionar(this, 'Stronger With You Intensely', '5 ml', '$490')"
+                    >
+                        5 ml
+                    </button>
+
+                    <button
+                        class="tamano"
+                        onclick="seleccionar(this, 'Stronger With You Intensely', '10 ml', '$850')"
+                    >
+                        10 ml
+                    </button>
+
+                </div>
+
+                <div class="precio">$490</div>
+
+                <a class="comprar"
+                   href="#"
+                   onclick="enviarWhatsApp(this); return false;">
+                    💬 Pedir por WhatsApp
+                </a>
+
+            </div>
 
         </div>
 
-        <div class="precio">$490</div>
 
-        <a class="comprar"
-           href="#"
-           onclick="enviarWhatsApp(this); return false;">
-            Consultar por WhatsApp
-        </a>
+        <!-- ACQUA DI GIO -->
 
-    </div>
+        <div class="producto">
 
-</div>
+            <div class="foto">
 
+                <img
+                    src="acqua.jpg.AVIF"
+                    alt="Acqua di Giò"
+                >
 
-<!-- ACQUA DI GIO -->
+            </div>
 
-<div class="producto">
+            <div class="info">
 
-    <div class="foto">
+                <h3>Acqua di Giò</h3>
 
-        <img
-            src="acqua.jpg.AVIF"
-            alt="Acqua di Giò"
-        >
+                <div class="tamanos">
 
-    </div>
+                    <button
+                        class="tamano activo"
+                        onclick="seleccionar(this, 'Acqua di Giò', '5 ml', '$450')"
+                    >
+                        5 ml
+                    </button>
 
-    <div class="info">
+                    <button
+                        class="tamano"
+                        onclick="seleccionar(this, 'Acqua di Giò', '10 ml', '$790')"
+                    >
+                        10 ml
+                    </button>
 
-        <h3>Acqua di Giò</h3>
+                </div>
 
-        <div class="tamanos">
+                <div class="precio">$450</div>
 
-            <button
-                class="tamano activo"
-                onclick="seleccionar(this, 'Acqua di Giò', '5 ml', '$450')"
-            >
-                5 ml
-            </button>
+                <a class="comprar"
+                   href="#"
+                   onclick="enviarWhatsApp(this); return false;">
+                    💬 Pedir por WhatsApp
+                </a>
 
-            <button
-                class="tamano"
-                onclick="seleccionar(this, 'Acqua di Giò', '10 ml', '$790')"
-            >
-                10 ml
-            </button>
-
-        </div>
-
-        <div class="precio">$450</div>
-
-        <a class="comprar"
-           href="#"
-           onclick="enviarWhatsApp(this); return false;">
-            Consultar por WhatsApp
-        </a>
-
-    </div>
-
-</div>
-
-
-<!-- VALENTINO UOMO INTENSE -->
-
-<div class="producto">
-
-    <div class="foto">
-
-        <img
-            src="valentino.jpg.AVIF"
-            alt="Valentino Uomo Intense"
-        >
-
-    </div>
-
-    <div class="info">
-
-        <h3>Valentino Uomo Intense</h3>
-
-        <div class="tamanos">
-
-            <button
-                class="tamano activo"
-                onclick="seleccionar(this, 'Valentino Uomo Intense', '5 ml', '$490')"
-            >
-                5 ml
-            </button>
-
-            <button
-                class="tamano"
-                onclick="seleccionar(this, 'Valentino Uomo Intense', '10 ml', '$850')"
-            >
-                10 ml
-            </button>
+            </div>
 
         </div>
 
-        <div class="precio">$490</div>
 
-        <a class="comprar"
-           href="#"
-           onclick="enviarWhatsApp(this); return false;">
-            Consultar por WhatsApp
-        </a>
+        <!-- VALENTINO UOMO -->
 
-    </div>
+        <div class="producto">
 
-</div>
+            <div class="foto">
 
+                <img
+                    src="valentino.jpg.AVIF"
+                    alt="Valentino Uomo Intense"
+                >
 
-<!-- JPG LE BEAU -->
+            </div>
 
-<div class="producto">
+            <div class="info">
 
-    <div class="foto">
+                <h3>Valentino Uomo Intense</h3>
 
-        <img
-            src="jpg.jpg.AVIF"
-            alt="JPG Le Beau Le Parfum"
-        >
+                <div class="tamanos">
 
-    </div>
+                    <button
+                        class="tamano activo"
+                        onclick="seleccionar(this, 'Valentino Uomo Intense', '5 ml', '$490')"
+                    >
+                        5 ml
+                    </button>
 
-    <div class="info">
+                    <button
+                        class="tamano"
+                        onclick="seleccionar(this, 'Valentino Uomo Intense', '10 ml', '$850')"
+                    >
+                        10 ml
+                    </button>
 
-        <h3>JPG Le Beau Le Parfum</h3>
+                </div>
 
-        <div class="tamanos">
+                <div class="precio">$490</div>
 
-            <button
-                class="tamano activo"
-                onclick="seleccionar(this, 'JPG Le Beau Le Parfum', '5 ml', '$490')"
-            >
-                5 ml
-            </button>
+                <a class="comprar"
+                   href="#"
+                   onclick="enviarWhatsApp(this); return false;">
+                    💬 Pedir por WhatsApp
+                </a>
 
-            <button
-                class="tamano"
-                onclick="seleccionar(this, 'JPG Le Beau Le Parfum', '10 ml', '$850')"
-            >
-                10 ml
-            </button>
-
-        </div>
-
-        <div class="precio">$490</div>
-
-        <a class="comprar"
-           href="#"
-           onclick="enviarWhatsApp(this); return false;">
-            Consultar por WhatsApp
-        </a>
-
-    </div>
-
-</div>
-
-
-<!-- 212 -->
-
-<div class="producto">
-
-    <div class="foto">
-
-        <img
-            src="212.jpg.AVIF"
-            alt="212 Carolina Herrera Hombre"
-        >
-
-    </div>
-
-    <div class="info">
-
-        <h3>212 Carolina Herrera Hombre</h3>
-
-        <div class="tamanos">
-
-            <button
-                class="tamano activo"
-                onclick="seleccionar(this, '212 Carolina Herrera Hombre', '5 ml', '$450')"
-            >
-                5 ml
-            </button>
-
-            <button
-                class="tamano"
-                onclick="seleccionar(this, '212 Carolina Herrera Hombre', '10 ml', '$790')"
-            >
-                10 ml
-            </button>
+            </div>
 
         </div>
 
-        <div class="precio">$450</div>
 
-        <a class="comprar"
-           href="#"
-           onclick="enviarWhatsApp(this); return false;">
-            Consultar por WhatsApp
-        </a>
+        <!-- JPG LE BEAU -->
 
-    </div>
+        <div class="producto">
 
-</div>
+            <div class="foto">
 
+                <img
+                    src="jpg.jpg.AVIF"
+                    alt="JPG Le Beau Le Parfum"
+                >
 
-<!-- EROS FLAME -->
+            </div>
 
-<div class="producto">
+            <div class="info">
 
-    <div class="foto">
+                <h3>JPG Le Beau Le Parfum</h3>
 
-        <img
-            src="eros-flame.jpg.AVIF"
-            alt="Versace Eros Flame"
-        >
+                <div class="tamanos">
 
-    </div>
+                    <button
+                        class="tamano activo"
+                        onclick="seleccionar(this, 'JPG Le Beau Le Parfum', '5 ml', '$490')"
+                    >
+                        5 ml
+                    </button>
 
-    <div class="info">
+                    <button
+                        class="tamano"
+                        onclick="seleccionar(this, 'JPG Le Beau Le Parfum', '10 ml', '$850')"
+                    >
+                        10 ml
+                    </button>
 
-        <h3>Versace Eros Flame</h3>
+                </div>
 
-        <div class="tamanos">
+                <div class="precio">$490</div>
 
-            <button
-                class="tamano activo"
-                onclick="seleccionar(this, 'Versace Eros Flame', '5 ml', '$450')"
-            >
-                5 ml
-            </button>
+                <a class="comprar"
+                   href="#"
+                   onclick="enviarWhatsApp(this); return false;">
+                    💬 Pedir por WhatsApp
+                </a>
 
-            <button
-                class="tamano"
-                onclick="seleccionar(this, 'Versace Eros Flame', '10 ml', '$790')"
-            >
-                10 ml
-            </button>
-
-        </div>
-
-        <div class="precio">$450</div>
-
-        <a class="comprar"
-           href="#"
-           onclick="enviarWhatsApp(this); return false;">
-            Consultar por WhatsApp
-        </a>
-
-    </div>
-
-</div>
-
-
-<!-- ASAD BOURBON -->
-
-<div class="producto">
-
-    <div class="foto">
-
-        <img
-            src="asad-bourbon.jpg.AVIF"
-            alt="Asad Bourbon"
-        >
-
-    </div>
-
-    <div class="info">
-
-        <h3>Asad Bourbon</h3>
-
-        <div class="tamanos">
-
-            <button
-                class="tamano activo"
-                onclick="seleccionar(this, 'Asad Bourbon', '5 ml', '$390')"
-            >
-                5 ml
-            </button>
-
-            <button
-                class="tamano"
-                onclick="seleccionar(this, 'Asad Bourbon', '10 ml', '$590')"
-            >
-                10 ml
-            </button>
+            </div>
 
         </div>
 
-        <div class="precio">$390</div>
 
-        <a class="comprar"
-           href="#"
-           onclick="enviarWhatsApp(this); return false;">
-            Consultar por WhatsApp
-        </a>
+        <!-- 212 -->
 
-    </div>
+        <div class="producto">
 
-</div>
+            <div class="foto">
 
+                <img
+                    src="212.jpg.AVIF"
+                    alt="212 Carolina Herrera Hombre"
+                >
 
-<!-- SCANDAL -->
+            </div>
 
-<div class="producto">
+            <div class="info">
 
-    <div class="foto">
+                <h3>212 Carolina Herrera Hombre</h3>
 
-        <img
-            src="scandal.jpg.AVIF"
-            alt="Scandal"
-        >
+                <div class="tamanos">
 
-    </div>
+                    <button
+                        class="tamano activo"
+                        onclick="seleccionar(this, '212 Carolina Herrera Hombre', '5 ml', '$450')"
+                    >
+                        5 ml
+                    </button>
 
-    <div class="info">
+                    <button
+                        class="tamano"
+                        onclick="seleccionar(this, '212 Carolina Herrera Hombre', '10 ml', '$790')"
+                    >
+                        10 ml
+                    </button>
 
-        <h3>Scandal</h3>
+                </div>
 
-        <div class="tamanos">
+                <div class="precio">$450</div>
 
-            <button
-                class="tamano activo"
-                onclick="seleccionar(this, 'Scandal', '5 ml', '$490')"
-            >
-                5 ml
-            </button>
+                <a class="comprar"
+                   href="#"
+                   onclick="enviarWhatsApp(this); return false;">
+                    💬 Pedir por WhatsApp
+                </a>
 
-            <button
-                class="tamano"
-                onclick="seleccionar(this, 'Scandal', '10 ml', '$850')"
-            >
-                10 ml
-            </button>
+            </div>
 
         </div>
 
-        <div class="precio">$490</div>
 
-        <a class="comprar"
-           href="#"
-           onclick="enviarWhatsApp(this); return false;">
-            Consultar por WhatsApp
-        </a>
+        <!-- EROS FLAME -->
+
+        <div class="producto">
+
+            <div class="foto">
+
+                <img
+                    src="eros-flame.jpg.AVIF"
+                    alt="Versace Eros Flame"
+                >
+
+            </div>
+
+            <div class="info">
+
+                <h3>Versace Eros Flame</h3>
+
+                <div class="tamanos">
+
+                    <button
+                        class="tamano activo"
+                        onclick="seleccionar(this, 'Versace Eros Flame', '5 ml', '$450')"
+                    >
+                        5 ml
+                    </button>
+
+                    <button
+                        class="tamano"
+                        onclick="seleccionar(this, 'Versace Eros Flame', '10 ml', '$790')"
+                    >
+                        10 ml
+                    </button>
+
+                </div>
+
+                <div class="precio">$450</div>
+
+                <a class="comprar"
+                   href="#"
+                   onclick="enviarWhatsApp(this); return false;">
+                    💬 Pedir por WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ASAD BOURBON -->
+
+        <div class="producto">
+
+            <div class="foto">
+
+                <img
+                    src="asad-bourbon.jpg.AVIF"
+                    alt="Asad Bourbon"
+                >
+
+            </div>
+
+            <div class="info">
+
+                <h3>Asad Bourbon</h3>
+
+                <div class="tamanos">
+
+                    <button
+                        class="tamano activo"
+                        onclick="seleccionar(this, 'Asad Bourbon', '5 ml', '$390')"
+                    >
+                        5 ml
+                    </button>
+
+                    <button
+                        class="tamano"
+                        onclick="seleccionar(this, 'Asad Bourbon', '10 ml', '$590')"
+                    >
+                        10 ml
+                    </button>
+
+                </div>
+
+                <div class="precio">$390</div>
+
+                <a class="comprar"
+                   href="#"
+                   onclick="enviarWhatsApp(this); return false;">
+                    💬 Pedir por WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SCANDAL -->
+
+        <div class="producto">
+
+            <div class="foto">
+
+                <img
+                    src="scandal.jpg.AVIF"
+                    alt="Scandal"
+                >
+
+            </div>
+
+            <div class="info">
+
+                <h3>Scandal</h3>
+
+                <div class="tamanos">
+
+                    <button
+                        class="tamano activo"
+                        onclick="seleccionar(this, 'Scandal', '5 ml', '$490')"
+                    >
+                        5 ml
+                    </button>
+
+                    <button
+                        class="tamano"
+                        onclick="seleccionar(this, 'Scandal', '10 ml', '$850')"
+                    >
+                        10 ml
+                    </button>
+
+                </div>
+
+                <div class="precio">$490</div>
+
+                <a class="comprar"
+                   href="#"
+                   onclick="enviarWhatsApp(this); return false;">
+                    💬 Pedir por WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
 
     </div>
 
-</div>
-
-
-</div>
+</section>
 
 
 <div class="separador"></div>
 
 
 <!-- =========================
-     MUJER
+     PERFUMES MUJER
 ========================= -->
 
-<div class="categoria">
+<section class="section" id="mujer">
 
-    <h2>Perfumes para Mujer</h2>
+    <div class="categoria">
 
-    <p>Fragancias femeninas</p>
+        <h2>Perfumes para Mujer</h2>
 
-</div>
-
-
-<div class="productos">
-
-
-<!-- NOBLE BLUSH -->
-
-<div class="producto">
-
-    <div class="foto">
-
-        <img
-            src="noble-blush.jpg.AVIF"
-            alt="Lattafa Noble Blush"
-        >
+        <p>Fragancias femeninas</p>
 
     </div>
 
-    <div class="info">
 
-        <h3>Lattafa Noble Blush</h3>
+    <div class="productos">
 
-        <div class="tamanos">
 
-            <button
-                class="tamano activo"
-                onclick="seleccionar(this, 'Lattafa Noble Blush', '5 ml', '$350')"
-            >
-                5 ml
-            </button>
+        <!-- NOBLE BLUSH -->
 
-            <button
-                class="tamano"
-                onclick="seleccionar(this, 'Lattafa Noble Blush', '10 ml', '$590')"
-            >
-                10 ml
-            </button>
+        <div class="producto">
+
+            <div class="foto">
+
+                <img
+                    src="noble-blush.jpg.AVIF"
+                    alt="Lattafa Noble Blush"
+                >
+
+            </div>
+
+            <div class="info">
+
+                <h3>Lattafa Noble Blush</h3>
+
+                <div class="tamanos">
+
+                    <button
+                        class="tamano activo"
+                        onclick="seleccionar(this, 'Lattafa Noble Blush', '5 ml', '$350')"
+                    >
+                        5 ml
+                    </button>
+
+                    <button
+                        class="tamano"
+                        onclick="seleccionar(this, 'Lattafa Noble Blush', '10 ml', '$590')"
+                    >
+                        10 ml
+                    </button>
+
+                </div>
+
+                <div class="precio">$350</div>
+
+                <a class="comprar"
+                   href="#"
+                   onclick="enviarWhatsApp(this); return false;">
+                    💬 Pedir por WhatsApp
+                </a>
+
+            </div>
 
         </div>
 
-        <div class="precio">$350</div>
 
-        <a class="comprar"
-           href="#"
-           onclick="enviarWhatsApp(this); return false;">
-            Consultar por WhatsApp
-        </a>
+        <!-- LA VIE EST BELLE -->
 
-    </div>
+        <div class="producto">
 
-</div>
+            <div class="foto">
 
+                <img
+                    src="la-vie-est-belle.jpg.AVIF"
+                    alt="La Vie Est Belle"
+                >
 
-<!-- LA VIE EST BELLE -->
+            </div>
 
-<div class="producto">
+            <div class="info">
 
-    <div class="foto">
+                <h3>La Vie Est Belle</h3>
 
-        <img
-            src="la-vie-est-belle.jpg.AVIF"
-            alt="La Vie Est Belle"
-        >
+                <div class="tamanos">
 
-    </div>
+                    <button
+                        class="tamano activo"
+                        onclick="seleccionar(this, 'La Vie Est Belle', '5 ml', '$490')"
+                    >
+                        5 ml
+                    </button>
 
-    <div class="info">
+                    <button
+                        class="tamano"
+                        onclick="seleccionar(this, 'La Vie Est Belle', '10 ml', '$850')"
+                    >
+                        10 ml
+                    </button>
 
-        <h3>La Vie Est Belle</h3>
+                </div>
 
-        <div class="tamanos">
+                <div class="precio">$490</div>
 
-            <button
-                class="tamano activo"
-                onclick="seleccionar(this, 'La Vie Est Belle', '5 ml', '$490')"
-            >
-                5 ml
-            </button>
+                <a class="comprar"
+                   href="#"
+                   onclick="enviarWhatsApp(this); return false;">
+                    💬 Pedir por WhatsApp
+                </a>
 
-            <button
-                class="tamano"
-                onclick="seleccionar(this, 'La Vie Est Belle', '10 ml', '$850')"
-            >
-                10 ml
-            </button>
-
-        </div>
-
-        <div class="precio">$490</div>
-
-        <a class="comprar"
-           href="#"
-           onclick="enviarWhatsApp(this); return false;">
-            Consultar por WhatsApp
-        </a>
-
-    </div>
-
-</div>
-
-
-<!-- CALVIN KLEIN -->
-
-<div class="producto">
-
-    <div class="foto">
-
-        <img
-            src="calvin-klein.jpg.AVIF"
-            alt="Calvin Klein"
-        >
-
-    </div>
-
-    <div class="info">
-
-        <h3>Calvin Klein</h3>
-
-        <div class="tamanos">
-
-            <button
-                class="tamano activo"
-                onclick="seleccionar(this, 'Calvin Klein', '5 ml', '$450')"
-            >
-                5 ml
-            </button>
-
-            <button
-                class="tamano"
-                onclick="seleccionar(this, 'Calvin Klein', '10 ml', '$790')"
-            >
-                10 ml
-            </button>
+            </div>
 
         </div>
 
-        <div class="precio">$450</div>
 
-        <a class="comprar"
-           href="#"
-           onclick="enviarWhatsApp(this); return false;">
-            Consultar por WhatsApp
-        </a>
+        <!-- CALVIN KLEIN -->
 
-    </div>
+        <div class="producto">
 
-</div>
+            <div class="foto">
 
+                <img
+                    src="calvin-klein.jpg.AVIF"
+                    alt="Calvin Klein"
+                >
 
-<!-- VALENTINO DONNA -->
+            </div>
 
-<div class="producto">
+            <div class="info">
 
-    <div class="foto">
+                <h3>Calvin Klein</h3>
 
-        <img
-            src="mujer.jpg.AVIF"
-            alt="Valentino Donna Born in Roma"
-        >
+                <div class="tamanos">
 
-    </div>
+                    <button
+                        class="tamano activo"
+                        onclick="seleccionar(this, 'Calvin Klein', '5 ml', '$450')"
+                    >
+                        5 ml
+                    </button>
 
-    <div class="info">
+                    <button
+                        class="tamano"
+                        onclick="seleccionar(this, 'Calvin Klein', '10 ml', '$790')"
+                    >
+                        10 ml
+                    </button>
 
-        <h3>Valentino Donna Born in Roma</h3>
+                </div>
 
-        <div class="tamanos">
+                <div class="precio">$450</div>
 
-            <button
-                class="tamano activo"
-                onclick="seleccionar(this, 'Valentino Donna Born in Roma', '5 ml', '$490')"
-            >
-                5 ml
-            </button>
+                <a class="comprar"
+                   href="#"
+                   onclick="enviarWhatsApp(this); return false;">
+                    💬 Pedir por WhatsApp
+                </a>
 
-            <button
-                class="tamano"
-                onclick="seleccionar(this, 'Valentino Donna Born in Roma', '10 ml', '$850')"
-            >
-                10 ml
-            </button>
+            </div>
 
         </div>
 
-        <div class="precio">$490</div>
 
-        <a class="comprar"
-           href="#"
-           onclick="enviarWhatsApp(this); return false;">
-            Consultar por WhatsApp
-        </a>
+        <!-- VALENTINO DONNA -->
+
+        <div class="producto">
+
+            <div class="foto">
+
+                <img
+                    src="mujer.jpg.AVIF"
+                    alt="Valentino Donna Born in Roma"
+                >
+
+            </div>
+
+            <div class="info">
+
+                <h3>Valentino Donna Born in Roma</h3>
+
+                <div class="tamanos">
+
+                    <button
+                        class="tamano activo"
+                        onclick="seleccionar(this, 'Valentino Donna Born in Roma', '5 ml', '$490')"
+                    >
+                        5 ml
+                    </button>
+
+                    <button
+                        class="tamano"
+                        onclick="seleccionar(this, 'Valentino Donna Born in Roma', '10 ml', '$850')"
+                    >
+                        10 ml
+                    </button>
+
+                </div>
+
+                <div class="precio">$490</div>
+
+                <a class="comprar"
+                   href="#"
+                   onclick="enviarWhatsApp(this); return false;">
+                    💬 Pedir por WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
 
     </div>
-
-</div>
-
-
-</div>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     CONTACTO
+========================= -->
+
+<section class="section" id="contacto">
+
+    <div class="categoria">
+
+        <h2>¿Querés hacer una consulta?</h2>
+
+        <p>
+            Escribinos por WhatsApp y te ayudamos.
+        </p>
+
+    </div>
+
+    <div style="text-align:center;">
+
+        <a
+            class="btn"
+            href="https://wa.me/59892033401"
+            target="_blank"
+        >
+            💬 Hablar por WhatsApp
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -1018,7 +1150,9 @@ footer p {
 </footer>
 
 
-<!-- WHATSAPP FLOTANTE -->
+<!-- =========================
+     WHATSAPP FLOTANTE
+========================= -->
 
 <a
     class="whatsapp"
@@ -1073,6 +1207,8 @@ function enviarWhatsApp(boton) {
     window.open(enlace, "_blank");
 }
 
+
+/* Seleccionar automáticamente el primer tamaño */
 
 document.querySelectorAll(".producto").forEach(function(producto) {
 
