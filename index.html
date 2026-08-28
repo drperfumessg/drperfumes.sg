@@ -2,12 +2,17 @@
 <html lang="es">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>DrPerfumes | Perfumes & Decants</title>
 
 <style>
+
+/* =========================
+   GENERAL
+========================= */
 
 * {
     margin: 0;
@@ -22,22 +27,23 @@ body {
     color: #292729;
 }
 
+
 /* =========================
    HEADER
 ========================= */
 
 header {
     background: #ffffff;
-    padding: 18px 20px;
+    padding: 20px;
     text-align: center;
     border-bottom: 1px solid #e5e1e2;
     position: sticky;
     top: 0;
-    z-index: 999;
+    z-index: 1000;
 }
 
 .logo {
-    font-size: 30px;
+    font-size: 31px;
     font-weight: bold;
     letter-spacing: 2px;
 }
@@ -52,23 +58,25 @@ header p {
     font-size: 14px;
 }
 
+
 /* =========================
    MENU
 ========================= */
 
 .menu {
-    margin-top: 15px;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    align-items: center;
+    gap: 25px;
+    margin-top: 17px;
     flex-wrap: wrap;
 }
 
 .menu a {
     text-decoration: none;
     color: #444;
-    font-size: 15px;
     font-weight: bold;
+    font-size: 14px;
     transition: 0.2s;
 }
 
@@ -76,18 +84,23 @@ header p {
     color: #9b858a;
 }
 
+
 /* =========================
    HERO
 ========================= */
 
 .hero {
     text-align: center;
-    padding: 70px 20px;
-    background: linear-gradient(135deg, #ffffff, #eee9ea);
+    padding: 75px 20px;
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #eee9ea
+    );
 }
 
 .hero h1 {
-    font-size: 40px;
+    font-size: 42px;
     margin-bottom: 15px;
 }
 
@@ -96,16 +109,16 @@ header p {
 }
 
 .hero p {
-    color: #777;
     max-width: 600px;
     margin: auto;
+    color: #777;
     line-height: 1.6;
 }
 
 .btn {
     display: inline-block;
     margin-top: 25px;
-    padding: 13px 30px;
+    padding: 14px 30px;
     background: #292729;
     color: white;
     text-decoration: none;
@@ -119,59 +132,105 @@ header p {
     transform: translateY(-2px);
 }
 
+
 /* =========================
    SECCIONES
 ========================= */
 
 .section {
-    padding: 55px 20px;
     max-width: 1200px;
     margin: auto;
+    padding: 55px 20px;
 }
 
 .descripcion {
-    text-align: center;
     max-width: 750px;
     margin: auto;
+    text-align: center;
     color: #777;
     line-height: 1.7;
 }
+
 
 /* =========================
    BUSCADOR
 ========================= */
 
+.buscador-seccion {
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    padding: 25px 20px 35px;
+}
+
+.buscador-seccion h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
 .buscador {
-    max-width: 600px;
-    margin: 0 auto 40px auto;
     position: relative;
+    max-width: 600px;
+    margin: auto;
 }
 
-.buscador input {
-    width: 100%;
-    padding: 15px 20px 15px 48px;
-    border: 1px solid #d8d2d4;
-    border-radius: 30px;
-    background: #ffffff;
-    font-size: 16px;
-    outline: none;
-    color: #333;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-}
-
-.buscador input:focus {
-    border-color: #aa989d;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
-}
-
-.icono-busqueda {
+.buscador span {
     position: absolute;
     left: 18px;
     top: 50%;
     transform: translateY(-50%);
     font-size: 20px;
-    color: #888;
 }
+
+.buscador input {
+    width: 100%;
+    padding: 16px 20px 16px 50px;
+    border: 1px solid #d5ced0;
+    border-radius: 30px;
+    background: #ffffff;
+    font-size: 16px;
+    outline: none;
+}
+
+.buscador input:focus {
+    border-color: #9b858a;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+}
+
+
+/* =========================
+   FILTROS
+========================= */
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.filtro {
+    padding: 10px 22px;
+    border: 1px solid #d5ced0;
+    border-radius: 25px;
+    background: #ffffff;
+    color: #444;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.filtro:hover {
+    background: #eee8ea;
+}
+
+.filtro.activo {
+    background: #292729;
+    color: white;
+    border-color: #292729;
+}
+
 
 /* =========================
    CATEGORIAS
@@ -191,15 +250,20 @@ header p {
     color: #999;
 }
 
+
 /* =========================
    PRODUCTOS
 ========================= */
 
 .productos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(220px, 1fr)
+    );
     gap: 24px;
 }
+
 
 /* =========================
    TARJETA
@@ -210,8 +274,8 @@ header p {
     border: 1px solid #e3dfe0;
     border-radius: 18px;
     overflow: hidden;
-    transition: 0.3s;
     box-shadow: 0 5px 18px rgba(0,0,0,0.04);
+    transition: 0.3s;
 }
 
 .producto:hover {
@@ -219,6 +283,7 @@ header p {
     border-color: #c9bbbe;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
+
 
 /* =========================
    FOTOS
@@ -241,6 +306,7 @@ header p {
     display: block;
 }
 
+
 /* =========================
    INFORMACION
 ========================= */
@@ -254,6 +320,7 @@ header p {
     margin-bottom: 15px;
     min-height: 43px;
 }
+
 
 /* =========================
    TAMAÑOS
@@ -288,6 +355,7 @@ header p {
     border-color: #b9a9ad;
 }
 
+
 /* =========================
    PRECIO
 ========================= */
@@ -299,6 +367,7 @@ header p {
     color: #555;
     margin-bottom: 15px;
 }
+
 
 /* =========================
    WHATSAPP
@@ -321,17 +390,19 @@ header p {
     transform: translateY(-2px);
 }
 
+
 /* =========================
-   MENSAJE SIN RESULTADOS
+   SIN RESULTADOS
 ========================= */
 
 .sin-resultados {
     display: none;
     text-align: center;
+    padding: 40px 20px;
     color: #888;
-    padding: 30px;
     font-size: 17px;
 }
+
 
 /* =========================
    SEPARADOR
@@ -339,10 +410,29 @@ header p {
 
 .separador {
     height: 1px;
-    background: #ded9da;
     max-width: 1100px;
-    margin: 60px auto;
+    margin: 10px auto;
+    background: #ded9da;
 }
+
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contacto {
+    text-align: center;
+}
+
+.contacto h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.contacto p {
+    color: #888;
+}
+
 
 /* =========================
    FOOTER
@@ -361,7 +451,7 @@ footer strong {
 }
 
 footer p {
-    margin: 5px 0;
+    margin: 6px 0;
 }
 
 footer a {
@@ -370,8 +460,9 @@ footer a {
 }
 
 footer a:hover {
-    color: #ffffff;
+    color: white;
 }
+
 
 /* =========================
    WHATSAPP FLOTANTE
@@ -388,17 +479,18 @@ footer a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
     color: white;
+    text-decoration: none;
     font-size: 27px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    z-index: 2000;
     transition: 0.2s;
-    z-index: 1000;
 }
 
 .whatsapp:hover {
     transform: scale(1.08);
 }
+
 
 /* =========================
    CELULAR
@@ -406,21 +498,16 @@ footer a:hover {
 
 @media (max-width: 600px) {
 
-    header {
-        padding: 15px 10px;
-    }
-
     .logo {
-        font-size: 26px;
+        font-size: 27px;
     }
 
     .menu {
-        gap: 18px;
-        margin-top: 12px;
+        gap: 15px;
     }
 
     .menu a {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .hero {
@@ -446,6 +533,7 @@ footer a:hover {
 }
 
 </style>
+
 </head>
 
 
@@ -453,7 +541,7 @@ footer a:hover {
 
 
 <!-- =========================
-     HEADER + MENU
+     HEADER
 ========================= -->
 
 <header>
@@ -487,7 +575,7 @@ footer a:hover {
 
 
 <!-- =========================
-     INICIO
+     HERO
 ========================= -->
 
 <section class="hero" id="inicio">
@@ -509,7 +597,7 @@ footer a:hover {
 
 
 <!-- =========================
-     SOBRE DR PERFUMES
+     SOBRE
 ========================= -->
 
 <section class="section">
@@ -520,11 +608,13 @@ footer a:hover {
 
     <p class="descripcion">
 
-        DrPerfumes es un emprendimiento dedicado a la venta de perfumes
-        y decants, ofreciendo fragancias para hombres y mujeres a precios
-        accesibles. Buscamos brindar productos de calidad y una atención
-        personalizada, permitiendo conocer y probar diferentes aromas
-        antes de comprar.
+        DrPerfumes es un emprendimiento dedicado a la venta
+        de perfumes y decants, ofreciendo fragancias para
+        hombres y mujeres a precios accesibles.
+
+        Buscamos brindar productos de calidad y una atención
+        personalizada, permitiendo conocer y probar diferentes
+        aromas antes de comprar.
 
     </p>
 
@@ -532,21 +622,51 @@ footer a:hover {
 
 
 <!-- =========================
-     BUSCADOR
+     BUSCADOR + FILTROS
 ========================= -->
 
-<section class="section" style="padding-top: 10px; padding-bottom: 10px;">
+<section class="buscador-seccion">
+
+    <h2>
+        Encontrá tu perfume
+    </h2>
 
     <div class="buscador">
 
-        <span class="icono-busqueda">🔎</span>
+        <span>🔍</span>
 
         <input
             type="text"
             id="buscador"
-            placeholder="Buscá tu perfume..."
-            onkeyup="buscarPerfume()"
+            placeholder="Buscar perfume..."
+            onkeyup="filtrarPerfumes()"
         >
+
+    </div>
+
+
+    <div class="filtros">
+
+        <button
+            class="filtro activo"
+            onclick="cambiarFiltro('todos', this)"
+        >
+            Todos
+        </button>
+
+        <button
+            class="filtro"
+            onclick="cambiarFiltro('hombre', this)"
+        >
+            Hombre
+        </button>
+
+        <button
+            class="filtro"
+            onclick="cambiarFiltro('mujer', this)"
+        >
+            Mujer
+        </button>
 
     </div>
 
@@ -554,16 +674,20 @@ footer a:hover {
 
 
 <!-- =========================
-     PERFUMES HOMBRE
+     HOMBRE
 ========================= -->
 
 <section class="section" id="hombre">
 
     <div class="categoria">
 
-        <h2>Perfumes para Hombre</h2>
+        <h2>
+            Perfumes para Hombre
+        </h2>
 
-        <p>Fragancias masculinas</p>
+        <p>
+            Fragancias masculinas
+        </p>
 
     </div>
 
@@ -571,9 +695,13 @@ footer a:hover {
     <div class="productos">
 
 
-        <!-- STRONGER WITH YOU -->
+        <!-- STRONGER -->
 
-        <div class="producto" data-nombre="Stronger With You Intensely">
+        <div
+            class="producto"
+            data-nombre="Stronger With You Intensely"
+            data-categoria="hombre"
+        >
 
             <div class="foto">
 
@@ -586,31 +714,47 @@ footer a:hover {
 
             <div class="info">
 
-                <h3>Stronger With You Intensely</h3>
+                <h3>
+                    Stronger With You Intensely
+                </h3>
 
                 <div class="tamanos">
 
                     <button
                         class="tamano activo"
-                        onclick="seleccionar(this, 'Stronger With You Intensely', '5 ml', '$490')"
+                        onclick="seleccionar(
+                            this,
+                            'Stronger With You Intensely',
+                            '5 ml',
+                            '$490'
+                        )"
                     >
                         5 ml
                     </button>
 
                     <button
                         class="tamano"
-                        onclick="seleccionar(this, 'Stronger With You Intensely', '10 ml', '$850')"
+                        onclick="seleccionar(
+                            this,
+                            'Stronger With You Intensely',
+                            '10 ml',
+                            '$850'
+                        )"
                     >
                         10 ml
                     </button>
 
                 </div>
 
-                <div class="precio">$490</div>
+                <div class="precio">
+                    $490
+                </div>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="enviarWhatsApp(this); return false;">
+                <a
+                    class="comprar"
+                    href="#"
+                    onclick="enviarWhatsApp(this); return false;"
+                >
                     💬 Pedir por WhatsApp
                 </a>
 
@@ -619,9 +763,13 @@ footer a:hover {
         </div>
 
 
-        <!-- ACQUA DI GIO -->
+        <!-- ACQUA -->
 
-        <div class="producto" data-nombre="Acqua di Gio">
+        <div
+            class="producto"
+            data-nombre="Acqua di Gio"
+            data-categoria="hombre"
+        >
 
             <div class="foto">
 
@@ -634,31 +782,47 @@ footer a:hover {
 
             <div class="info">
 
-                <h3>Acqua di Giò</h3>
+                <h3>
+                    Acqua di Giò
+                </h3>
 
                 <div class="tamanos">
 
                     <button
                         class="tamano activo"
-                        onclick="seleccionar(this, 'Acqua di Giò', '5 ml', '$450')"
+                        onclick="seleccionar(
+                            this,
+                            'Acqua di Giò',
+                            '5 ml',
+                            '$450'
+                        )"
                     >
                         5 ml
                     </button>
 
                     <button
                         class="tamano"
-                        onclick="seleccionar(this, 'Acqua di Giò', '10 ml', '$790')"
+                        onclick="seleccionar(
+                            this,
+                            'Acqua di Giò',
+                            '10 ml',
+                            '$790'
+                        )"
                     >
                         10 ml
                     </button>
 
                 </div>
 
-                <div class="precio">$450</div>
+                <div class="precio">
+                    $450
+                </div>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="enviarWhatsApp(this); return false;">
+                <a
+                    class="comprar"
+                    href="#"
+                    onclick="enviarWhatsApp(this); return false;"
+                >
                     💬 Pedir por WhatsApp
                 </a>
 
@@ -667,9 +831,13 @@ footer a:hover {
         </div>
 
 
-        <!-- VALENTINO UOMO -->
+        <!-- VALENTINO HOMBRE -->
 
-        <div class="producto" data-nombre="Valentino Uomo Intense">
+        <div
+            class="producto"
+            data-nombre="Valentino Uomo Intense"
+            data-categoria="hombre"
+        >
 
             <div class="foto">
 
@@ -682,31 +850,47 @@ footer a:hover {
 
             <div class="info">
 
-                <h3>Valentino Uomo Intense</h3>
+                <h3>
+                    Valentino Uomo Intense
+                </h3>
 
                 <div class="tamanos">
 
                     <button
                         class="tamano activo"
-                        onclick="seleccionar(this, 'Valentino Uomo Intense', '5 ml', '$490')"
+                        onclick="seleccionar(
+                            this,
+                            'Valentino Uomo Intense',
+                            '5 ml',
+                            '$490'
+                        )"
                     >
                         5 ml
                     </button>
 
                     <button
                         class="tamano"
-                        onclick="seleccionar(this, 'Valentino Uomo Intense', '10 ml', '$850')"
+                        onclick="seleccionar(
+                            this,
+                            'Valentino Uomo Intense',
+                            '10 ml',
+                            '$850'
+                        )"
                     >
                         10 ml
                     </button>
 
                 </div>
 
-                <div class="precio">$490</div>
+                <div class="precio">
+                    $490
+                </div>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="enviarWhatsApp(this); return false;">
+                <a
+                    class="comprar"
+                    href="#"
+                    onclick="enviarWhatsApp(this); return false;"
+                >
                     💬 Pedir por WhatsApp
                 </a>
 
@@ -715,9 +899,13 @@ footer a:hover {
         </div>
 
 
-        <!-- JPG LE BEAU -->
+        <!-- JPG -->
 
-        <div class="producto" data-nombre="JPG Le Beau Le Parfum">
+        <div
+            class="producto"
+            data-nombre="JPG Le Beau Le Parfum"
+            data-categoria="hombre"
+        >
 
             <div class="foto">
 
@@ -730,31 +918,47 @@ footer a:hover {
 
             <div class="info">
 
-                <h3>JPG Le Beau Le Parfum</h3>
+                <h3>
+                    JPG Le Beau Le Parfum
+                </h3>
 
                 <div class="tamanos">
 
                     <button
                         class="tamano activo"
-                        onclick="seleccionar(this, 'JPG Le Beau Le Parfum', '5 ml', '$490')"
+                        onclick="seleccionar(
+                            this,
+                            'JPG Le Beau Le Parfum',
+                            '5 ml',
+                            '$490'
+                        )"
                     >
                         5 ml
                     </button>
 
                     <button
                         class="tamano"
-                        onclick="seleccionar(this, 'JPG Le Beau Le Parfum', '10 ml', '$850')"
+                        onclick="seleccionar(
+                            this,
+                            'JPG Le Beau Le Parfum',
+                            '10 ml',
+                            '$850'
+                        )"
                     >
                         10 ml
                     </button>
 
                 </div>
 
-                <div class="precio">$490</div>
+                <div class="precio">
+                    $490
+                </div>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="enviarWhatsApp(this); return false;">
+                <a
+                    class="comprar"
+                    href="#"
+                    onclick="enviarWhatsApp(this); return false;"
+                >
                     💬 Pedir por WhatsApp
                 </a>
 
@@ -765,7 +969,11 @@ footer a:hover {
 
         <!-- 212 -->
 
-        <div class="producto" data-nombre="212 Carolina Herrera Hombre">
+        <div
+            class="producto"
+            data-nombre="212 Carolina Herrera Hombre"
+            data-categoria="hombre"
+        >
 
             <div class="foto">
 
@@ -778,31 +986,47 @@ footer a:hover {
 
             <div class="info">
 
-                <h3>212 Carolina Herrera Hombre</h3>
+                <h3>
+                    212 Carolina Herrera Hombre
+                </h3>
 
                 <div class="tamanos">
 
                     <button
                         class="tamano activo"
-                        onclick="seleccionar(this, '212 Carolina Herrera Hombre', '5 ml', '$450')"
+                        onclick="seleccionar(
+                            this,
+                            '212 Carolina Herrera Hombre',
+                            '5 ml',
+                            '$450'
+                        )"
                     >
                         5 ml
                     </button>
 
                     <button
                         class="tamano"
-                        onclick="seleccionar(this, '212 Carolina Herrera Hombre', '10 ml', '$790')"
+                        onclick="seleccionar(
+                            this,
+                            '212 Carolina Herrera Hombre',
+                            '10 ml',
+                            '$790'
+                        )"
                     >
                         10 ml
                     </button>
 
                 </div>
 
-                <div class="precio">$450</div>
+                <div class="precio">
+                    $450
+                </div>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="enviarWhatsApp(this); return false;">
+                <a
+                    class="comprar"
+                    href="#"
+                    onclick="enviarWhatsApp(this); return false;"
+                >
                     💬 Pedir por WhatsApp
                 </a>
 
@@ -811,9 +1035,13 @@ footer a:hover {
         </div>
 
 
-        <!-- EROS FLAME -->
+        <!-- EROS -->
 
-        <div class="producto" data-nombre="Versace Eros Flame">
+        <div
+            class="producto"
+            data-nombre="Versace Eros Flame"
+            data-categoria="hombre"
+        >
 
             <div class="foto">
 
@@ -826,31 +1054,47 @@ footer a:hover {
 
             <div class="info">
 
-                <h3>Versace Eros Flame</h3>
+                <h3>
+                    Versace Eros Flame
+                </h3>
 
                 <div class="tamanos">
 
                     <button
                         class="tamano activo"
-                        onclick="seleccionar(this, 'Versace Eros Flame', '5 ml', '$450')"
+                        onclick="seleccionar(
+                            this,
+                            'Versace Eros Flame',
+                            '5 ml',
+                            '$450'
+                        )"
                     >
                         5 ml
                     </button>
 
                     <button
                         class="tamano"
-                        onclick="seleccionar(this, 'Versace Eros Flame', '10 ml', '$790')"
+                        onclick="seleccionar(
+                            this,
+                            'Versace Eros Flame',
+                            '10 ml',
+                            '$790'
+                        )"
                     >
                         10 ml
                     </button>
 
                 </div>
 
-                <div class="precio">$450</div>
+                <div class="precio">
+                    $450
+                </div>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="enviarWhatsApp(this); return false;">
+                <a
+                    class="comprar"
+                    href="#"
+                    onclick="enviarWhatsApp(this); return false;"
+                >
                     💬 Pedir por WhatsApp
                 </a>
 
@@ -859,9 +1103,13 @@ footer a:hover {
         </div>
 
 
-        <!-- ASAD BOURBON -->
+        <!-- ASAD -->
 
-        <div class="producto" data-nombre="Asad Bourbon">
+        <div
+            class="producto"
+            data-nombre="Asad Bourbon"
+            data-categoria="hombre"
+        >
 
             <div class="foto">
 
@@ -874,31 +1122,47 @@ footer a:hover {
 
             <div class="info">
 
-                <h3>Asad Bourbon</h3>
+                <h3>
+                    Asad Bourbon
+                </h3>
 
                 <div class="tamanos">
 
                     <button
                         class="tamano activo"
-                        onclick="seleccionar(this, 'Asad Bourbon', '5 ml', '$390')"
+                        onclick="seleccionar(
+                            this,
+                            'Asad Bourbon',
+                            '5 ml',
+                            '$390'
+                        )"
                     >
                         5 ml
                     </button>
 
                     <button
                         class="tamano"
-                        onclick="seleccionar(this, 'Asad Bourbon', '10 ml', '$590')"
+                        onclick="seleccionar(
+                            this,
+                            'Asad Bourbon',
+                            '10 ml',
+                            '$590'
+                        )"
                     >
                         10 ml
                     </button>
 
                 </div>
 
-                <div class="precio">$390</div>
+                <div class="precio">
+                    $390
+                </div>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="enviarWhatsApp(this); return false;">
+                <a
+                    class="comprar"
+                    href="#"
+                    onclick="enviarWhatsApp(this); return false;"
+                >
                     💬 Pedir por WhatsApp
                 </a>
 
@@ -909,7 +1173,11 @@ footer a:hover {
 
         <!-- SCANDAL -->
 
-        <div class="producto" data-nombre="Scandal">
+        <div
+            class="producto"
+            data-nombre="Scandal"
+            data-categoria="hombre"
+        >
 
             <div class="foto">
 
@@ -922,31 +1190,47 @@ footer a:hover {
 
             <div class="info">
 
-                <h3>Scandal</h3>
+                <h3>
+                    Scandal
+                </h3>
 
                 <div class="tamanos">
 
                     <button
                         class="tamano activo"
-                        onclick="seleccionar(this, 'Scandal', '5 ml', '$490')"
+                        onclick="seleccionar(
+                            this,
+                            'Scandal',
+                            '5 ml',
+                            '$490'
+                        )"
                     >
                         5 ml
                     </button>
 
                     <button
                         class="tamano"
-                        onclick="seleccionar(this, 'Scandal', '10 ml', '$850')"
+                        onclick="seleccionar(
+                            this,
+                            'Scandal',
+                            '10 ml',
+                            '$850'
+                        )"
                     >
                         10 ml
                     </button>
 
                 </div>
 
-                <div class="precio">$490</div>
+                <div class="precio">
+                    $490
+                </div>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="enviarWhatsApp(this); return false;">
+                <a
+                    class="comprar"
+                    href="#"
+                    onclick="enviarWhatsApp(this); return false;"
+                >
                     💬 Pedir por WhatsApp
                 </a>
 
@@ -964,16 +1248,20 @@ footer a:hover {
 
 
 <!-- =========================
-     PERFUMES MUJER
+     MUJER
 ========================= -->
 
 <section class="section" id="mujer">
 
     <div class="categoria">
 
-        <h2>Perfumes para Mujer</h2>
+        <h2>
+            Perfumes para Mujer
+        </h2>
 
-        <p>Fragancias femeninas</p>
+        <p>
+            Fragancias femeninas
+        </p>
 
     </div>
 
@@ -983,7 +1271,11 @@ footer a:hover {
 
         <!-- NOBLE BLUSH -->
 
-        <div class="producto" data-nombre="Lattafa Noble Blush">
+        <div
+            class="producto"
+            data-nombre="Lattafa Noble Blush"
+            data-categoria="mujer"
+        >
 
             <div class="foto">
 
@@ -996,31 +1288,47 @@ footer a:hover {
 
             <div class="info">
 
-                <h3>Lattafa Noble Blush</h3>
+                <h3>
+                    Lattafa Noble Blush
+                </h3>
 
                 <div class="tamanos">
 
                     <button
                         class="tamano activo"
-                        onclick="seleccionar(this, 'Lattafa Noble Blush', '5 ml', '$350')"
+                        onclick="seleccionar(
+                            this,
+                            'Lattafa Noble Blush',
+                            '5 ml',
+                            '$350'
+                        )"
                     >
                         5 ml
                     </button>
 
                     <button
                         class="tamano"
-                        onclick="seleccionar(this, 'Lattafa Noble Blush', '10 ml', '$590')"
+                        onclick="seleccionar(
+                            this,
+                            'Lattafa Noble Blush',
+                            '10 ml',
+                            '$590'
+                        )"
                     >
                         10 ml
                     </button>
 
                 </div>
 
-                <div class="precio">$350</div>
+                <div class="precio">
+                    $350
+                </div>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="enviarWhatsApp(this); return false;">
+                <a
+                    class="comprar"
+                    href="#"
+                    onclick="enviarWhatsApp(this); return false;"
+                >
                     💬 Pedir por WhatsApp
                 </a>
 
@@ -1031,7 +1339,11 @@ footer a:hover {
 
         <!-- LA VIE EST BELLE -->
 
-        <div class="producto" data-nombre="La Vie Est Belle">
+        <div
+            class="producto"
+            data-nombre="La Vie Est Belle"
+            data-categoria="mujer"
+        >
 
             <div class="foto">
 
@@ -1044,31 +1356,47 @@ footer a:hover {
 
             <div class="info">
 
-                <h3>La Vie Est Belle</h3>
+                <h3>
+                    La Vie Est Belle
+                </h3>
 
                 <div class="tamanos">
 
                     <button
                         class="tamano activo"
-                        onclick="seleccionar(this, 'La Vie Est Belle', '5 ml', '$490')"
+                        onclick="seleccionar(
+                            this,
+                            'La Vie Est Belle',
+                            '5 ml',
+                            '$490'
+                        )"
                     >
                         5 ml
                     </button>
 
                     <button
                         class="tamano"
-                        onclick="seleccionar(this, 'La Vie Est Belle', '10 ml', '$850')"
+                        onclick="seleccionar(
+                            this,
+                            'La Vie Est Belle',
+                            '10 ml',
+                            '$850'
+                        )"
                     >
                         10 ml
                     </button>
 
                 </div>
 
-                <div class="precio">$490</div>
+                <div class="precio">
+                    $490
+                </div>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="enviarWhatsApp(this); return false;">
+                <a
+                    class="comprar"
+                    href="#"
+                    onclick="enviarWhatsApp(this); return false;"
+                >
                     💬 Pedir por WhatsApp
                 </a>
 
@@ -1079,7 +1407,11 @@ footer a:hover {
 
         <!-- CALVIN KLEIN -->
 
-        <div class="producto" data-nombre="Calvin Klein">
+        <div
+            class="producto"
+            data-nombre="Calvin Klein"
+            data-categoria="mujer"
+        >
 
             <div class="foto">
 
@@ -1092,31 +1424,47 @@ footer a:hover {
 
             <div class="info">
 
-                <h3>Calvin Klein</h3>
+                <h3>
+                    Calvin Klein
+                </h3>
 
                 <div class="tamanos">
 
                     <button
                         class="tamano activo"
-                        onclick="seleccionar(this, 'Calvin Klein', '5 ml', '$450')"
+                        onclick="seleccionar(
+                            this,
+                            'Calvin Klein',
+                            '5 ml',
+                            '$450'
+                        )"
                     >
                         5 ml
                     </button>
 
                     <button
                         class="tamano"
-                        onclick="seleccionar(this, 'Calvin Klein', '10 ml', '$790')"
+                        onclick="seleccionar(
+                            this,
+                            'Calvin Klein',
+                            '10 ml',
+                            '$790'
+                        )"
                     >
                         10 ml
                     </button>
 
                 </div>
 
-                <div class="precio">$450</div>
+                <div class="precio">
+                    $450
+                </div>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="enviarWhatsApp(this); return false;">
+                <a
+                    class="comprar"
+                    href="#"
+                    onclick="enviarWhatsApp(this); return false;"
+                >
                     💬 Pedir por WhatsApp
                 </a>
 
@@ -1127,7 +1475,11 @@ footer a:hover {
 
         <!-- VALENTINO DONNA -->
 
-        <div class="producto" data-nombre="Valentino Donna Born in Roma">
+        <div
+            class="producto"
+            data-nombre="Valentino Donna Born in Roma"
+            data-categoria="mujer"
+        >
 
             <div class="foto">
 
@@ -1140,31 +1492,47 @@ footer a:hover {
 
             <div class="info">
 
-                <h3>Valentino Donna Born in Roma</h3>
+                <h3>
+                    Valentino Donna Born in Roma
+                </h3>
 
                 <div class="tamanos">
 
                     <button
                         class="tamano activo"
-                        onclick="seleccionar(this, 'Valentino Donna Born in Roma', '5 ml', '$490')"
+                        onclick="seleccionar(
+                            this,
+                            'Valentino Donna Born in Roma',
+                            '5 ml',
+                            '$490'
+                        )"
                     >
                         5 ml
                     </button>
 
                     <button
                         class="tamano"
-                        onclick="seleccionar(this, 'Valentino Donna Born in Roma', '10 ml', '$850')"
+                        onclick="seleccionar(
+                            this,
+                            'Valentino Donna Born in Roma',
+                            '10 ml',
+                            '$850'
+                        )"
                     >
                         10 ml
                     </button>
 
                 </div>
 
-                <div class="precio">$490</div>
+                <div class="precio">
+                    $490
+                </div>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="enviarWhatsApp(this); return false;">
+                <a
+                    class="comprar"
+                    href="#"
+                    onclick="enviarWhatsApp(this); return false;"
+                >
                     💬 Pedir por WhatsApp
                 </a>
 
@@ -1175,7 +1543,11 @@ footer a:hover {
 
     </div>
 
-    <div class="sin-resultados" id="sinResultados">
+
+    <div
+        class="sin-resultados"
+        id="sinResultados"
+    >
         No encontramos ese perfume 😔
     </div>
 
@@ -1186,29 +1558,26 @@ footer a:hover {
      CONTACTO
 ========================= -->
 
-<section class="section" id="contacto">
+<section
+    class="section contacto"
+    id="contacto"
+>
 
-    <div class="categoria">
+    <h2>
+        ¿Querés hacer una consulta?
+    </h2>
 
-        <h2>¿Querés hacer una consulta?</h2>
+    <p>
+        Escribinos por WhatsApp y te ayudamos.
+    </p>
 
-        <p>
-            Escribinos por WhatsApp y te ayudamos.
-        </p>
-
-    </div>
-
-    <div style="text-align:center;">
-
-        <a
-            class="btn"
-            href="https://wa.me/59892033401"
-            target="_blank"
-        >
-            💬 Hablar por WhatsApp
-        </a>
-
-    </div>
+    <a
+        class="btn"
+        href="https://wa.me/59892033401"
+        target="_blank"
+    >
+        💬 Hablar por WhatsApp
+    </a>
 
 </section>
 
@@ -1266,24 +1635,44 @@ footer a:hover {
 <script>
 
 /* =========================
+   VARIABLES
+========================= */
+
+let filtroActual = "todos";
+
+
+/* =========================
    SELECCIONAR TAMAÑO
 ========================= */
 
-function seleccionar(boton, perfume, tamano, precio) {
+function seleccionar(
+    boton,
+    perfume,
+    tamano,
+    precio
+) {
 
-    const producto = boton.closest(".producto");
+    const producto =
+        boton.closest(".producto");
 
-    producto.querySelectorAll(".tamano").forEach(function(btn) {
-        btn.classList.remove("activo");
-    });
+    producto
+        .querySelectorAll(".tamano")
+        .forEach(function(btn) {
+
+            btn.classList.remove("activo");
+
+        });
 
     boton.classList.add("activo");
 
-    producto.querySelector(".precio").textContent = precio;
+    producto
+        .querySelector(".precio")
+        .textContent = precio;
 
     producto.dataset.perfume = perfume;
     producto.dataset.tamano = tamano;
     producto.dataset.precio = precio;
+
 }
 
 
@@ -1293,11 +1682,17 @@ function seleccionar(boton, perfume, tamano, precio) {
 
 function enviarWhatsApp(boton) {
 
-    const producto = boton.closest(".producto");
+    const producto =
+        boton.closest(".producto");
 
-    const perfume = producto.dataset.perfume;
-    const tamano = producto.dataset.tamano;
-    const precio = producto.dataset.precio;
+    const perfume =
+        producto.dataset.perfume;
+
+    const tamano =
+        producto.dataset.tamano;
+
+    const precio =
+        producto.dataset.precio;
 
     const mensaje =
         "Hola! Quiero consultar por " +
@@ -1312,7 +1707,37 @@ function enviarWhatsApp(boton) {
         "https://wa.me/59892033401?text=" +
         encodeURIComponent(mensaje);
 
-    window.open(enlace, "_blank");
+    window.open(
+        enlace,
+        "_blank"
+    );
+
+}
+
+
+/* =========================
+   CAMBIAR FILTRO
+========================= */
+
+function cambiarFiltro(
+    categoria,
+    boton
+) {
+
+    filtroActual = categoria;
+
+    document
+        .querySelectorAll(".filtro")
+        .forEach(function(btn) {
+
+            btn.classList.remove("activo");
+
+        });
+
+    boton.classList.add("activo");
+
+    filtrarPerfumes();
+
 }
 
 
@@ -1320,7 +1745,7 @@ function enviarWhatsApp(boton) {
    BUSCADOR
 ========================= */
 
-function buscarPerfume() {
+function filtrarPerfumes() {
 
     const texto =
         document
@@ -1341,7 +1766,21 @@ function buscarPerfume() {
             .getAttribute("data-nombre")
             .toLowerCase();
 
-        if (nombre.includes(texto)) {
+        const categoria =
+            producto
+            .getAttribute("data-categoria");
+
+        const coincideNombre =
+            nombre.includes(texto);
+
+        const coincideCategoria =
+            filtroActual === "todos" ||
+            categoria === filtroActual;
+
+        if (
+            coincideNombre &&
+            coincideCategoria
+        ) {
 
             producto.style.display = "";
 
@@ -1357,10 +1796,14 @@ function buscarPerfume() {
 
 
     const sinResultados =
-        document.getElementById("sinResultados");
+        document.getElementById(
+            "sinResultados"
+        );
 
-
-    if (texto !== "" && encontrados === 0) {
+    if (
+        texto !== "" &&
+        encontrados === 0
+    ) {
 
         sinResultados.style.display = "block";
 
@@ -1374,21 +1817,26 @@ function buscarPerfume() {
 
 
 /* =========================
-   SELECCIONAR 5 ML AL CARGAR
+   INICIAR PRECIOS
 ========================= */
 
-document.querySelectorAll(".producto").forEach(function(producto) {
+document
+    .querySelectorAll(".producto")
+    .forEach(function(producto) {
 
-    const botonInicial =
-        producto.querySelector(".tamano.activo");
+        const botonInicial =
+            producto.querySelector(
+                ".tamano.activo"
+            );
 
-    if (botonInicial) {
-        botonInicial.click();
-    }
+        if (botonInicial) {
+            botonInicial.click();
+        }
 
-});
+    });
 
 </script>
+
 
 </body>
 </html>
