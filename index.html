@@ -2967,18 +2967,15 @@ function enviarWhatsAppStock(nombre, precio) {
 }
 
 
-</script>
+<script>
+
 /* =========================
    FILTRO
 ========================= */
 
 let filtroActual = "todos";
 
-
-function cambiarFiltro(
-    categoria,
-    boton
-) {
+function cambiarFiltro(categoria, boton) {
 
     filtroActual = categoria;
 
@@ -2993,9 +2990,234 @@ function cambiarFiltro(
     boton.classList.add("activo");
 
     filtrarPerfumes();
+}
+
+
+/* =========================
+   BUSCADOR
+========================= */
+
+function filtrarPerfumes() {
+
+    const texto = document
+        .getElementById("buscador")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const productos = document.querySelectorAll(
+        ".producto, .stock-card"
+    );
+
+    productos.forEach(function(producto) {
+
+        const nombre =
+            (producto.getAttribute("data-nombre") || "")
+            .toLowerCase();
+
+        const categoria =
+            producto.getAttribute("data-categoria");
+
+        const coincideNombre =
+            nombre.includes(texto);
+
+        const coincideCategoria =
+            filtroActual === "todos" ||
+            categoria === filtroActual;
+
+        if (
+            coincideNombre &&
+            coincideCategoria
+        ) {
+
+            producto.style.display = "";
+
+        } else {
+
+            producto.style.display = "none";
+
+        }
+
+    });
 
 }
 
+
+/* =========================
+   TAMAÑOS DECANTS
+========================= */
+
+function seleccionar(
+    boton,
+    perfume,
+    tamano,
+    precio
+) {
+
+    const producto =
+        boton.closest(".producto");
+
+    producto
+        .querySelectorAll(".tamano")
+        .forEach(function(btn) {
+
+            btn.classList.remove("activo");
+
+        });
+
+    boton.classList.add("activo");
+
+    producto
+        .querySelector(".precio")
+        .textContent = precio;
+
+    producto.dataset.perfume = perfume;
+
+    producto.dataset.tamano = tamano;
+
+    producto.dataset.precio = precio;
+
+}
+
+
+/* =========================
+   WHATSAPP DECANTS
+========================= */
+
+function enviarWhatsApp(boton) {
+
+    const producto =
+        boton.closest(".producto");
+
+    const perfume =
+        producto.dataset.perfume;
+
+    const tamano =
+        producto.dataset.tamano;
+
+    const precio =
+        producto.dataset.precio;
+
+    const mensaje =
+        "Hola! Quiero consultar por " +
+        perfume +
+        ". " +
+        tamano +
+        ": " +
+        precio +
+        ".";
+
+    const enlace =
+        "https://wa.me/59892033401?text=" +
+        encodeURIComponent(mensaje);
+
+    window.open(
+        enlace,
+        "_blank"
+    );
+
+}
+
+
+/* =========================
+   WHATSAPP STOCK
+========================= */
+
+function pedirStock(
+    producto,
+    precio
+) {
+
+    const mensaje =
+        "Hola! Quiero consultar por " +
+        producto +
+        ". Precio: " +
+        precio +
+        ".";
+
+    const enlace =
+        "https://wa.me/59892033401?text=" +
+        encodeURIComponent(mensaje);
+
+    window.open(
+        enlace,
+        "_blank"
+    );
+
+}
+
+
+/* =========================
+   INICIAR PRECIOS
+========================= */
+
+document
+    .querySelectorAll(".producto")
+    .forEach(function(producto) {
+
+        const botonInicial =
+            producto.querySelector(
+                ".tamano.activo"
+            );
+
+        if (botonInicial) {
+
+            botonInicial.click();
+
+        }
+
+    });
+
+
+/* =========================
+   GIRAR TARJETAS EN CELULAR
+========================= */
+
+document
+    .querySelectorAll(".stock-card")
+    .forEach(function(card) {
+
+        card.addEventListener(
+            "click",
+            function(event) {
+
+                /* Si toca WhatsApp,
+                   no gira la tarjeta */
+
+                if (
+                    event.target.closest(".comprar")
+                ) {
+
+                    return;
+
+                }
+
+                const inner =
+                    card.querySelector(
+                        ".stock-inner"
+                    );
+
+                if (
+                    inner.style.transform ===
+                    "rotateY(180deg)"
+                ) {
+
+                    inner.style.transform =
+                        "rotateY(0deg)";
+
+                } else {
+
+                    inner.style.transform =
+                        "rotateY(180deg)";
+
+                }
+
+            }
+        );
+
+    });
+
+</script>
 
 /* =========================
    BUSCADOR
