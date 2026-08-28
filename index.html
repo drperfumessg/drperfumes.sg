@@ -9,6 +9,10 @@
 
 <style>
 
+/* =========================
+   GENERAL
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -26,7 +30,6 @@ button,
 input {
     font-family: inherit;
 }
-
 
 /* =========================
    HEADER
@@ -56,11 +59,6 @@ header p {
     font-size: 14px;
 }
 
-
-/* =========================
-   MENU
-========================= */
-
 .menu {
     display: flex;
     justify-content: center;
@@ -77,11 +75,6 @@ header p {
     font-size: 14px;
 }
 
-.menu a:hover {
-    color: #000;
-}
-
-
 /* =========================
    HERO
 ========================= */
@@ -89,7 +82,7 @@ header p {
 .hero {
     text-align: center;
     padding: 75px 20px;
-    background: linear-gradient(135deg, #ffffff, #e9e9e9);
+    background: linear-gradient(135deg, #fff, #e9e9e9);
 }
 
 .hero h1 {
@@ -117,14 +110,9 @@ header p {
     text-decoration: none;
     border-radius: 30px;
     font-weight: bold;
-    transition: 0.2s;
+    border: none;
+    cursor: pointer;
 }
-
-.btn:hover {
-    background: #444;
-    transform: translateY(-2px);
-}
-
 
 /* =========================
    SECCIONES
@@ -149,7 +137,6 @@ header p {
     color: #777;
     line-height: 1.7;
 }
-
 
 /* =========================
    BUSCADOR
@@ -179,6 +166,7 @@ header p {
     top: 50%;
     transform: translateY(-50%);
     font-size: 20px;
+    pointer-events: none;
 }
 
 .buscador input {
@@ -190,16 +178,6 @@ header p {
     font-size: 16px;
     outline: none;
 }
-
-.buscador input:focus {
-    border-color: #222;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-}
-
-
-/* =========================
-   FILTROS
-========================= */
 
 .filtros {
     display: flex;
@@ -217,11 +195,6 @@ header p {
     color: #333;
     cursor: pointer;
     font-weight: bold;
-    transition: 0.2s;
-}
-
-.filtro:hover {
-    background: #eee;
 }
 
 .filtro.activo {
@@ -229,7 +202,6 @@ header p {
     color: #fff;
     border-color: #222;
 }
-
 
 /* =========================
    PRODUCTOS
@@ -247,18 +219,7 @@ header p {
     border-radius: 18px;
     overflow: hidden;
     box-shadow: 0 5px 18px rgba(0,0,0,0.05);
-    transition: 0.3s;
 }
-
-.producto:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.10);
-}
-
-
-/* =========================
-   FOTOS
-========================= */
 
 .foto {
     width: 100%;
@@ -277,11 +238,6 @@ header p {
     display: block;
 }
 
-
-/* =========================
-   INFORMACIÓN
-========================= */
-
 .info {
     padding: 20px;
 }
@@ -291,7 +247,6 @@ header p {
     margin-bottom: 15px;
     min-height: 43px;
 }
-
 
 /* =========================
    TAMAÑOS
@@ -312,11 +267,6 @@ header p {
     color: #333;
     cursor: pointer;
     font-weight: bold;
-    transition: 0.2s;
-}
-
-.tamano:hover {
-    background: #e5e5e5;
 }
 
 .tamano.activo {
@@ -324,11 +274,6 @@ header p {
     color: #fff;
     border-color: #222;
 }
-
-
-/* =========================
-   PRECIO
-========================= */
 
 .precio-seleccionado {
     text-align: center;
@@ -338,9 +283,8 @@ header p {
     margin-bottom: 15px;
 }
 
-
 /* =========================
-   BOTÓN CARRITO
+   BOTONES PRODUCTO
 ========================= */
 
 .agregar {
@@ -353,17 +297,7 @@ header p {
     font-weight: bold;
     cursor: pointer;
     margin-bottom: 10px;
-    transition: 0.2s;
 }
-
-.agregar:hover {
-    background: #444;
-}
-
-
-/* =========================
-   WHATSAPP
-========================= */
 
 .comprar {
     display: block;
@@ -376,25 +310,8 @@ header p {
     font-weight: bold;
 }
 
-.comprar:hover {
-    background: #222;
-}
-
-
 /* =========================
-   SEPARADOR
-========================= */
-
-.separador {
-    height: 1px;
-    max-width: 1100px;
-    margin: 10px auto;
-    background: #ddd;
-}
-
-
-/* =========================
-   ACORDES
+   STOCK
 ========================= */
 
 .acordes-box {
@@ -417,6 +334,16 @@ header p {
     font-size: 13px;
 }
 
+/* =========================
+   SEPARADOR
+========================= */
+
+.separador {
+    height: 1px;
+    max-width: 1100px;
+    margin: 10px auto;
+    background: #ddd;
+}
 
 /* =========================
    CONTACTO
@@ -434,7 +361,6 @@ header p {
 .contacto p {
     color: #777;
 }
-
 
 /* =========================
    FOOTER
@@ -461,9 +387,8 @@ footer a {
     text-decoration: none;
 }
 
-
 /* =========================
-   WHATSAPP FLOTANTE
+   WHATSAPP
 ========================= */
 
 .whatsapp {
@@ -484,7 +409,6 @@ footer a {
     z-index: 2000;
 }
 
-
 /* =========================
    CARRITO
 ========================= */
@@ -501,7 +425,7 @@ footer a {
     color: #fff;
     font-size: 23px;
     cursor: pointer;
-    z-index: 1200;
+    z-index: 3000;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
@@ -520,6 +444,18 @@ footer a {
     justify-content: center;
 }
 
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 2500;
+    display: none;
+}
+
+.overlay.activo {
+    display: block;
+}
+
 .carrito-panel {
     position: fixed;
     top: 0;
@@ -528,7 +464,7 @@ footer a {
     max-width: 95%;
     height: 100vh;
     background: #fff;
-    z-index: 2500;
+    z-index: 4000;
     box-shadow: -5px 0 25px rgba(0,0,0,0.15);
     transition: right 0.3s ease;
     padding: 20px;
@@ -595,12 +531,12 @@ footer a {
     font-weight: bold;
 }
 
-.eliminar {
-    border: none !important;
-    background: none !important;
-    color: #555 !important;
+.controles .eliminar {
+    width: auto;
+    border: none;
+    background: none;
     margin-left: auto;
-    width: auto !important;
+    color: #555;
 }
 
 .carrito-footer {
@@ -638,19 +574,6 @@ footer a {
     color: #555;
     cursor: pointer;
 }
-
-.overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
-    z-index: 2400;
-    display: none;
-}
-
-.overlay.activo {
-    display: block;
-}
-
 
 /* =========================
    CELULAR
@@ -709,7 +632,6 @@ footer a {
     .carrito-panel.abierto {
         right: 0;
     }
-
 }
 
 </style>
@@ -718,6 +640,10 @@ footer a {
 
 <body>
 
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
@@ -736,23 +662,42 @@ footer a {
 </header>
 
 
-<!-- CARRITO -->
+<!-- =========================
+     CARRITO
+========================= -->
 
-<button class="carrito-btn" type="button" onclick="abrirCarrito()">
+<button
+    type="button"
+    class="carrito-btn"
+    id="abrirCarritoBtn"
+>
     🛒
     <span id="contador">0</span>
 </button>
 
-<div class="overlay" id="overlay" onclick="cerrarCarrito()"></div>
 
-<div class="carrito-panel" id="carritoPanel">
+<div
+    class="overlay"
+    id="overlay"
+></div>
+
+
+<aside
+    class="carrito-panel"
+    id="carritoPanel"
+>
 
     <div class="carrito-header">
+
         <h2>🛒 Mi carrito</h2>
 
-        <button type="button" onclick="cerrarCarrito()">
+        <button
+            type="button"
+            id="cerrarCarritoBtn"
+        >
             ×
         </button>
+
     </div>
 
     <div id="carritoContenido">
@@ -769,7 +714,7 @@ footer a {
         <button
             type="button"
             class="whatsapp-pedido"
-            onclick="enviarPedido()"
+            id="pedidoBtn"
         >
             📱 Hacer pedido por WhatsApp
         </button>
@@ -777,17 +722,19 @@ footer a {
         <button
             type="button"
             class="vaciar"
-            onclick="vaciarCarrito()"
+            id="vaciarBtn"
         >
             Vaciar carrito
         </button>
 
     </div>
 
-</div>
+</aside>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero" id="inicio">
 
@@ -807,7 +754,9 @@ footer a {
 </section>
 
 
-<!-- BUSCADOR -->
+<!-- =========================
+     BUSCADOR
+========================= -->
 
 <section class="buscador-seccion">
 
@@ -818,9 +767,10 @@ footer a {
         <span>🔍</span>
 
         <input
-            type="text"
+            type="search"
             id="buscador"
             placeholder="Buscar perfume..."
+            autocomplete="off"
         >
 
     </div>
@@ -831,7 +781,6 @@ footer a {
             type="button"
             class="filtro activo"
             data-filtro="todos"
-            onclick="cambiarFiltro('todos', this)"
         >
             Todos
         </button>
@@ -840,7 +789,6 @@ footer a {
             type="button"
             class="filtro"
             data-filtro="hombre"
-            onclick="cambiarFiltro('hombre', this)"
         >
             Hombre
         </button>
@@ -849,7 +797,6 @@ footer a {
             type="button"
             class="filtro"
             data-filtro="mujer"
-            onclick="cambiarFiltro('mujer', this)"
         >
             Mujer
         </button>
@@ -858,7 +805,6 @@ footer a {
             type="button"
             class="filtro"
             data-filtro="stock"
-            onclick="cambiarFiltro('stock', this)"
         >
             En stock
         </button>
@@ -868,7 +814,9 @@ footer a {
 </section>
 
 
-<!-- HOMBRE -->
+<!-- =========================
+     HOMBRE
+========================= -->
 
 <section class="section" id="hombre">
 
@@ -883,9 +831,11 @@ footer a {
 
         <!-- STRONGER -->
 
-        <div class="producto"
-             data-nombre="Stronger With You Intensely"
-             data-categoria="hombre">
+        <div
+            class="producto"
+            data-nombre="Stronger With You Intensely"
+            data-categoria="hombre"
+        >
 
             <div class="foto">
                 <img src="Stronger.jpg.AVIF" alt="Stronger With You Intensely">
@@ -897,15 +847,23 @@ footer a {
 
                 <div class="tamanos">
 
-                    <button type="button"
+                    <button
+                        type="button"
                         class="tamano activo"
-                        onclick="seleccionar(this, 'Stronger With You Intensely', '5 ml', 490)">
+                        data-perfume="Stronger With You Intensely"
+                        data-tamano="5 ml"
+                        data-precio="490"
+                    >
                         5 ml
                     </button>
 
-                    <button type="button"
+                    <button
+                        type="button"
                         class="tamano"
-                        onclick="seleccionar(this, 'Stronger With You Intensely', '10 ml', 850)">
+                        data-perfume="Stronger With You Intensely"
+                        data-tamano="10 ml"
+                        data-precio="850"
+                    >
                         10 ml
                     </button>
 
@@ -913,15 +871,14 @@ footer a {
 
                 <div class="precio-seleccionado">$490</div>
 
-                <button type="button"
+                <button
+                    type="button"
                     class="agregar"
-                    onclick="agregarProductoSeleccionado(this)">
+                >
                     🛒 Agregar al carrito
                 </button>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="enviarWhatsApp(this); return false;">
+                <a class="comprar" href="#">
                     Consultar por WhatsApp
                 </a>
 
@@ -931,9 +888,11 @@ footer a {
 
         <!-- ACQUA -->
 
-        <div class="producto"
-             data-nombre="Acqua di Giò"
-             data-categoria="hombre">
+        <div
+            class="producto"
+            data-nombre="Acqua di Giò"
+            data-categoria="hombre"
+        >
 
             <div class="foto">
                 <img src="acqua.jpg.AVIF" alt="Acqua di Giò">
@@ -945,15 +904,23 @@ footer a {
 
                 <div class="tamanos">
 
-                    <button type="button"
+                    <button
+                        type="button"
                         class="tamano activo"
-                        onclick="seleccionar(this, 'Acqua di Giò', '5 ml', 450)">
+                        data-perfume="Acqua di Giò"
+                        data-tamano="5 ml"
+                        data-precio="450"
+                    >
                         5 ml
                     </button>
 
-                    <button type="button"
+                    <button
+                        type="button"
                         class="tamano"
-                        onclick="seleccionar(this, 'Acqua di Giò', '10 ml', 790)">
+                        data-perfume="Acqua di Giò"
+                        data-tamano="10 ml"
+                        data-precio="790"
+                    >
                         10 ml
                     </button>
 
@@ -961,15 +928,11 @@ footer a {
 
                 <div class="precio-seleccionado">$450</div>
 
-                <button type="button"
-                    class="agregar"
-                    onclick="agregarProductoSeleccionado(this)">
+                <button type="button" class="agregar">
                     🛒 Agregar al carrito
                 </button>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="enviarWhatsApp(this); return false;">
+                <a class="comprar" href="#">
                     Consultar por WhatsApp
                 </a>
 
@@ -977,11 +940,13 @@ footer a {
         </div>
 
 
-        <!-- VALENTINO -->
+        <!-- VALENTINO UOMO -->
 
-        <div class="producto"
-             data-nombre="Valentino Uomo Intense"
-             data-categoria="hombre">
+        <div
+            class="producto"
+            data-nombre="Valentino Uomo Intense"
+            data-categoria="hombre"
+        >
 
             <div class="foto">
                 <img src="valentino.jpg.AVIF" alt="Valentino Uomo Intense">
@@ -993,15 +958,23 @@ footer a {
 
                 <div class="tamanos">
 
-                    <button type="button"
+                    <button
+                        type="button"
                         class="tamano activo"
-                        onclick="seleccionar(this, 'Valentino Uomo Intense', '5 ml', 490)">
+                        data-perfume="Valentino Uomo Intense"
+                        data-tamano="5 ml"
+                        data-precio="490"
+                    >
                         5 ml
                     </button>
 
-                    <button type="button"
+                    <button
+                        type="button"
                         class="tamano"
-                        onclick="seleccionar(this, 'Valentino Uomo Intense', '10 ml', 850)">
+                        data-perfume="Valentino Uomo Intense"
+                        data-tamano="10 ml"
+                        data-precio="850"
+                    >
                         10 ml
                     </button>
 
@@ -1009,15 +982,11 @@ footer a {
 
                 <div class="precio-seleccionado">$490</div>
 
-                <button type="button"
-                    class="agregar"
-                    onclick="agregarProductoSeleccionado(this)">
+                <button type="button" class="agregar">
                     🛒 Agregar al carrito
                 </button>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="enviarWhatsApp(this); return false;">
+                <a class="comprar" href="#">
                     Consultar por WhatsApp
                 </a>
 
@@ -1027,9 +996,11 @@ footer a {
 
         <!-- JPG -->
 
-        <div class="producto"
-             data-nombre="JPG Le Beau Le Parfum"
-             data-categoria="hombre">
+        <div
+            class="producto"
+            data-nombre="JPG Le Beau Le Parfum"
+            data-categoria="hombre"
+        >
 
             <div class="foto">
                 <img src="jpg.jpg.AVIF" alt="JPG Le Beau Le Parfum">
@@ -1041,15 +1012,23 @@ footer a {
 
                 <div class="tamanos">
 
-                    <button type="button"
+                    <button
+                        type="button"
                         class="tamano activo"
-                        onclick="seleccionar(this, 'JPG Le Beau Le Parfum', '5 ml', 490)">
+                        data-perfume="JPG Le Beau Le Parfum"
+                        data-tamano="5 ml"
+                        data-precio="490"
+                    >
                         5 ml
                     </button>
 
-                    <button type="button"
+                    <button
+                        type="button"
                         class="tamano"
-                        onclick="seleccionar(this, 'JPG Le Beau Le Parfum', '10 ml', 850)">
+                        data-perfume="JPG Le Beau Le Parfum"
+                        data-tamano="10 ml"
+                        data-precio="850"
+                    >
                         10 ml
                     </button>
 
@@ -1057,15 +1036,11 @@ footer a {
 
                 <div class="precio-seleccionado">$490</div>
 
-                <button type="button"
-                    class="agregar"
-                    onclick="agregarProductoSeleccionado(this)">
+                <button type="button" class="agregar">
                     🛒 Agregar al carrito
                 </button>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="enviarWhatsApp(this); return false;">
+                <a class="comprar" href="#">
                     Consultar por WhatsApp
                 </a>
 
@@ -1075,9 +1050,11 @@ footer a {
 
         <!-- 212 -->
 
-        <div class="producto"
-             data-nombre="212 Carolina Herrera Hombre"
-             data-categoria="hombre">
+        <div
+            class="producto"
+            data-nombre="212 Carolina Herrera Hombre"
+            data-categoria="hombre"
+        >
 
             <div class="foto">
                 <img src="212.jpg.AVIF" alt="212 Carolina Herrera Hombre">
@@ -1089,15 +1066,23 @@ footer a {
 
                 <div class="tamanos">
 
-                    <button type="button"
+                    <button
+                        type="button"
                         class="tamano activo"
-                        onclick="seleccionar(this, '212 Carolina Herrera Hombre', '5 ml', 450)">
+                        data-perfume="212 Carolina Herrera Hombre"
+                        data-tamano="5 ml"
+                        data-precio="450"
+                    >
                         5 ml
                     </button>
 
-                    <button type="button"
+                    <button
+                        type="button"
                         class="tamano"
-                        onclick="seleccionar(this, '212 Carolina Herrera Hombre', '10 ml', 790)">
+                        data-perfume="212 Carolina Herrera Hombre"
+                        data-tamano="10 ml"
+                        data-precio="790"
+                    >
                         10 ml
                     </button>
 
@@ -1105,15 +1090,11 @@ footer a {
 
                 <div class="precio-seleccionado">$450</div>
 
-                <button type="button"
-                    class="agregar"
-                    onclick="agregarProductoSeleccionado(this)">
+                <button type="button" class="agregar">
                     🛒 Agregar al carrito
                 </button>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="enviarWhatsApp(this); return false;">
+                <a class="comprar" href="#">
                     Consultar por WhatsApp
                 </a>
 
@@ -1123,9 +1104,11 @@ footer a {
 
         <!-- EROS FLAME -->
 
-        <div class="producto"
-             data-nombre="Versace Eros Flame"
-             data-categoria="hombre">
+        <div
+            class="producto"
+            data-nombre="Versace Eros Flame"
+            data-categoria="hombre"
+        >
 
             <div class="foto">
                 <img src="eros-flame.jpg.AVIF" alt="Versace Eros Flame">
@@ -1137,15 +1120,23 @@ footer a {
 
                 <div class="tamanos">
 
-                    <button type="button"
+                    <button
+                        type="button"
                         class="tamano activo"
-                        onclick="seleccionar(this, 'Versace Eros Flame', '5 ml', 450)">
+                        data-perfume="Versace Eros Flame"
+                        data-tamano="5 ml"
+                        data-precio="450"
+                    >
                         5 ml
                     </button>
 
-                    <button type="button"
+                    <button
+                        type="button"
                         class="tamano"
-                        onclick="seleccionar(this, 'Versace Eros Flame', '10 ml', 790)">
+                        data-perfume="Versace Eros Flame"
+                        data-tamano="10 ml"
+                        data-precio="790"
+                    >
                         10 ml
                     </button>
 
@@ -1153,15 +1144,11 @@ footer a {
 
                 <div class="precio-seleccionado">$450</div>
 
-                <button type="button"
-                    class="agregar"
-                    onclick="agregarProductoSeleccionado(this)">
+                <button type="button" class="agregar">
                     🛒 Agregar al carrito
                 </button>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="enviarWhatsApp(this); return false;">
+                <a class="comprar" href="#">
                     Consultar por WhatsApp
                 </a>
 
@@ -1171,9 +1158,11 @@ footer a {
 
         <!-- ASAD -->
 
-        <div class="producto"
-             data-nombre="Asad Bourbon"
-             data-categoria="hombre">
+        <div
+            class="producto"
+            data-nombre="Asad Bourbon"
+            data-categoria="hombre"
+        >
 
             <div class="foto">
                 <img src="asad-bourbon.jpg.AVIF" alt="Asad Bourbon">
@@ -1185,15 +1174,23 @@ footer a {
 
                 <div class="tamanos">
 
-                    <button type="button"
+                    <button
+                        type="button"
                         class="tamano activo"
-                        onclick="seleccionar(this, 'Asad Bourbon', '5 ml', 390)">
+                        data-perfume="Asad Bourbon"
+                        data-tamano="5 ml"
+                        data-precio="390"
+                    >
                         5 ml
                     </button>
 
-                    <button type="button"
+                    <button
+                        type="button"
                         class="tamano"
-                        onclick="seleccionar(this, 'Asad Bourbon', '10 ml', 590)">
+                        data-perfume="Asad Bourbon"
+                        data-tamano="10 ml"
+                        data-precio="590"
+                    >
                         10 ml
                     </button>
 
@@ -1201,15 +1198,11 @@ footer a {
 
                 <div class="precio-seleccionado">$390</div>
 
-                <button type="button"
-                    class="agregar"
-                    onclick="agregarProductoSeleccionado(this)">
+                <button type="button" class="agregar">
                     🛒 Agregar al carrito
                 </button>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="enviarWhatsApp(this); return false;">
+                <a class="comprar" href="#">
                     Consultar por WhatsApp
                 </a>
 
@@ -1219,9 +1212,11 @@ footer a {
 
         <!-- SCANDAL -->
 
-        <div class="producto"
-             data-nombre="Scandal"
-             data-categoria="hombre">
+        <div
+            class="producto"
+            data-nombre="Scandal"
+            data-categoria="hombre"
+        >
 
             <div class="foto">
                 <img src="scandal.jpg.AVIF" alt="Scandal">
@@ -1233,15 +1228,23 @@ footer a {
 
                 <div class="tamanos">
 
-                    <button type="button"
+                    <button
+                        type="button"
                         class="tamano activo"
-                        onclick="seleccionar(this, 'Scandal', '5 ml', 490)">
+                        data-perfume="Scandal"
+                        data-tamano="5 ml"
+                        data-precio="490"
+                    >
                         5 ml
                     </button>
 
-                    <button type="button"
+                    <button
+                        type="button"
                         class="tamano"
-                        onclick="seleccionar(this, 'Scandal', '10 ml', 850)">
+                        data-perfume="Scandal"
+                        data-tamano="10 ml"
+                        data-precio="850"
+                    >
                         10 ml
                     </button>
 
@@ -1249,15 +1252,11 @@ footer a {
 
                 <div class="precio-seleccionado">$490</div>
 
-                <button type="button"
-                    class="agregar"
-                    onclick="agregarProductoSeleccionado(this)">
+                <button type="button" class="agregar">
                     🛒 Agregar al carrito
                 </button>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="enviarWhatsApp(this); return false;">
+                <a class="comprar" href="#">
                     Consultar por WhatsApp
                 </a>
 
@@ -1265,10 +1264,13 @@ footer a {
         </div>
 
     </div>
+
 </section>
 
 
-<!-- MUJER -->
+<!-- =========================
+     MUJER
+========================= -->
 
 <section class="section" id="mujer">
 
@@ -1283,9 +1285,11 @@ footer a {
 
         <!-- NOBLE BLUSH -->
 
-        <div class="producto"
-             data-nombre="Lattafa Noble Blush"
-             data-categoria="mujer">
+        <div
+            class="producto"
+            data-nombre="Lattafa Noble Blush"
+            data-categoria="mujer"
+        >
 
             <div class="foto">
                 <img src="noble-blush.jpg.AVIF" alt="Lattafa Noble Blush">
@@ -1297,15 +1301,23 @@ footer a {
 
                 <div class="tamanos">
 
-                    <button type="button"
+                    <button
+                        type="button"
                         class="tamano activo"
-                        onclick="seleccionar(this, 'Lattafa Noble Blush', '5 ml', 350)">
+                        data-perfume="Lattafa Noble Blush"
+                        data-tamano="5 ml"
+                        data-precio="350"
+                    >
                         5 ml
                     </button>
 
-                    <button type="button"
+                    <button
+                        type="button"
                         class="tamano"
-                        onclick="seleccionar(this, 'Lattafa Noble Blush', '10 ml', 590)">
+                        data-perfume="Lattafa Noble Blush"
+                        data-tamano="10 ml"
+                        data-precio="590"
+                    >
                         10 ml
                     </button>
 
@@ -1313,15 +1325,11 @@ footer a {
 
                 <div class="precio-seleccionado">$350</div>
 
-                <button type="button"
-                    class="agregar"
-                    onclick="agregarProductoSeleccionado(this)">
+                <button type="button" class="agregar">
                     🛒 Agregar al carrito
                 </button>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="enviarWhatsApp(this); return false;">
+                <a class="comprar" href="#">
                     Consultar por WhatsApp
                 </a>
 
@@ -1329,11 +1337,13 @@ footer a {
         </div>
 
 
-        <!-- LA VIE -->
+        <!-- LA VIE EST BELLE -->
 
-        <div class="producto"
-             data-nombre="La Vie Est Belle"
-             data-categoria="mujer">
+        <div
+            class="producto"
+            data-nombre="La Vie Est Belle"
+            data-categoria="mujer"
+        >
 
             <div class="foto">
                 <img src="la-vie-est-belle.jpg.AVIF" alt="La Vie Est Belle">
@@ -1345,15 +1355,23 @@ footer a {
 
                 <div class="tamanos">
 
-                    <button type="button"
+                    <button
+                        type="button"
                         class="tamano activo"
-                        onclick="seleccionar(this, 'La Vie Est Belle', '5 ml', 490)">
+                        data-perfume="La Vie Est Belle"
+                        data-tamano="5 ml"
+                        data-precio="490"
+                    >
                         5 ml
                     </button>
 
-                    <button type="button"
+                    <button
+                        type="button"
                         class="tamano"
-                        onclick="seleccionar(this, 'La Vie Est Belle', '10 ml', 850)">
+                        data-perfume="La Vie Est Belle"
+                        data-tamano="10 ml"
+                        data-precio="850"
+                    >
                         10 ml
                     </button>
 
@@ -1361,15 +1379,11 @@ footer a {
 
                 <div class="precio-seleccionado">$490</div>
 
-                <button type="button"
-                    class="agregar"
-                    onclick="agregarProductoSeleccionado(this)">
+                <button type="button" class="agregar">
                     🛒 Agregar al carrito
                 </button>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="enviarWhatsApp(this); return false;">
+                <a class="comprar" href="#">
                     Consultar por WhatsApp
                 </a>
 
@@ -1379,9 +1393,11 @@ footer a {
 
         <!-- CALVIN KLEIN -->
 
-        <div class="producto"
-             data-nombre="Calvin Klein"
-             data-categoria="mujer">
+        <div
+            class="producto"
+            data-nombre="Calvin Klein"
+            data-categoria="mujer"
+        >
 
             <div class="foto">
                 <img src="calvin-klein.jpg.AVIF" alt="Calvin Klein">
@@ -1393,15 +1409,23 @@ footer a {
 
                 <div class="tamanos">
 
-                    <button type="button"
+                    <button
+                        type="button"
                         class="tamano activo"
-                        onclick="seleccionar(this, 'Calvin Klein', '5 ml', 450)">
+                        data-perfume="Calvin Klein"
+                        data-tamano="5 ml"
+                        data-precio="450"
+                    >
                         5 ml
                     </button>
 
-                    <button type="button"
+                    <button
+                        type="button"
                         class="tamano"
-                        onclick="seleccionar(this, 'Calvin Klein', '10 ml', 790)">
+                        data-perfume="Calvin Klein"
+                        data-tamano="10 ml"
+                        data-precio="790"
+                    >
                         10 ml
                     </button>
 
@@ -1409,15 +1433,11 @@ footer a {
 
                 <div class="precio-seleccionado">$450</div>
 
-                <button type="button"
-                    class="agregar"
-                    onclick="agregarProductoSeleccionado(this)">
+                <button type="button" class="agregar">
                     🛒 Agregar al carrito
                 </button>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="enviarWhatsApp(this); return false;">
+                <a class="comprar" href="#">
                     Consultar por WhatsApp
                 </a>
 
@@ -1425,11 +1445,13 @@ footer a {
         </div>
 
 
-        <!-- CORAL -->
+        <!-- CORAL FANTASY -->
 
-        <div class="producto"
-             data-nombre="Valentino Donna Coral Fantasy"
-             data-categoria="mujer">
+        <div
+            class="producto"
+            data-nombre="Valentino Donna Coral Fantasy"
+            data-categoria="mujer"
+        >
 
             <div class="foto">
                 <img src="coral.jpg.AVIF" alt="Valentino Donna Coral Fantasy">
@@ -1441,15 +1463,23 @@ footer a {
 
                 <div class="tamanos">
 
-                    <button type="button"
+                    <button
+                        type="button"
                         class="tamano activo"
-                        onclick="seleccionar(this, 'Valentino Donna Coral Fantasy', '5 ml', 490)">
+                        data-perfume="Valentino Donna Coral Fantasy"
+                        data-tamano="5 ml"
+                        data-precio="490"
+                    >
                         5 ml
                     </button>
 
-                    <button type="button"
+                    <button
+                        type="button"
                         class="tamano"
-                        onclick="seleccionar(this, 'Valentino Donna Coral Fantasy', '10 ml', 850)">
+                        data-perfume="Valentino Donna Coral Fantasy"
+                        data-tamano="10 ml"
+                        data-precio="850"
+                    >
                         10 ml
                     </button>
 
@@ -1457,15 +1487,11 @@ footer a {
 
                 <div class="precio-seleccionado">$490</div>
 
-                <button type="button"
-                    class="agregar"
-                    onclick="agregarProductoSeleccionado(this)">
+                <button type="button" class="agregar">
                     🛒 Agregar al carrito
                 </button>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="enviarWhatsApp(this); return false;">
+                <a class="comprar" href="#">
                     Consultar por WhatsApp
                 </a>
 
@@ -1473,13 +1499,16 @@ footer a {
         </div>
 
     </div>
+
 </section>
 
 
 <div class="separador"></div>
 
 
-<!-- STOCK -->
+<!-- =========================
+     STOCK
+========================= -->
 
 <section class="section" id="stock">
 
@@ -1494,12 +1523,14 @@ footer a {
 
         <!-- HALLOWEEN -->
 
-        <div class="producto"
-             data-nombre="Set Halloween Women EDT"
-             data-categoria="stock">
+        <div
+            class="producto"
+            data-nombre="Set Halloween Women EDT"
+            data-categoria="stock"
+        >
 
             <div class="foto">
-                <img src="halloween.jpg.AVIF" alt="Halloween Women">
+                <img src="halloween.jpg.AVIF" alt="Set Halloween Women">
             </div>
 
             <div class="info">
@@ -1529,15 +1560,21 @@ footer a {
                     $3290
                 </div>
 
-                <button type="button"
-                    class="agregar"
-                    onclick="agregarStock('Set Halloween Women EDT 100 ml + 30 ml', 3290)">
+                <button
+                    type="button"
+                    class="agregar-stock"
+                    data-nombre="Set Halloween Women EDT 100 ml + 30 ml"
+                    data-precio="3290"
+                >
                     🛒 Agregar al carrito
                 </button>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="consultarStock('Set Halloween Women EDT 100 ml + 30 ml', 3290); return false;">
+                <a
+                    class="comprar stock-whatsapp"
+                    href="#"
+                    data-nombre="Set Halloween Women EDT 100 ml + 30 ml"
+                    data-precio="3290"
+                >
                     Consultar por WhatsApp
                 </a>
 
@@ -1547,9 +1584,11 @@ footer a {
 
         <!-- LA VIE STOCK -->
 
-        <div class="producto"
-             data-nombre="La Vie Est Belle 100 ml"
-             data-categoria="stock">
+        <div
+            class="producto"
+            data-nombre="La Vie Est Belle 100 ml"
+            data-categoria="stock"
+        >
 
             <div class="foto">
                 <img src="la-vie-est-belle.jpg.AVIF" alt="La Vie Est Belle">
@@ -1582,15 +1621,21 @@ footer a {
                     $4390
                 </div>
 
-                <button type="button"
-                    class="agregar"
-                    onclick="agregarStock('La Vie Est Belle 100 ml', 4390)">
+                <button
+                    type="button"
+                    class="agregar-stock"
+                    data-nombre="La Vie Est Belle 100 ml"
+                    data-precio="4390"
+                >
                     🛒 Agregar al carrito
                 </button>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="consultarStock('La Vie Est Belle 100 ml', 4390); return false;">
+                <a
+                    class="comprar stock-whatsapp"
+                    href="#"
+                    data-nombre="La Vie Est Belle 100 ml"
+                    data-precio="4390"
+                >
                     Consultar por WhatsApp
                 </a>
 
@@ -1600,9 +1645,11 @@ footer a {
 
         <!-- GUESS -->
 
-        <div class="producto"
-             data-nombre="Guess Uomo Intenso EDP"
-             data-categoria="stock">
+        <div
+            class="producto"
+            data-nombre="Guess Uomo Intenso EDP"
+            data-categoria="stock"
+        >
 
             <div class="foto">
                 <img src="guess.jpg.AVIF" alt="Guess Uomo Intenso">
@@ -1635,15 +1682,21 @@ footer a {
                     $3490
                 </div>
 
-                <button type="button"
-                    class="agregar"
-                    onclick="agregarStock('Guess Uomo Intenso EDP Set 100 ml + Deo + Gel de ducha', 3490)">
+                <button
+                    type="button"
+                    class="agregar-stock"
+                    data-nombre="Guess Uomo Intenso EDP Set 100 ml + Deo + Gel de ducha"
+                    data-precio="3490"
+                >
                     🛒 Agregar al carrito
                 </button>
 
-                <a class="comprar"
-                   href="#"
-                   onclick="consultarStock('Guess Uomo Intenso EDP Set 100 ml + Deo + Gel de ducha', 3490); return false;">
+                <a
+                    class="comprar stock-whatsapp"
+                    href="#"
+                    data-nombre="Guess Uomo Intenso EDP Set 100 ml + Deo + Gel de ducha"
+                    data-precio="3490"
+                >
                     Consultar por WhatsApp
                 </a>
 
@@ -1655,7 +1708,9 @@ footer a {
 </section>
 
 
-<!-- CONTACTO -->
+<!-- =========================
+     CONTACTO
+========================= -->
 
 <section class="section contacto" id="contacto">
 
@@ -1686,7 +1741,9 @@ footer a {
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -1714,7 +1771,9 @@ footer a {
 </footer>
 
 
-<!-- WHATSAPP FLOTANTE -->
+<!-- =========================
+     WHATSAPP FLOTANTE
+========================= -->
 
 <a
     class="whatsapp"
@@ -1726,693 +1785,765 @@ footer a {
 </a>
 
 
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 <script>
 
-/* =====================================================
-   DRPERFUMES - JAVASCRIPT
-   Todo el funcionamiento está acá.
-===================================================== */
+document.addEventListener("DOMContentLoaded", function () {
 
+    /* =========================
+       VARIABLES
+    ========================= */
 
-/* =========================
-   VARIABLES
-========================= */
+    let carrito = [];
+    let filtroActual = "todos";
 
-let carrito = [];
-let filtroActual = "todos";
 
+    /* =========================
+       ELEMENTOS
+    ========================= */
 
-/* =========================
-   BUSCADOR
-========================= */
+    const carritoPanel =
+        document.getElementById("carritoPanel");
 
-const buscador = document.getElementById("buscador");
-
-if (buscador) {
-    buscador.addEventListener("input", filtrarPerfumes);
-}
-
-
-/* =========================
-   CAMBIAR FILTRO
-========================= */
-
-function cambiarFiltro(categoria, boton) {
-
-    filtroActual = categoria;
-
-    document.querySelectorAll(".filtro").forEach(function(btn) {
-        btn.classList.remove("activo");
-    });
-
-    if (boton) {
-        boton.classList.add("activo");
-    }
-
-    filtrarPerfumes();
-}
-
-
-/* =========================
-   FILTRAR PRODUCTOS
-========================= */
-
-function filtrarPerfumes() {
-
-    const texto = buscador
-        ? buscador.value.toLowerCase().trim()
-        : "";
-
-    const productos = document.querySelectorAll(".producto");
-
-    productos.forEach(function(producto) {
-
-        const nombre = (
-            producto.dataset.nombre || ""
-        ).toLowerCase();
-
-        const categoria =
-            producto.dataset.categoria || "";
-
-        const coincideTexto =
-            nombre.includes(texto);
-
-        const coincideCategoria =
-            filtroActual === "todos" ||
-            categoria === filtroActual;
-
-        if (coincideTexto && coincideCategoria) {
-            producto.style.display = "";
-        } else {
-            producto.style.display = "none";
-        }
-
-    });
-
-}
-
-
-/* =========================
-   SELECCIONAR TAMAÑO
-========================= */
-
-function seleccionar(
-    boton,
-    perfume,
-    tamano,
-    precio
-) {
-
-    const producto =
-        boton.closest(".producto");
-
-    if (!producto) return;
-
-
-    /* Quitar activo de todos */
-
-    producto.querySelectorAll(".tamano").forEach(function(btn) {
-        btn.classList.remove("activo");
-    });
-
-
-    /* Activar botón elegido */
-
-    boton.classList.add("activo");
-
-
-    /* Cambiar precio visible */
-
-    const precioElemento =
-        producto.querySelector(".precio-seleccionado");
-
-    if (precioElemento) {
-        precioElemento.textContent =
-            "$" + precio;
-    }
-
-
-    /* Guardar selección */
-
-    producto.dataset.perfume = perfume;
-    producto.dataset.tamano = tamano;
-    producto.dataset.precio = precio;
-
-}
-
-
-/* =========================
-   AGREGAR PRODUCTO
-========================= */
-
-function agregarProductoSeleccionado(boton) {
-
-    const producto =
-        boton.closest(".producto");
-
-    if (!producto) return;
-
-
-    const botonActivo =
-        producto.querySelector(".tamano.activo");
-
-
-    if (!botonActivo) {
-
-        alert("Elegí un tamaño.");
-
-        return;
-    }
-
-
-    const nombre =
-        producto.dataset.perfume ||
-        producto.dataset.nombre;
-
-
-    const tamano =
-        producto.dataset.tamano ||
-        botonActivo.textContent.trim();
-
-
-    const precio =
-        Number(producto.dataset.precio);
-
-
-    if (!nombre || !tamano || !precio) {
-
-        alert("No se pudo obtener el producto. Elegí nuevamente el tamaño.");
-
-        return;
-    }
-
-
-    agregarAlCarrito(
-        nombre,
-        tamano,
-        precio
-    );
-
-}
-
-
-/* =========================
-   AGREGAR AL CARRITO
-========================= */
-
-function agregarAlCarrito(
-    nombre,
-    tamano,
-    precio
-) {
-
-    const existente =
-        carrito.find(function(item) {
-
-            return (
-                item.nombre === nombre &&
-                item.tamano === tamano
-            );
-
-        });
-
-
-    if (existente) {
-
-        existente.cantidad += 1;
-
-    } else {
-
-        carrito.push({
-
-            nombre: nombre,
-            tamano: tamano,
-            precio: precio,
-            cantidad: 1
-
-        });
-
-    }
-
-
-    actualizarCarrito();
-
-    abrirCarrito();
-
-}
-
-
-/* =========================
-   AGREGAR STOCK
-========================= */
-
-function agregarStock(
-    nombre,
-    precio
-) {
-
-    const existente =
-        carrito.find(function(item) {
-
-            return (
-                item.nombre === nombre &&
-                item.tamano === "Stock"
-            );
-
-        });
-
-
-    if (existente) {
-
-        existente.cantidad += 1;
-
-    } else {
-
-        carrito.push({
-
-            nombre: nombre,
-            tamano: "Stock",
-            precio: precio,
-            cantidad: 1
-
-        });
-
-    }
-
-
-    actualizarCarrito();
-
-    abrirCarrito();
-
-}
-
-
-/* =========================
-   ACTUALIZAR CARRITO
-========================= */
-
-function actualizarCarrito() {
-
-    const contenido =
-        document.getElementById("carritoContenido");
+    const overlay =
+        document.getElementById("overlay");
 
     const contador =
         document.getElementById("contador");
 
+    const carritoContenido =
+        document.getElementById("carritoContenido");
+
     const totalElemento =
         document.getElementById("total");
 
+    const buscador =
+        document.getElementById("buscador");
 
-    if (!contenido || !contador || !totalElemento) {
-        return;
-    }
 
+    /* =========================
+       ABRIR CARRITO
+    ========================= */
 
-    contenido.innerHTML = "";
+    function abrirCarrito() {
 
-
-    let total = 0;
-    let cantidadTotal = 0;
-
-
-    if (carrito.length === 0) {
-
-        contenido.innerHTML =
-            "<p>Tu carrito está vacío.</p>";
-
-    }
-
-
-    carrito.forEach(function(item, index) {
-
-        const subtotal =
-            item.precio * item.cantidad;
-
-
-        total += subtotal;
-
-        cantidadTotal += item.cantidad;
-
-
-        const itemHTML = document.createElement("div");
-
-        itemHTML.className = "item-carrito";
-
-
-        itemHTML.innerHTML = `
-
-            <strong>${item.nombre}</strong>
-
-            <small>
-                ${item.tamano} · $${item.precio}
-            </small>
-
-            <div class="controles">
-
-                <button
-                    type="button"
-                    onclick="cambiarCantidad(${index}, -1)"
-                >
-                    −
-                </button>
-
-                <span>
-                    ${item.cantidad}
-                </span>
-
-                <button
-                    type="button"
-                    onclick="cambiarCantidad(${index}, 1)"
-                >
-                    +
-                </button>
-
-                <button
-                    type="button"
-                    class="eliminar"
-                    onclick="eliminarProducto(${index})"
-                >
-                    Eliminar
-                </button>
-
-            </div>
-
-        `;
-
-
-        contenido.appendChild(itemHTML);
-
-    });
-
-
-    contador.textContent =
-        cantidadTotal;
-
-
-    totalElemento.textContent =
-        "$" + total;
-
-}
-
-
-/* =========================
-   CAMBIAR CANTIDAD
-========================= */
-
-function cambiarCantidad(
-    index,
-    cambio
-) {
-
-    if (!carrito[index]) return;
-
-
-    carrito[index].cantidad += cambio;
-
-
-    if (carrito[index].cantidad <= 0) {
-
-        carrito.splice(index, 1);
-
-    }
-
-
-    actualizarCarrito();
-
-}
-
-
-/* =========================
-   ELIMINAR PRODUCTO
-========================= */
-
-function eliminarProducto(index) {
-
-    if (!carrito[index]) return;
-
-    carrito.splice(index, 1);
-
-    actualizarCarrito();
-
-}
-
-
-/* =========================
-   VACIAR CARRITO
-========================= */
-
-function vaciarCarrito() {
-
-    carrito = [];
-
-    actualizarCarrito();
-
-}
-
-
-/* =========================
-   ABRIR CARRITO
-========================= */
-
-function abrirCarrito() {
-
-    const panel =
-        document.getElementById("carritoPanel");
-
-    const overlay =
-        document.getElementById("overlay");
-
-
-    if (panel) {
-        panel.classList.add("abierto");
-    }
-
-    if (overlay) {
+        carritoPanel.classList.add("abierto");
         overlay.classList.add("activo");
     }
 
-}
 
+    /* =========================
+       CERRAR CARRITO
+    ========================= */
 
-/* =========================
-   CERRAR CARRITO
-========================= */
+    function cerrarCarrito() {
 
-function cerrarCarrito() {
-
-    const panel =
-        document.getElementById("carritoPanel");
-
-    const overlay =
-        document.getElementById("overlay");
-
-
-    if (panel) {
-        panel.classList.remove("abierto");
-    }
-
-    if (overlay) {
+        carritoPanel.classList.remove("abierto");
         overlay.classList.remove("activo");
     }
 
-}
+
+    document
+        .getElementById("abrirCarritoBtn")
+        .addEventListener("click", abrirCarrito);
 
 
-/* =========================
-   WHATSAPP PRODUCTO
-========================= */
-
-function enviarWhatsApp(boton) {
-
-    const producto =
-        boton.closest(".producto");
-
-    if (!producto) return;
+    document
+        .getElementById("cerrarCarritoBtn")
+        .addEventListener("click", cerrarCarrito);
 
 
-    const nombre =
-        producto.dataset.perfume ||
-        producto.dataset.nombre;
-
-
-    const tamano =
-        producto.dataset.tamano ||
-        "Tamaño seleccionado";
-
-
-    const precio =
-        producto.dataset.precio ||
-        "";
-
-
-    const mensaje =
-        "Hola! Quiero consultar por " +
-        nombre +
-        ". " +
-        tamano +
-        ": $" +
-        precio +
-        ".";
-
-
-    const enlace =
-        "https://wa.me/59892033401?text=" +
-        encodeURIComponent(mensaje);
-
-
-    window.open(
-        enlace,
-        "_blank",
-        "noopener"
+    overlay.addEventListener(
+        "click",
+        cerrarCarrito
     );
 
-}
+
+    /* =========================
+       TAMAÑOS
+    ========================= */
+
+    document
+        .querySelectorAll(".producto")
+        .forEach(function (producto) {
+
+            const botones =
+                producto.querySelectorAll(".tamano");
+
+            botones.forEach(function (boton) {
+
+                boton.addEventListener(
+                    "click",
+                    function () {
+
+                        botones.forEach(function (b) {
+                            b.classList.remove("activo");
+                        });
+
+                        boton.classList.add("activo");
+
+                        const precio =
+                            boton.dataset.precio;
+
+                        const precioElemento =
+                            producto.querySelector(
+                                ".precio-seleccionado"
+                            );
+
+                        if (precioElemento) {
+                            precioElemento.textContent =
+                                "$" + precio;
+                        }
+
+                    }
+                );
+
+            });
+
+        });
 
 
-/* =========================
-   WHATSAPP STOCK
-========================= */
+    /* =========================
+       AGREGAR DECANTS
+    ========================= */
 
-function consultarStock(
-    nombre,
-    precio
-) {
+    document
+        .querySelectorAll(".producto")
+        .forEach(function (producto) {
 
-    const mensaje =
-        "Hola! Quiero consultar por " +
-        nombre +
-        ". Precio: $" +
-        precio +
-        ".";
+            const botonAgregar =
+                producto.querySelector(".agregar");
+
+            if (!botonAgregar) return;
 
 
-    const enlace =
-        "https://wa.me/59892033401?text=" +
-        encodeURIComponent(mensaje);
+            botonAgregar.addEventListener(
+                "click",
+                function () {
+
+                    const seleccionado =
+                        producto.querySelector(
+                            ".tamano.activo"
+                        );
+
+                    if (!seleccionado) {
+
+                        alert("Elegí un tamaño.");
+
+                        return;
+                    }
 
 
-    window.open(
-        enlace,
-        "_blank",
-        "noopener"
-    );
+                    const nombre =
+                        seleccionado.dataset.perfume;
 
-}
+                    const tamano =
+                        seleccionado.dataset.tamano;
 
-
-/* =========================
-   PEDIDO COMPLETO
-========================= */
-
-function enviarPedido() {
-
-    if (carrito.length === 0) {
-
-        alert("Tu carrito está vacío.");
-
-        return;
-    }
+                    const precio =
+                        Number(
+                            seleccionado.dataset.precio
+                        );
 
 
-    let mensaje =
-        "Hola! Quiero hacer este pedido en DrPerfumes:\n\n";
-
-
-    let total = 0;
-
-
-    carrito.forEach(function(item) {
-
-        const subtotal =
-            item.precio * item.cantidad;
-
-
-        total += subtotal;
-
-
-        mensaje +=
-            "• " +
-            item.nombre +
-            " - " +
-            item.tamano +
-            " x" +
-            item.cantidad +
-            " = $" +
-            subtotal +
-            "\n";
-
-    });
-
-
-    mensaje +=
-        "\n💰 Total: $" +
-        total;
-
-
-    const enlace =
-        "https://wa.me/59892033401?text=" +
-        encodeURIComponent(mensaje);
-
-
-    window.open(
-        enlace,
-        "_blank",
-        "noopener"
-    );
-
-}
-
-
-/* =========================
-   INICIAR PRODUCTOS
-========================= */
-
-document.addEventListener("DOMContentLoaded", function() {
-
-    document.querySelectorAll(".producto").forEach(function(producto) {
-
-        const botonInicial =
-            producto.querySelector(".tamano.activo");
-
-
-        if (botonInicial) {
-
-            /*
-             * Solo inicializamos los datos.
-             * NO usamos click(), porque eso podía
-             * generar comportamientos innecesarios.
-             */
-
-            const onclick =
-                botonInicial.getAttribute("onclick");
-
-            if (onclick) {
-
-                const resultado =
-                    onclick.match(
-                        /seleccionar\(this,\s*'([^']+)',\s*'([^']+)',\s*(\d+)\)/
+                    agregarAlCarrito(
+                        nombre,
+                        tamano,
+                        precio
                     );
 
+                }
+            );
 
-                if (resultado) {
+        });
 
-                    producto.dataset.perfume =
-                        resultado[1];
 
-                    producto.dataset.tamano =
-                        resultado[2];
+    /* =========================
+       AGREGAR STOCK
+    ========================= */
 
-                    producto.dataset.precio =
-                        resultado[3];
+    document
+        .querySelectorAll(".agregar-stock")
+        .forEach(function (boton) {
+
+            boton.addEventListener(
+                "click",
+                function () {
+
+                    const nombre =
+                        boton.dataset.nombre;
+
+                    const precio =
+                        Number(
+                            boton.dataset.precio
+                        );
+
+
+                    agregarAlCarrito(
+                        nombre,
+                        "Stock",
+                        precio
+                    );
 
                 }
+            );
 
-            }
+        });
+
+
+    /* =========================
+       AGREGAR AL CARRITO
+    ========================= */
+
+    function agregarAlCarrito(
+        nombre,
+        tamano,
+        precio
+    ) {
+
+        const existente =
+            carrito.find(function (item) {
+
+                return (
+                    item.nombre === nombre &&
+                    item.tamano === tamano
+                );
+
+            });
+
+
+        if (existente) {
+
+            existente.cantidad++;
+
+        } else {
+
+            carrito.push({
+
+                nombre: nombre,
+                tamano: tamano,
+                precio: precio,
+                cantidad: 1
+
+            });
 
         }
 
-    });
 
+        actualizarCarrito();
+
+        abrirCarrito();
+    }
+
+
+    /* =========================
+       ACTUALIZAR CARRITO
+    ========================= */
+
+    function actualizarCarrito() {
+
+        carritoContenido.innerHTML = "";
+
+
+        let total = 0;
+        let cantidadTotal = 0;
+
+
+        if (carrito.length === 0) {
+
+            carritoContenido.innerHTML =
+                "<p>Tu carrito está vacío.</p>";
+
+        }
+
+
+        carrito.forEach(function (item, index) {
+
+            const subtotal =
+                item.precio * item.cantidad;
+
+
+            total += subtotal;
+
+            cantidadTotal += item.cantidad;
+
+
+            const elemento =
+                document.createElement("div");
+
+            elemento.className =
+                "item-carrito";
+
+
+            elemento.innerHTML = `
+
+                <strong>
+                    ${item.nombre}
+                </strong>
+
+                <small>
+                    ${item.tamano} · $${item.precio}
+                </small>
+
+                <div class="controles">
+
+                    <button
+                        type="button"
+                        class="menos"
+                    >
+                        −
+                    </button>
+
+                    <span>
+                        ${item.cantidad}
+                    </span>
+
+                    <button
+                        type="button"
+                        class="mas"
+                    >
+                        +
+                    </button>
+
+                    <button
+                        type="button"
+                        class="eliminar"
+                    >
+                        Eliminar
+                    </button>
+
+                </div>
+
+            `;
+
+
+            elemento
+                .querySelector(".menos")
+                .addEventListener(
+                    "click",
+                    function () {
+
+                        cambiarCantidad(
+                            index,
+                            -1
+                        );
+
+                    }
+                );
+
+
+            elemento
+                .querySelector(".mas")
+                .addEventListener(
+                    "click",
+                    function () {
+
+                        cambiarCantidad(
+                            index,
+                            1
+                        );
+
+                    }
+                );
+
+
+            elemento
+                .querySelector(".eliminar")
+                .addEventListener(
+                    "click",
+                    function () {
+
+                        eliminarProducto(index);
+
+                    }
+                );
+
+
+            carritoContenido.appendChild(
+                elemento
+            );
+
+        });
+
+
+        contador.textContent =
+            cantidadTotal;
+
+        totalElemento.textContent =
+            "$" + total;
+
+    }
+
+
+    /* =========================
+       CAMBIAR CANTIDAD
+    ========================= */
+
+    function cambiarCantidad(
+        index,
+        cambio
+    ) {
+
+        if (!carrito[index]) return;
+
+
+        carrito[index].cantidad +=
+            cambio;
+
+
+        if (
+            carrito[index].cantidad <= 0
+        ) {
+
+            carrito.splice(index, 1);
+
+        }
+
+
+        actualizarCarrito();
+    }
+
+
+    /* =========================
+       ELIMINAR
+    ========================= */
+
+    function eliminarProducto(index) {
+
+        if (!carrito[index]) return;
+
+        carrito.splice(index, 1);
+
+        actualizarCarrito();
+    }
+
+
+    /* =========================
+       VACIAR
+    ========================= */
+
+    document
+        .getElementById("vaciarBtn")
+        .addEventListener(
+            "click",
+            function () {
+
+                carrito = [];
+
+                actualizarCarrito();
+
+            }
+        );
+
+
+    /* =========================
+       BUSCADOR
+    ========================= */
+
+    function filtrarProductos() {
+
+        const texto =
+            buscador.value
+                .toLowerCase()
+                .trim();
+
+
+        document
+            .querySelectorAll(".producto")
+            .forEach(function (producto) {
+
+                const nombre =
+                    (
+                        producto.dataset.nombre || ""
+                    ).toLowerCase();
+
+
+                const categoria =
+                    producto.dataset.categoria || "";
+
+
+                const coincideNombre =
+                    nombre.includes(texto);
+
+
+                const coincideCategoria =
+                    filtroActual === "todos" ||
+                    categoria === filtroActual;
+
+
+                if (
+                    coincideNombre &&
+                    coincideCategoria
+                ) {
+
+                    producto.style.display =
+                        "";
+
+                } else {
+
+                    producto.style.display =
+                        "none";
+
+                }
+
+            });
+
+    }
+
+
+    buscador.addEventListener(
+        "input",
+        filtrarProductos
+    );
+
+
+    /* =========================
+       FILTROS
+    ========================= */
+
+    document
+        .querySelectorAll(".filtro")
+        .forEach(function (boton) {
+
+            boton.addEventListener(
+                "click",
+                function () {
+
+                    document
+                        .querySelectorAll(".filtro")
+                        .forEach(function (b) {
+
+                            b.classList.remove(
+                                "activo"
+                            );
+
+                        });
+
+
+                    boton.classList.add(
+                        "activo"
+                    );
+
+
+                    filtroActual =
+                        boton.dataset.filtro;
+
+
+                    filtrarProductos();
+
+                }
+            );
+
+        });
+
+
+    /* =========================
+       WHATSAPP DECANTS
+    ========================= */
+
+    document
+        .querySelectorAll(".producto")
+        .forEach(function (producto) {
+
+            const botonWhatsApp =
+                producto.querySelector(
+                    ".comprar:not(.stock-whatsapp)"
+                );
+
+
+            if (!botonWhatsApp) return;
+
+
+            botonWhatsApp.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+
+                    const seleccionado =
+                        producto.querySelector(
+                            ".tamano.activo"
+                        );
+
+
+                    if (!seleccionado) {
+
+                        alert("Elegí un tamaño.");
+
+                        return;
+                    }
+
+
+                    const nombre =
+                        seleccionado.dataset.perfume;
+
+                    const tamano =
+                        seleccionado.dataset.tamano;
+
+                    const precio =
+                        seleccionado.dataset.precio;
+
+
+                    const mensaje =
+                        "Hola! Quiero consultar por " +
+                        nombre +
+                        ". " +
+                        tamano +
+                        ": $" +
+                        precio +
+                        ".";
+
+
+                    abrirWhatsApp(mensaje);
+
+                }
+            );
+
+        });
+
+
+    /* =========================
+       WHATSAPP STOCK
+    ========================= */
+
+    document
+        .querySelectorAll(".stock-whatsapp")
+        .forEach(function (boton) {
+
+            boton.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+
+                    const nombre =
+                        boton.dataset.nombre;
+
+                    const precio =
+                        boton.dataset.precio;
+
+
+                    const mensaje =
+                        "Hola! Quiero consultar por " +
+                        nombre +
+                        ". Precio: $" +
+                        precio +
+                        ".";
+
+
+                    abrirWhatsApp(mensaje);
+
+                }
+            );
+
+        });
+
+
+    /* =========================
+       ABRIR WHATSAPP
+    ========================= */
+
+    function abrirWhatsApp(mensaje) {
+
+        const enlace =
+            "https://wa.me/59892033401?text=" +
+            encodeURIComponent(mensaje);
+
+
+        window.open(
+            enlace,
+            "_blank"
+        );
+
+    }
+
+
+    /* =========================
+       PEDIDO COMPLETO
+    ========================= */
+
+    document
+        .getElementById("pedidoBtn")
+        .addEventListener(
+            "click",
+            function () {
+
+                if (carrito.length === 0) {
+
+                    alert(
+                        "Tu carrito está vacío."
+                    );
+
+                    return;
+                }
+
+
+                let mensaje =
+                    "Hola! Quiero hacer este pedido en DrPerfumes:\n\n";
+
+
+                let total = 0;
+
+
+                carrito.forEach(function (item) {
+
+                    const subtotal =
+                        item.precio *
+                        item.cantidad;
+
+
+                    total += subtotal;
+
+
+                    mensaje +=
+                        "• " +
+                        item.nombre +
+                        " - " +
+                        item.tamano +
+                        " x" +
+                        item.cantidad +
+                        " = $" +
+                        subtotal +
+                        "\n";
+
+                });
+
+
+                mensaje +=
+                    "\n💰 Total: $" +
+                    total;
+
+
+                abrirWhatsApp(mensaje);
+
+            }
+        );
+
+
+    /* =========================
+       ESCAPE
+    ========================= */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key === "Escape") {
+                cerrarCarrito();
+            }
+
+        }
+    );
+
+
+    /* =========================
+       INICIAR
+    ========================= */
 
     actualizarCarrito();
 
