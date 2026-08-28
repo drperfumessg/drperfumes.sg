@@ -1,5 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
 
-0px;
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DrPerfumes | Perfumes & Decants</title>
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f5f5;
+    color: #292729;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: #ffffff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #e5e1e2;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 31px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #9b858a;
+}
+
+header p {
+    color: #888;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 17px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #444;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.menu a:hover {
+    color: #9b858a;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    text-align: center;
+    padding: 75px 20px;
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #eee9ea
+    );
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #9b858a;
+}
+
+.hero p {
+    max-width: 600px;
     margin: auto;
     color: #777;
     line-height: 1.6;
@@ -154,11 +264,6 @@
     gap: 24px;
 }
 
-
-/* =========================
-   TARJETA
-========================= */
-
 .producto {
     background: #ffffff;
     border: 1px solid #e3dfe0;
@@ -282,19 +387,6 @@
 
 
 /* =========================
-   SIN RESULTADOS
-========================= */
-
-.sin-resultados {
-    display: none;
-    text-align: center;
-    padding: 40px 20px;
-    color: #888;
-    font-size: 17px;
-}
-
-
-/* =========================
    SEPARADOR
 ========================= */
 
@@ -303,6 +395,149 @@
     max-width: 1100px;
     margin: 10px auto;
     background: #ded9da;
+}
+
+
+/* =========================
+   PRODUCTOS EN STOCK
+========================= */
+
+.stock-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(260px, 1fr)
+    );
+    gap: 28px;
+}
+
+
+/* TARJETA GIRATORIA */
+
+.stock-card {
+    perspective: 1000px;
+    height: 520px;
+}
+
+.stock-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+}
+
+.stock-card:hover .stock-inner {
+    transform: rotateY(180deg);
+}
+
+.stock-front,
+.stock-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e3dfe0;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+
+/* FRENTE */
+
+.stock-front {
+    display: flex;
+    flex-direction: column;
+}
+
+.stock-photo {
+    width: 100%;
+    height: 330px;
+    background: #f1eeee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stock-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.stock-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.stock-info h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.stock-presentacion {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.stock-price {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.stock-hint {
+    color: #999;
+    font-size: 13px;
+}
+
+
+/* ATRÁS */
+
+.stock-back {
+    transform: rotateY(180deg);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stock-back h3 {
+    text-align: center;
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.stock-back-subtitle {
+    text-align: center;
+    color: #999;
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+.acordes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.acorde {
+    padding: 8px 12px;
+    background: #f2eeee;
+    border: 1px solid #ded6d8;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #555;
+}
+
+.stock-back .comprar {
+    margin-top: auto;
 }
 
 
@@ -393,7 +628,7 @@ footer a:hover {
     }
 
     .menu {
-        gap: 15px;
+        gap: 14px;
     }
 
     .menu a {
@@ -420,6 +655,40 @@ footer a:hover {
         height: 280px;
     }
 
+    .stock-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stock-card {
+        height: 500px;
+    }
+
+    .stock-photo {
+        height: 300px;
+    }
+
+    /*
+       En celular funciona tocando la tarjeta.
+       El efecto hover también funciona en algunos dispositivos.
+    */
+
+}
+
+
+/* =========================
+   BOTON VOLTEAR
+========================= */
+
+.voltear {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 15px;
+    padding: 8px 16px;
+    border: 1px solid #d5ced0;
+    border-radius: 20px;
+    background: #ffffff;
+    color: #555;
+    cursor: pointer;
 }
 
 </style>
@@ -444,13 +713,25 @@ footer a:hover {
 
     <nav class="menu">
 
-        <a href="#inicio">Inicio</a>
+        <a href="#inicio">
+            Inicio
+        </a>
 
-        <a href="#hombre">Hombre</a>
+        <a href="#hombre">
+            Hombre
+        </a>
 
-        <a href="#mujer">Mujer</a>
+        <a href="#mujer">
+            Mujer
+        </a>
 
-        <a href="#contacto">Contacto</a>
+        <a href="#stock">
+            En stock
+        </a>
+
+        <a href="#contacto">
+            Contacto
+        </a>
 
         <a
             href="https://www.instagram.com/drperfumes.sg/"
@@ -468,7 +749,10 @@ footer a:hover {
      HERO
 ========================= -->
 
-<section class="hero" id="inicio">
+<section
+    class="hero"
+    id="inicio"
+>
 
     <h1>
         Encontrá tu <span>fragancia</span>
@@ -479,7 +763,10 @@ footer a:hover {
         Elegí tu fragancia y el tamaño que querés.
     </p>
 
-    <a class="btn" href="#hombre">
+    <a
+        class="btn"
+        href="#hombre"
+    >
         VER PERFUMES
     </a>
 
@@ -492,7 +779,12 @@ footer a:hover {
 
 <section class="section">
 
-    <h2 style="text-align:center; margin-bottom:15px;">
+    <h2
+        style="
+        text-align:center;
+        margin-bottom:15px;
+        "
+    >
         Sobre DrPerfumes
     </h2>
 
@@ -512,7 +804,7 @@ footer a:hover {
 
 
 <!-- =========================
-     BUSCADOR + FILTROS
+     BUSCADOR
 ========================= -->
 
 <section class="buscador-seccion">
@@ -558,6 +850,13 @@ footer a:hover {
             Mujer
         </button>
 
+        <button
+            class="filtro"
+            onclick="cambiarFiltro('stock', this)"
+        >
+            En stock
+        </button>
+
     </div>
 
 </section>
@@ -567,7 +866,10 @@ footer a:hover {
      HOMBRE
 ========================= -->
 
-<section class="section" id="hombre">
+<section
+    class="section"
+    id="hombre"
+>
 
     <div class="categoria">
 
@@ -643,7 +945,10 @@ footer a:hover {
                 <a
                     class="comprar"
                     href="#"
-                    onclick="enviarWhatsApp(this); return false;"
+                    onclick="
+                    enviarWhatsApp(this);
+                    return false;
+                    "
                 >
                     💬 Pedir por WhatsApp
                 </a>
@@ -711,7 +1016,10 @@ footer a:hover {
                 <a
                     class="comprar"
                     href="#"
-                    onclick="enviarWhatsApp(this); return false;"
+                    onclick="
+                    enviarWhatsApp(this);
+                    return false;
+                    "
                 >
                     💬 Pedir por WhatsApp
                 </a>
@@ -779,7 +1087,10 @@ footer a:hover {
                 <a
                     class="comprar"
                     href="#"
-                    onclick="enviarWhatsApp(this); return false;"
+                    onclick="
+                    enviarWhatsApp(this);
+                    return false;
+                    "
                 >
                     💬 Pedir por WhatsApp
                 </a>
@@ -847,7 +1158,10 @@ footer a:hover {
                 <a
                     class="comprar"
                     href="#"
-                    onclick="enviarWhatsApp(this); return false;"
+                    onclick="
+                    enviarWhatsApp(this);
+                    return false;
+                    "
                 >
                     💬 Pedir por WhatsApp
                 </a>
@@ -915,7 +1229,10 @@ footer a:hover {
                 <a
                     class="comprar"
                     href="#"
-                    onclick="enviarWhatsApp(this); return false;"
+                    onclick="
+                    enviarWhatsApp(this);
+                    return false;
+                    "
                 >
                     💬 Pedir por WhatsApp
                 </a>
@@ -925,7 +1242,7 @@ footer a:hover {
         </div>
 
 
-        <!-- EROS -->
+        <!-- EROS FLAME -->
 
         <div
             class="producto"
@@ -983,7 +1300,10 @@ footer a:hover {
                 <a
                     class="comprar"
                     href="#"
-                    onclick="enviarWhatsApp(this); return false;"
+                    onclick="
+                    enviarWhatsApp(this);
+                    return false;
+                    "
                 >
                     💬 Pedir por WhatsApp
                 </a>
@@ -1051,7 +1371,10 @@ footer a:hover {
                 <a
                     class="comprar"
                     href="#"
-                    onclick="enviarWhatsApp(this); return false;"
+                    onclick="
+                    enviarWhatsApp(this);
+                    return false;
+                    "
                 >
                     💬 Pedir por WhatsApp
                 </a>
@@ -1119,7 +1442,10 @@ footer a:hover {
                 <a
                     class="comprar"
                     href="#"
-                    onclick="enviarWhatsApp(this); return false;"
+                    onclick="
+                    enviarWhatsApp(this);
+                    return false;
+                    "
                 >
                     💬 Pedir por WhatsApp
                 </a>
@@ -1141,7 +1467,10 @@ footer a:hover {
      MUJER
 ========================= -->
 
-<section class="section" id="mujer">
+<section
+    class="section"
+    id="mujer"
+>
 
     <div class="categoria">
 
@@ -1217,7 +1546,10 @@ footer a:hover {
                 <a
                     class="comprar"
                     href="#"
-                    onclick="enviarWhatsApp(this); return false;"
+                    onclick="
+                    enviarWhatsApp(this);
+                    return false;
+                    "
                 >
                     💬 Pedir por WhatsApp
                 </a>
@@ -1285,7 +1617,10 @@ footer a:hover {
                 <a
                     class="comprar"
                     href="#"
-                    onclick="enviarWhatsApp(this); return false;"
+                    onclick="
+                    enviarWhatsApp(this);
+                    return false;
+                    "
                 >
                     💬 Pedir por WhatsApp
                 </a>
@@ -1353,7 +1688,10 @@ footer a:hover {
                 <a
                     class="comprar"
                     href="#"
-                    onclick="enviarWhatsApp(this); return false;"
+                    onclick="
+                    enviarWhatsApp(this);
+                    return false;
+                    "
                 >
                     💬 Pedir por WhatsApp
                 </a>
@@ -1421,7 +1759,10 @@ footer a:hover {
                 <a
                     class="comprar"
                     href="#"
-                    onclick="enviarWhatsApp(this); return false;"
+                    onclick="
+                    enviarWhatsApp(this);
+                    return false;
+                    "
                 >
                     💬 Pedir por WhatsApp
                 </a>
@@ -1433,12 +1774,328 @@ footer a:hover {
 
     </div>
 
+</section>
 
-    <div
-        class="sin-resultados"
-        id="sinResultados"
-    >
-        No encontramos ese perfume 😔
+
+<div class="separador"></div>
+
+
+<!-- =========================
+     EN STOCK
+========================= -->
+
+<section
+    class="section"
+    id="stock"
+>
+
+    <div class="categoria">
+
+        <h2>
+            🛍️ Productos en stock
+        </h2>
+
+        <p>
+            Perfumes disponibles para entrega
+        </p>
+
+    </div>
+
+
+    <div class="stock-grid">
+
+
+        <!-- =====================
+             HALLOWEEN
+        ====================== -->
+
+        <div
+            class="stock-card"
+            data-nombre="Set Halloween Women EDT"
+            data-categoria="stock"
+        >
+
+            <div class="stock-inner">
+
+
+                <!-- FRENTE -->
+
+                <div class="stock-front">
+
+                    <div class="stock-photo">
+
+                        <img
+                            src="halloween.jpg.AVIF"
+                            alt="Set Halloween Women EDT"
+                        >
+
+                    </div>
+
+                    <div class="stock-info">
+
+                        <h3>
+                            Set Halloween Women EDT
+                        </h3>
+
+                        <p class="stock-presentacion">
+                            100 ml + 30 ml
+                        </p>
+
+                        <div class="stock-price">
+                            $3290
+                        </div>
+
+                        <p class="stock-hint">
+                            ✨ Pasá el cursor para ver los acordes
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ATRAS -->
+
+                <div class="stock-back">
+
+                    <h3>
+                        Halloween Women
+                    </h3>
+
+                    <p class="stock-back-subtitle">
+                        Acordes principales
+                    </p>
+
+                    <div class="acordes">
+
+                        <span class="acorde">Violeta</span>
+                        <span class="acorde">Atalcado</span>
+                        <span class="acorde">Marino</span>
+                        <span class="acorde">Floral</span>
+                        <span class="acorde">Verde</span>
+                        <span class="acorde">Aromático</span>
+                        <span class="acorde">Fresco</span>
+                        <span class="acorde">Floral blanco</span>
+                        <span class="acorde">Amaderado</span>
+                        <span class="acorde">Ámbar</span>
+
+                    </div>
+
+                    <a
+                        class="comprar"
+                        href="#"
+                        onclick="
+                        pedirStock(
+                            'Set Halloween Women EDT 100 ml + 30 ml',
+                            '$3290'
+                        );
+                        return false;
+                        "
+                    >
+                        💬 Pedir por WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================
+             LA VIE EST BELLE
+        ====================== -->
+
+        <div
+            class="stock-card"
+            data-nombre="La Vie Est Belle 100 ml"
+            data-categoria="stock"
+        >
+
+            <div class="stock-inner">
+
+
+                <!-- FRENTE -->
+
+                <div class="stock-front">
+
+                    <div class="stock-photo">
+
+                        <img
+                            src="la-vie-est-belle.jpg.AVIF"
+                            alt="La Vie Est Belle"
+                        >
+
+                    </div>
+
+                    <div class="stock-info">
+
+                        <h3>
+                            La Vie Est Belle
+                        </h3>
+
+                        <p class="stock-presentacion">
+                            100 ml
+                        </p>
+
+                        <div class="stock-price">
+                            $4390
+                        </div>
+
+                        <p class="stock-hint">
+                            ✨ Pasá el cursor para ver los acordes
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ATRAS -->
+
+                <div class="stock-back">
+
+                    <h3>
+                        La Vie Est Belle
+                    </h3>
+
+                    <p class="stock-back-subtitle">
+                        Acordes principales
+                    </p>
+
+                    <div class="acordes">
+
+                        <span class="acorde">Dulce</span>
+                        <span class="acorde">Avainillado</span>
+                        <span class="acorde">Afrutado</span>
+                        <span class="acorde">Pachulí</span>
+                        <span class="acorde">Amaderado</span>
+                        <span class="acorde">Floral blanco</span>
+                        <span class="acorde">Atalcado</span>
+                        <span class="acorde">Iris</span>
+                        <span class="acorde">Terroso</span>
+                        <span class="acorde">Cálido especiado</span>
+
+                    </div>
+
+                    <a
+                        class="comprar"
+                        href="#"
+                        onclick="
+                        pedirStock(
+                            'La Vie Est Belle 100 ml',
+                            '$4390'
+                        );
+                        return false;
+                        "
+                    >
+                        💬 Pedir por WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================
+             GUESS
+        ====================== -->
+
+        <div
+            class="stock-card"
+            data-nombre="Guess Uomo Intenso EDP"
+            data-categoria="stock"
+        >
+
+            <div class="stock-inner">
+
+
+                <!-- FRENTE -->
+
+                <div class="stock-front">
+
+                    <div class="stock-photo">
+
+                        <img
+                            src="guess.jpg.AVIF"
+                            alt="Guess Uomo Intenso EDP"
+                        >
+
+                    </div>
+
+                    <div class="stock-info">
+
+                        <h3>
+                            Guess Uomo Intenso EDP
+                        </h3>
+
+                        <p class="stock-presentacion">
+                            100 ml + deo + gel de ducha
+                        </p>
+
+                        <div class="stock-price">
+                            $3490
+                        </div>
+
+                        <p class="stock-hint">
+                            ✨ Pasá el cursor para ver los acordes
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ATRAS -->
+
+                <div class="stock-back">
+
+                    <h3>
+                        Guess Uomo Intenso
+                    </h3>
+
+                    <p class="stock-back-subtitle">
+                        Acordes principales
+                    </p>
+
+                    <div class="acordes">
+
+                        <span class="acorde">Aromático</span>
+                        <span class="acorde">Ámbar</span>
+                        <span class="acorde">Cálido especiado</span>
+                        <span class="acorde">Amaderado</span>
+                        <span class="acorde">Fresco especiado</span>
+                        <span class="acorde">Cítrico</span>
+                        <span class="acorde">Lavanda</span>
+                        <span class="acorde">Herbal</span>
+                        <span class="acorde">Avainillado</span>
+                        <span class="acorde">Floral blanco</span>
+
+                    </div>
+
+                    <a
+                        class="comprar"
+                        href="#"
+                        onclick="
+                        pedirStock(
+                            'Guess Uomo Intenso EDP 100 ml + deo + gel de ducha',
+                            '$3490'
+                        );
+                        return false;
+                        "
+                    >
+                        💬 Pedir por WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
     </div>
 
 </section>
@@ -1491,13 +2148,16 @@ footer a:hover {
     </p>
 
     <p>
+
         Instagram:
+
         <a
             href="https://www.instagram.com/drperfumes.sg/"
             target="_blank"
         >
             @drperfumes.sg
         </a>
+
     </p>
 
     <br>
@@ -1525,89 +2185,11 @@ footer a:hover {
 <script>
 
 /* =========================
-   VARIABLES
+   FILTRO
 ========================= */
 
 let filtroActual = "todos";
 
-
-/* =========================
-   SELECCIONAR TAMAÑO
-========================= */
-
-function seleccionar(
-    boton,
-    perfume,
-    tamano,
-    precio
-) {
-
-    const producto =
-        boton.closest(".producto");
-
-    producto
-        .querySelectorAll(".tamano")
-        .forEach(function(btn) {
-
-            btn.classList.remove("activo");
-
-        });
-
-    boton.classList.add("activo");
-
-    producto
-        .querySelector(".precio")
-        .textContent = precio;
-
-    producto.dataset.perfume = perfume;
-    producto.dataset.tamano = tamano;
-    producto.dataset.precio = precio;
-
-}
-
-
-/* =========================
-   WHATSAPP
-========================= */
-
-function enviarWhatsApp(boton) {
-
-    const producto =
-        boton.closest(".producto");
-
-    const perfume =
-        producto.dataset.perfume;
-
-    const tamano =
-        producto.dataset.tamano;
-
-    const precio =
-        producto.dataset.precio;
-
-    const mensaje =
-        "Hola! Quiero consultar por " +
-        perfume +
-        ". " +
-        tamano +
-        ": " +
-        precio +
-        ".";
-
-    const enlace =
-        "https://wa.me/59892033401?text=" +
-        encodeURIComponent(mensaje);
-
-    window.open(
-        enlace,
-        "_blank"
-    );
-
-}
-
-
-/* =========================
-   CAMBIAR FILTRO
-========================= */
 
 function cambiarFiltro(
     categoria,
@@ -1645,9 +2227,10 @@ function filtrarPerfumes() {
         .trim();
 
     const productos =
-        document.querySelectorAll(".producto");
+        document.querySelectorAll(
+            ".producto, .stock-card"
+        );
 
-    let encontrados = 0;
 
     productos.forEach(function(producto) {
 
@@ -1660,6 +2243,7 @@ function filtrarPerfumes() {
             producto
             .getAttribute("data-categoria");
 
+
         const coincideNombre =
             nombre.includes(texto);
 
@@ -1667,14 +2251,13 @@ function filtrarPerfumes() {
             filtroActual === "todos" ||
             categoria === filtroActual;
 
+
         if (
             coincideNombre &&
             coincideCategoria
         ) {
 
             producto.style.display = "";
-
-            encontrados++;
 
         } else {
 
@@ -1684,24 +2267,122 @@ function filtrarPerfumes() {
 
     });
 
+}
 
-    const sinResultados =
-        document.getElementById(
-            "sinResultados"
-        );
 
-    if (
-        texto !== "" &&
-        encontrados === 0
-    ) {
+/* =========================
+   TAMAÑOS DECANTS
+========================= */
 
-        sinResultados.style.display = "block";
+function seleccionar(
+    boton,
+    perfume,
+    tamano,
+    precio
+) {
 
-    } else {
+    const producto =
+        boton.closest(".producto");
 
-        sinResultados.style.display = "none";
 
-    }
+    producto
+        .querySelectorAll(".tamano")
+        .forEach(function(btn) {
+
+            btn.classList.remove("activo");
+
+        });
+
+
+    boton.classList.add("activo");
+
+
+    producto
+        .querySelector(".precio")
+        .textContent = precio;
+
+
+    producto.dataset.perfume =
+        perfume;
+
+    producto.dataset.tamano =
+        tamano;
+
+    producto.dataset.precio =
+        precio;
+
+}
+
+
+/* =========================
+   WHATSAPP DECANTS
+========================= */
+
+function enviarWhatsApp(boton) {
+
+    const producto =
+        boton.closest(".producto");
+
+
+    const perfume =
+        producto.dataset.perfume;
+
+    const tamano =
+        producto.dataset.tamano;
+
+    const precio =
+        producto.dataset.precio;
+
+
+    const mensaje =
+        "Hola! Quiero consultar por " +
+        perfume +
+        ". " +
+        tamano +
+        ": " +
+        precio +
+        ".";
+
+
+    const enlace =
+        "https://wa.me/59892033401?text=" +
+        encodeURIComponent(mensaje);
+
+
+    window.open(
+        enlace,
+        "_blank"
+    );
+
+}
+
+
+/* =========================
+   WHATSAPP STOCK
+========================= */
+
+function pedirStock(
+    producto,
+    precio
+) {
+
+    const mensaje =
+        "Hola! Quiero consultar por " +
+        producto +
+        ". Precio: " +
+        precio +
+        ".";
+
+
+    const enlace =
+        "https://wa.me/59892033401?text=" +
+        encodeURIComponent(mensaje);
+
+
+    window.open(
+        enlace,
+        "_blank"
+    );
 
 }
 
@@ -1720,8 +2401,61 @@ document
             );
 
         if (botonInicial) {
+
             botonInicial.click();
+
         }
+
+    });
+
+
+/* =========================
+   GIRAR TARJETAS EN CELULAR
+========================= */
+
+document
+    .querySelectorAll(".stock-card")
+    .forEach(function(card) {
+
+        card.addEventListener(
+            "click",
+            function(event) {
+
+                /*
+                   Si se toca el botón de WhatsApp,
+                   no giramos la tarjeta.
+                */
+
+                if (
+                    event.target.closest(".comprar")
+                ) {
+                    return;
+                }
+
+
+                const inner =
+                    card.querySelector(
+                        ".stock-inner"
+                    );
+
+
+                if (
+                    inner.style.transform ===
+                    "rotateY(180deg)"
+                ) {
+
+                    inner.style.transform =
+                        "rotateY(0deg)";
+
+                } else {
+
+                    inner.style.transform =
+                        "rotateY(180deg)";
+
+                }
+
+            }
+        );
 
     });
 
@@ -1729,4 +2463,5 @@ document
 
 
 </body>
+
 </html>
