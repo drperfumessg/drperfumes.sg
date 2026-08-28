@@ -138,6 +138,42 @@ header p {
 }
 
 /* =========================
+   BUSCADOR
+========================= */
+
+.buscador {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    position: relative;
+}
+
+.buscador input {
+    width: 100%;
+    padding: 15px 20px 15px 48px;
+    border: 1px solid #d8d2d4;
+    border-radius: 30px;
+    background: #ffffff;
+    font-size: 16px;
+    outline: none;
+    color: #333;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+}
+
+.buscador input:focus {
+    border-color: #aa989d;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+}
+
+.icono-busqueda {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #888;
+}
+
+/* =========================
    CATEGORIAS
 ========================= */
 
@@ -286,6 +322,18 @@ header p {
 }
 
 /* =========================
+   MENSAJE SIN RESULTADOS
+========================= */
+
+.sin-resultados {
+    display: none;
+    text-align: center;
+    color: #888;
+    padding: 30px;
+    font-size: 17px;
+}
+
+/* =========================
    SEPARADOR
 ========================= */
 
@@ -314,6 +362,15 @@ footer strong {
 
 footer p {
     margin: 5px 0;
+}
+
+footer a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ffffff;
 }
 
 /* =========================
@@ -407,21 +464,25 @@ footer p {
 
     <p>Perfumes & Decants</p>
 
-<nav class="menu">
+    <nav class="menu">
 
-    <a href="#inicio">Inicio</a>
+        <a href="#inicio">Inicio</a>
 
-    <a href="#hombre">Hombre</a>
+        <a href="#hombre">Hombre</a>
 
-    <a href="#mujer">Mujer</a>
+        <a href="#mujer">Mujer</a>
 
-    <a href="#contacto">Contacto</a>
+        <a href="#contacto">Contacto</a>
 
-    <a href="https://www.instagram.com/drperfumes.sg/" target="_blank">
-        Instagram
-    </a>
+        <a
+            href="https://www.instagram.com/drperfumes.sg/"
+            target="_blank"
+        >
+            Instagram
+        </a>
 
-</nav>
+    </nav>
+
 </header>
 
 
@@ -471,6 +532,28 @@ footer p {
 
 
 <!-- =========================
+     BUSCADOR
+========================= -->
+
+<section class="section" style="padding-top: 10px; padding-bottom: 10px;">
+
+    <div class="buscador">
+
+        <span class="icono-busqueda">🔎</span>
+
+        <input
+            type="text"
+            id="buscador"
+            placeholder="Buscá tu perfume..."
+            onkeyup="buscarPerfume()"
+        >
+
+    </div>
+
+</section>
+
+
+<!-- =========================
      PERFUMES HOMBRE
 ========================= -->
 
@@ -490,14 +573,13 @@ footer p {
 
         <!-- STRONGER WITH YOU -->
 
-        <div class="producto">
+        <div class="producto" data-nombre="Stronger With You Intensely">
 
             <div class="foto">
 
-               <img
-    src="Stronger.jpg.AVIF"
-    alt="Stronger With You Intensely"
->
+                <img
+                    src="Stronger.jpg.AVIF"
+                    alt="Stronger With You Intensely"
                 >
 
             </div>
@@ -539,7 +621,7 @@ footer p {
 
         <!-- ACQUA DI GIO -->
 
-        <div class="producto">
+        <div class="producto" data-nombre="Acqua di Gio">
 
             <div class="foto">
 
@@ -587,7 +669,7 @@ footer p {
 
         <!-- VALENTINO UOMO -->
 
-        <div class="producto">
+        <div class="producto" data-nombre="Valentino Uomo Intense">
 
             <div class="foto">
 
@@ -635,7 +717,7 @@ footer p {
 
         <!-- JPG LE BEAU -->
 
-        <div class="producto">
+        <div class="producto" data-nombre="JPG Le Beau Le Parfum">
 
             <div class="foto">
 
@@ -683,7 +765,7 @@ footer p {
 
         <!-- 212 -->
 
-        <div class="producto">
+        <div class="producto" data-nombre="212 Carolina Herrera Hombre">
 
             <div class="foto">
 
@@ -731,7 +813,7 @@ footer p {
 
         <!-- EROS FLAME -->
 
-        <div class="producto">
+        <div class="producto" data-nombre="Versace Eros Flame">
 
             <div class="foto">
 
@@ -779,7 +861,7 @@ footer p {
 
         <!-- ASAD BOURBON -->
 
-        <div class="producto">
+        <div class="producto" data-nombre="Asad Bourbon">
 
             <div class="foto">
 
@@ -827,7 +909,7 @@ footer p {
 
         <!-- SCANDAL -->
 
-        <div class="producto">
+        <div class="producto" data-nombre="Scandal">
 
             <div class="foto">
 
@@ -901,7 +983,7 @@ footer p {
 
         <!-- NOBLE BLUSH -->
 
-        <div class="producto">
+        <div class="producto" data-nombre="Lattafa Noble Blush">
 
             <div class="foto">
 
@@ -949,7 +1031,7 @@ footer p {
 
         <!-- LA VIE EST BELLE -->
 
-        <div class="producto">
+        <div class="producto" data-nombre="La Vie Est Belle">
 
             <div class="foto">
 
@@ -997,7 +1079,7 @@ footer p {
 
         <!-- CALVIN KLEIN -->
 
-        <div class="producto">
+        <div class="producto" data-nombre="Calvin Klein">
 
             <div class="foto">
 
@@ -1045,7 +1127,7 @@ footer p {
 
         <!-- VALENTINO DONNA -->
 
-        <div class="producto">
+        <div class="producto" data-nombre="Valentino Donna Born in Roma">
 
             <div class="foto">
 
@@ -1091,6 +1173,10 @@ footer p {
         </div>
 
 
+    </div>
+
+    <div class="sin-resultados" id="sinResultados">
+        No encontramos ese perfume 😔
     </div>
 
 </section>
@@ -1146,7 +1232,13 @@ footer p {
     </p>
 
     <p>
-        Instagram: @drperfumes.sg
+        Instagram:
+        <a
+            href="https://www.instagram.com/drperfumes.sg/"
+            target="_blank"
+        >
+            @drperfumes.sg
+        </a>
     </p>
 
     <br>
@@ -1156,6 +1248,7 @@ footer p {
     </p>
 
 </footer>
+
 
 <!-- =========================
      WHATSAPP FLOTANTE
@@ -1171,6 +1264,10 @@ footer p {
 
 
 <script>
+
+/* =========================
+   SELECCIONAR TAMAÑO
+========================= */
 
 function seleccionar(boton, perfume, tamano, precio) {
 
@@ -1189,6 +1286,10 @@ function seleccionar(boton, perfume, tamano, precio) {
     producto.dataset.precio = precio;
 }
 
+
+/* =========================
+   WHATSAPP
+========================= */
 
 function enviarWhatsApp(boton) {
 
@@ -1215,7 +1316,66 @@ function enviarWhatsApp(boton) {
 }
 
 
-/* Seleccionar automáticamente el primer tamaño */
+/* =========================
+   BUSCADOR
+========================= */
+
+function buscarPerfume() {
+
+    const texto =
+        document
+        .getElementById("buscador")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const productos =
+        document.querySelectorAll(".producto");
+
+    let encontrados = 0;
+
+    productos.forEach(function(producto) {
+
+        const nombre =
+            producto
+            .getAttribute("data-nombre")
+            .toLowerCase();
+
+        if (nombre.includes(texto)) {
+
+            producto.style.display = "";
+
+            encontrados++;
+
+        } else {
+
+            producto.style.display = "none";
+
+        }
+
+    });
+
+
+    const sinResultados =
+        document.getElementById("sinResultados");
+
+
+    if (texto !== "" && encontrados === 0) {
+
+        sinResultados.style.display = "block";
+
+    } else {
+
+        sinResultados.style.display = "none";
+
+    }
+
+}
+
+
+/* =========================
+   SELECCIONAR 5 ML AL CARGAR
+========================= */
 
 document.querySelectorAll(".producto").forEach(function(producto) {
 
