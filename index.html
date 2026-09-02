@@ -17,6 +17,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -25,11 +26,8 @@ body {
     color: #222;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-button {
+button,
+input {
     font-family: inherit;
 }
 
@@ -38,64 +36,52 @@ button {
 ========================= */
 
 header {
-    background: #ffffff;
-    padding: 15px 6%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    background: #fff;
+    padding: 14px 20px 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 .logo {
+    width: 100%;
+    background: #000;
+    padding: 10px 20px;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
 .logo img {
-    width: 145px;
-    height: auto;
+    width: 100%;
+    max-width: 700px;
+    height: 90px;
+    object-fit: contain;
+    display: block;
 }
 
-nav {
-    display: flex;
-    gap: 25px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #222;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-nav a:hover {
+header p {
     color: #777;
+    margin-top: 5px;
+    font-size: 14px;
 }
 
-/* =========================
-   CARRITO BOTÓN
-========================= */
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
 
-.carrito-btn {
-    position: fixed;
-    top: 85px;
-    right: 20px;
-    z-index: 1500;
-    background: white;
-    color: #222;
-    border: 1px solid #ddd;
-    border-radius: 30px;
-    padding: 12px 18px;
-    cursor: pointer;
+.menu a {
+    text-decoration: none;
+    color: #444;
     font-weight: bold;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
-}
-
-.carrito-btn:hover {
-    background: #f1f1f1;
+    font-size: 14px;
 }
 
 /* =========================
@@ -103,96 +89,131 @@ nav a:hover {
 ========================= */
 
 .hero {
-    min-height: 420px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #eeeeee, #ffffff);
+    padding: 75px 20px;
+    background: linear-gradient(135deg, #fff, #e9e9e9);
 }
 
-.hero-content h1 {
-    font-size: 48px;
+.hero h1 {
+    font-size: 42px;
     margin-bottom: 15px;
 }
 
-.hero-content p {
-    font-size: 20px;
+.hero h1 span {
+    color: #555;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: auto;
     color: #666;
+    line-height: 1.6;
 }
 
-/* =========================
-   BUSCADOR
-========================= */
-
-.buscador {
-    padding: 35px 20px 15px;
-    text-align: center;
-}
-
-.buscador input {
-    width: 90%;
-    max-width: 550px;
-    padding: 15px 20px;
-    border: 1px solid #ddd;
-    border-radius: 30px;
-    outline: none;
-    font-size: 16px;
-    background: white;
-}
-
-.buscador input:focus {
-    border-color: #999;
-}
-
-/* =========================
-   FILTROS
-========================= */
-
-.filtros {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 20px;
-}
-
-.filtro {
-    border: 1px solid #ddd;
-    background: white;
-    padding: 10px 20px;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.filtro:hover,
-.filtro.activo {
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 30px;
     background: #222;
-    color: white;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
 }
 
 /* =========================
    SECCIONES
 ========================= */
 
-section {
-    padding: 45px 6%;
+.section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 55px 20px;
 }
 
-.titulo-seccion {
+.section > h2 {
     text-align: center;
-    margin-bottom: 35px;
-}
-
-.titulo-seccion h2 {
-    font-size: 32px;
+    font-size: 30px;
     margin-bottom: 8px;
 }
 
-.titulo-seccion p {
+.descripcion {
+    max-width: 750px;
+    margin: 0 auto 35px;
+    text-align: center;
     color: #777;
+    line-height: 1.7;
+}
+
+/* =========================
+   BUSCADOR
+========================= */
+
+.buscador-seccion {
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    padding: 25px 20px 35px;
+}
+
+.buscador-seccion h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.buscador {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+}
+
+.buscador span {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    pointer-events: none;
+}
+
+.buscador input {
+    width: 100%;
+    padding: 16px 20px 16px 50px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    background: #fff;
+    font-size: 16px;
+    outline: none;
+}
+
+.buscador input:focus {
+    border-color: #777;
+}
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.filtro {
+    padding: 10px 22px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background: #fff;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.filtro.activo {
+    background: #222;
+    color: #fff;
+    border-color: #222;
 }
 
 /* =========================
@@ -201,41 +222,43 @@ section {
 
 .productos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 25px;
-    max-width: 1200px;
-    margin: auto;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
 }
 
 .producto {
-    background: white;
-    border-radius: 15px;
-    padding: 18px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-    transition: transform 0.3s, box-shadow 0.3s;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.05);
 }
 
-.producto:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-}
-
-.producto img {
+.foto {
     width: 100%;
     height: 260px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-    border-radius: 10px;
+    display: block;
+}
+
+.info {
+    padding: 20px;
+}
+
+.info h3 {
+    font-size: 18px;
     margin-bottom: 15px;
-}
-
-.producto h3 {
-    font-size: 19px;
-    margin-bottom: 8px;
-}
-
-.producto p {
-    color: #777;
-    margin-bottom: 12px;
+    min-height: 43px;
 }
 
 /* =========================
@@ -244,132 +267,111 @@ section {
 
 .tamanos {
     display: flex;
-    gap: 8px;
-    margin: 10px 0;
+    gap: 10px;
+    margin-bottom: 15px;
 }
 
 .tamano {
+    flex: 1;
+    padding: 10px;
     border: 1px solid #ccc;
-    background: white;
-    padding: 7px 12px;
     border-radius: 8px;
+    background: #f5f5f5;
+    color: #333;
     cursor: pointer;
+    font-weight: bold;
 }
 
-.tamano.seleccionado {
+.tamano.activo {
     background: #222;
-    color: white;
+    color: #fff;
     border-color: #222;
 }
 
-/* =========================
-   PRECIO
-========================= */
-
-.precio {
+.precio-seleccionado {
+    text-align: center;
     font-size: 22px;
     font-weight: bold;
-    margin: 10px 0 15px;
-    color: #222;
+    color: #333;
+    margin-bottom: 15px;
 }
 
 /* =========================
-   BOTONES
+   BOTONES PRODUCTO
 ========================= */
 
 .agregar {
     width: 100%;
+    padding: 11px;
     border: none;
-    background: #222;
-    color: white;
-    padding: 12px;
     border-radius: 8px;
-    cursor: pointer;
+    background: #222;
+    color: #fff;
     font-weight: bold;
-    margin-bottom: 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .agregar:hover {
     background: #444;
 }
 
-.consultar {
-    width: 100%;
-    border: 1px solid #222;
-    background: white;
-    color: #222;
+.comprar {
+    display: block;
+    text-align: center;
     padding: 11px;
+    background: #444;
+    color: #fff;
+    text-decoration: none;
     border-radius: 8px;
-    cursor: pointer;
     font-weight: bold;
-}
-
-.consultar:hover {
-    background: #f2f2f2;
 }
 
 /* =========================
    STOCK
 ========================= */
 
-.stock-section {
-    background: #eeeeee;
-}
-
-.stock-card {
-    background: white;
-    border-radius: 15px;
-    padding: 18px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-}
-
-.stock-card img {
-    width: 100%;
-    height: 280px;
-    object-fit: contain;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-.stock-card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-.stock-card .descripcion {
-    color: #777;
-    margin-bottom: 15px;
-}
-
-/* =========================
-   ACORDES
-========================= */
-
-.acordes {
-    background: #f7f7f7;
+.acordes-box {
+    background: #f3f3f3;
+    border: 1px solid #ddd;
     border-radius: 10px;
     padding: 13px;
-    margin: 15px 0;
+    margin-bottom: 18px;
 }
 
-.acordes h4 {
-    font-size: 15px;
+.acordes-titulo {
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.acordes {
+    color: #666;
+    line-height: 1.7;
+    font-size: 13px;
+}
+
+.agregar-stock {
+    width: 100%;
+    padding: 11px;
+    border: none;
+    border-radius: 8px;
+    background: #222;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
     margin-bottom: 10px;
 }
 
-.acordes-lista {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px;
-}
+/* =========================
+   SEPARADOR
+========================= */
 
-.acorde {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    padding: 6px 10px;
-    font-size: 12px;
-    color: #555;
+.separador {
+    height: 1px;
+    max-width: 1100px;
+    margin: 10px auto;
+    background: #ddd;
 }
 
 /* =========================
@@ -378,30 +380,19 @@ section {
 
 .contacto {
     text-align: center;
-    background: white;
 }
 
 .contacto h2 {
-    margin-bottom: 12px;
+    font-size: 28px;
+    margin-bottom: 10px;
 }
 
 .contacto p {
     color: #777;
-    margin-bottom: 20px;
 }
 
-.instagram-btn {
-    display: inline-block;
-    text-decoration: none;
-    background: #222;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 25px;
-    font-weight: bold;
-}
-
-.instagram-btn:hover {
-    background: #444;
+.contacto .btn {
+    margin: 15px 5px 0;
 }
 
 /* =========================
@@ -409,19 +400,98 @@ section {
 ========================= */
 
 footer {
-    background: #222;
-    color: white;
     text-align: center;
-    padding: 25px;
+    padding: 35px 20px;
+    background: #222;
+    color: #aaa;
+    margin-top: 30px;
+}
+
+footer strong {
+    color: #fff;
 }
 
 footer p {
-    font-size: 14px;
+    margin: 6px 0;
+}
+
+footer a {
+    color: #ddd;
+    text-decoration: none;
 }
 
 /* =========================
-   CARRITO PANEL
+   WHATSAPP FLOTANTE
 ========================= */
+
+.whatsapp {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 58px;
+    height: 58px;
+    background: #222;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    z-index: 2000;
+}
+
+/* =========================
+   CARRITO
+========================= */
+
+.carrito-btn {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 55px;
+    height: 55px;
+    border: none;
+    border-radius: 50%;
+    background: #fff;
+    color: #111;
+    font-size: 23px;
+    cursor: pointer;
+    z-index: 3000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.carrito-btn:hover {
+    transform: scale(1.05);
+}
+
+.carrito-btn span {
+    position: absolute;
+    top: -4px;
+    right: -3px;
+    background: #222;
+    color: #fff;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 4500;
+    display: none;
+}
+
+.overlay.activo {
+    display: block;
+}
 
 .carrito-panel {
     position: fixed;
@@ -430,12 +500,12 @@ footer p {
     width: 400px;
     max-width: 95%;
     height: 100vh;
-    background: white;
-    z-index: 2000;
-    box-shadow: -5px 0 25px rgba(0,0,0,0.2);
+    background: #fff;
+    z-index: 6000;
+    box-shadow: -5px 0 25px rgba(0,0,0,0.15);
     transition: right 0.3s ease;
-    display: flex;
-    flex-direction: column;
+    padding: 20px;
+    overflow-y: auto;
 }
 
 .carrito-panel.abierto {
@@ -446,73 +516,70 @@ footer p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
     border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .carrito-header h2 {
     font-size: 22px;
 }
 
-.cerrar-carrito {
+.carrito-header button {
     border: none;
     background: none;
-    font-size: 25px;
+    font-size: 28px;
     cursor: pointer;
 }
 
-.carrito-contenido {
-    padding: 20px;
-    overflow-y: auto;
-    flex: 1;
-}
-
 .item-carrito {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 0;
     border-bottom: 1px solid #eee;
+    padding: 15px 0;
 }
 
-.item-info {
-    flex: 1;
-}
-
-.item-info strong {
+.item-carrito strong {
     display: block;
     margin-bottom: 5px;
 }
 
-.item-info small {
+.item-carrito small {
     color: #777;
 }
 
-.cantidad {
+.controles {
     display: flex;
     align-items: center;
-    gap: 7px;
+    gap: 10px;
+    margin-top: 10px;
 }
 
-.cantidad button {
+.controles button {
     border: 1px solid #ddd;
-    background: white;
-    width: 27px;
-    height: 27px;
+    background: #f5f5f5;
+    width: 30px;
+    height: 30px;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.eliminar {
-    border: none !important;
-    background: none !important;
-    font-size: 18px;
+.controles span {
+    min-width: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.controles .eliminar {
+    width: auto;
+    border: none;
+    background: none;
+    margin-left: auto;
+    color: #555;
 }
 
 .carrito-footer {
-    padding: 20px;
     border-top: 1px solid #eee;
+    margin-top: 20px;
+    padding-top: 20px;
 }
 
 .total {
@@ -523,69 +590,118 @@ footer p {
     margin-bottom: 15px;
 }
 
-.btn-whatsapp-carrito,
-.btn-instagram-carrito {
+.pedido-botones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.whatsapp-pedido,
+.instagram-pedido {
     width: 100%;
-    border: none;
     padding: 13px;
+    border: none;
     border-radius: 8px;
-    cursor: pointer;
+    color: #fff;
     font-weight: bold;
-    margin-top: 8px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
 }
 
-.btn-whatsapp-carrito {
+.whatsapp-pedido {
     background: #222;
-    color: white;
 }
 
-.btn-instagram-carrito {
-    background: white;
-    border: 1px solid #222;
-    color: #222;
+.instagram-pedido {
+    background: #555;
+}
+
+.vaciar {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #eee;
+    color: #555;
+    cursor: pointer;
 }
 
 /* =========================
-   RESPONSIVE
+   MENSAJE SIN RESULTADOS
 ========================= */
 
-@media (max-width: 700px) {
+.sin-resultados {
+    display: none;
+    text-align: center;
+    color: #777;
+    padding: 30px;
+}
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
 
     header {
-        padding: 12px 4%;
+        padding: 12px 15px 15px;
     }
 
     .logo img {
-        width: 120px;
+        width: 270px;
+        max-width: 85%;
     }
 
-    nav {
+    .menu {
         gap: 12px;
-        font-size: 14px;
     }
 
-    .hero-content h1 {
-        font-size: 36px;
-    }
-
-    .hero-content p {
-        font-size: 17px;
-    }
-
-    .carrito-btn {
-        top: 75px;
-        right: 10px;
-        padding: 9px 13px;
+    .menu a {
         font-size: 13px;
     }
 
-    section {
-        padding: 35px 4%;
+    .hero {
+        padding: 55px 20px;
     }
 
-    .producto img,
-    .stock-card img {
-        height: 230px;
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .section {
+        padding: 40px 15px;
+    }
+
+    .productos {
+        grid-template-columns: 1fr;
+    }
+
+    .foto {
+        height: 280px;
+    }
+
+    .carrito-btn {
+        top: 15px;
+        right: 15px;
+    }
+
+    .carrito-panel {
+        width: 100%;
+        max-width: 100%;
+        right: -100%;
+        padding: 18px;
+    }
+
+    .carrito-panel.abierto {
+        right: 0;
+    }
+
+    .contacto .btn {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -601,23 +717,90 @@ footer p {
 <header>
 
     <div class="logo">
-        <img src="logonuevo.jpg.PNG" alt="DrPerfumes">
+      <img src="logonuevo.jpg.PNG" alt="DrPerfumes">
     </div>
 
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
+  <nav class="menu">
+    <a href="#inicio">Inicio</a>
+    <a href="#contacto">Contacto</a>
+</nav>
 
 </header>
 
 <!-- =========================
-     BOTÓN CARRITO
+     CARRITO
 ========================= -->
 
-<button class="carrito-btn" onclick="abrirCarrito()">
-    🛒 Carrito (<span id="cantidadCarrito">0</span>)
+<button
+    type="button"
+    class="carrito-btn"
+    id="abrirCarritoBtn"
+    aria-label="Abrir carrito"
+>
+    🛒
+    <span id="contador">0</span>
 </button>
+
+<div class="overlay" id="overlay"></div>
+
+<aside class="carrito-panel" id="carritoPanel">
+
+    <div class="carrito-header">
+
+        <h2>🛒 Mi carrito</h2>
+
+        <button
+            type="button"
+            id="cerrarCarritoBtn"
+            aria-label="Cerrar carrito"
+        >
+            ×
+        </button>
+
+    </div>
+
+    <div id="carritoContenido">
+        <p>Tu carrito está vacío.</p>
+    </div>
+
+    <div class="carrito-footer">
+
+        <div class="total">
+            <span>Total:</span>
+            <span id="total">$0</span>
+        </div>
+
+        <div class="pedido-botones">
+
+            <button
+                type="button"
+                class="whatsapp-pedido"
+                id="pedidoBtn"
+            >
+                📱 Hacer pedido por WhatsApp
+            </button>
+
+            <button
+                type="button"
+                class="instagram-pedido"
+                id="instagramPedidoBtn"
+            >
+                📸 Ver Instagram
+            </button>
+
+        </div>
+
+        <button
+            type="button"
+            class="vaciar"
+            id="vaciarBtn"
+        >
+            Vaciar carrito
+        </button>
+
+    </div>
+
+</aside>
 
 <!-- =========================
      HERO
@@ -625,15 +808,18 @@ footer p {
 
 <section class="hero" id="inicio">
 
-    <div class="hero-content">
+    <h1>
+        Encontrá tu <span>fragancia</span>
+    </h1>
 
-        <h1>DrPerfumes</h1>
+    <p>
+        Perfumes y decants para hombres y mujeres.
+        Elegí tu fragancia y el tamaño que querés.
+    </p>
 
-        <p>
-            Perfumes originales & Decants
-        </p>
-
-    </div>
+    <a class="btn" href="#hombre">
+        VER PERFUMES
+    </a>
 
 </section>
 
@@ -641,1043 +827,1007 @@ footer p {
      BUSCADOR
 ========================= -->
 
-<div class="buscador">
+<section class="buscador-seccion">
 
-    <input
-        type="text"
-        id="buscador"
-        placeholder="🔎 Buscar perfume..."
-    >
+    <h2>Encontrá tu perfume</h2>
 
-</div>
+    <div class="buscador">
 
-<!-- =========================
-     FILTROS
-========================= -->
+        <span>🔍</span>
 
-<div class="filtros">
-
-    <button class="filtro activo" data-filtro="todos">
-        Todos
-    </button>
-
-    <button class="filtro" data-filtro="hombre">
-        Hombre
-    </button>
-
-    <button class="filtro" data-filtro="mujer">
-        Mujer
-    </button>
-
-    <button class="filtro" data-filtro="stock">
-        Stock
-    </button>
-
-</div>
-
-
-<!-- =====================================================
-     DECANTS MUJER
-===================================================== -->
-
-<section>
-
-    <div class="titulo-seccion">
-
-        <h2>Decants para Mujer</h2>
-
-        <p>
-            Probá tu perfume favorito en 5 ml o 10 ml.
-        </p>
+        <input
+            type="search"
+            id="buscador"
+            placeholder="Buscar perfume..."
+            autocomplete="off"
+        >
 
     </div>
 
-    <div class="productos">
-
-
-        <!-- NOBLE BLUSH -->
-
-        <div class="producto mujer"
-             data-categoria="mujer"
-             data-nombre="Lattafa Noble Blush">
-
-            <img
-                src="noble-blush.jpg.AVIF"
-                alt="Lattafa Noble Blush"
-            >
-
-            <h3>Lattafa Noble Blush</h3>
-
-            <p>Decant</p>
-
-            <div class="tamanos">
-
-                <button class="tamano seleccionado"
-                        data-ml="5"
-                        data-precio="350">
-                    5 ml
-                </button>
-
-                <button class="tamano"
-                        data-ml="10"
-                        data-precio="590">
-                    10 ml
-                </button>
-
-            </div>
-
-            <div class="precio">$350</div>
-
-            <button class="agregar">
-                Agregar al carrito
-            </button>
-
-            <button class="consultar"
-                    data-perfume="Lattafa Noble Blush">
-                Consultar por WhatsApp
-            </button>
-
-        </div>
-
-
-        <!-- LA VIE EST BELLE -->
-
-        <div class="producto mujer"
-             data-categoria="mujer"
-             data-nombre="La Vie Est Belle">
-
-            <img
-                src="la-vie-est-belle.jpg.AVIF"
-                alt="La Vie Est Belle"
-            >
-
-            <h3>La Vie Est Belle</h3>
-
-            <p>Decant</p>
-
-            <div class="tamanos">
-
-                <button class="tamano seleccionado"
-                        data-ml="5"
-                        data-precio="490">
-                    5 ml
-                </button>
-
-                <button class="tamano"
-                        data-ml="10"
-                        data-precio="850">
-                    10 ml
-                </button>
-
-            </div>
-
-            <div class="precio">$490</div>
-
-            <button class="agregar">
-                Agregar al carrito
-            </button>
-
-            <button class="consultar"
-                    data-perfume="La Vie Est Belle">
-                Consultar por WhatsApp
-            </button>
-
-        </div>
-
-
-        <!-- CALVIN KLEIN -->
-
-        <div class="producto mujer"
-             data-categoria="mujer"
-             data-nombre="Calvin Klein">
-
-            <img
-                src="calvin-klein.jpg.AVIF"
-                alt="Calvin Klein"
-            >
-
-            <h3>Calvin Klein</h3>
-
-            <p>Decant</p>
-
-            <div class="tamanos">
-
-                <button class="tamano seleccionado"
-                        data-ml="5"
-                        data-precio="450">
-                    5 ml
-                </button>
-
-                <button class="tamano"
-                        data-ml="10"
-                        data-precio="790">
-                    10 ml
-                </button>
-
-            </div>
-
-            <div class="precio">$450</div>
-
-            <button class="agregar">
-                Agregar al carrito
-            </button>
-
-            <button class="consultar"
-                    data-perfume="Calvin Klein">
-                Consultar por WhatsApp
-            </button>
-
-        </div>
-
-
-        <!-- VALENTINO DONNA CORAL FANTASY -->
-
-        <div class="producto mujer"
-             data-categoria="mujer"
-             data-nombre="Valentino Donna Coral Fantasy">
-
-            <img
-                src="coral.jpg.AVIF"
-                alt="Valentino Donna Coral Fantasy"
-            >
-
-            <h3>Valentino Donna Coral Fantasy</h3>
-
-            <p>Decant</p>
-
-            <div class="tamanos">
-
-                <button class="tamano seleccionado"
-                        data-ml="5"
-                        data-precio="490">
-                    5 ml
-                </button>
-
-                <button class="tamano"
-                        data-ml="10"
-                        data-precio="850">
-                    10 ml
-                </button>
-
-            </div>
-
-            <div class="precio">$490</div>
-
-            <button class="agregar">
-                Agregar al carrito
-            </button>
-
-            <button class="consultar"
-                    data-perfume="Valentino Donna Coral Fantasy">
-                Consultar por WhatsApp
-            </button>
-
-        </div>
-
-
-        <!-- FLOWER IKEBANA -->
-
-        <div class="producto mujer"
-             data-categoria="mujer"
-             data-nombre="Flower Ikebana Kenzo">
-
-            <img
-                src="FlowerIkebanaKenzo.jpg.AVIF"
-                alt="Flower Ikebana Kenzo"
-            >
-
-            <h3>Flower Ikebana Kenzo</h3>
-
-            <p>Decant</p>
-
-            <div class="tamanos">
-
-                <button class="tamano seleccionado"
-                        data-ml="5"
-                        data-precio="390">
-                    5 ml
-                </button>
-
-                <button class="tamano"
-                        data-ml="10"
-                        data-precio="690">
-                    10 ml
-                </button>
-
-            </div>
-
-            <div class="precio">$390</div>
-
-            <button class="agregar">
-                Agregar al carrito
-            </button>
-
-            <button class="consultar"
-                    data-perfume="Flower Ikebana Kenzo">
-                Consultar por WhatsApp
-            </button>
-
-        </div>
-
-
-        <!-- ONE MILLION -->
-
-        <div class="producto mujer"
-             data-categoria="mujer"
-             data-nombre="One Million">
-
-            <img
-                src="one.jpg.AVIF"
-                alt="One Million"
-            >
-
-            <h3>One Million</h3>
-
-            <p>Decant</p>
-
-            <div class="tamanos">
-
-                <button class="tamano seleccionado"
-                        data-ml="5"
-                        data-precio="490">
-                    5 ml
-                </button>
-
-                <button class="tamano"
-                        data-ml="10"
-                        data-precio="850">
-                    10 ml
-                </button>
-
-            </div>
-
-            <div class="precio">$490</div>
-
-            <button class="agregar">
-                Agregar al carrito
-            </button>
-
-            <button class="consultar"
-                    data-perfume="One Million">
-                Consultar por WhatsApp
-            </button>
-
-        </div>
+    <div class="filtros">
+
+        <button
+            type="button"
+            class="filtro activo"
+            data-filtro="todos"
+        >
+            Todos
+        </button>
+
+        <button
+            type="button"
+            class="filtro"
+            data-filtro="hombre"
+        >
+            Hombre
+        </button>
+
+        <button
+            type="button"
+            class="filtro"
+            data-filtro="mujer"
+        >
+            Mujer
+        </button>
+
+        <button
+            type="button"
+            class="filtro"
+            data-filtro="stock"
+        >
+            En stock
+        </button>
 
     </div>
 
 </section>
 
+<!-- =========================
+     HOMBRE
+========================= -->
 
-<!-- =====================================================
-     DECANTS HOMBRE
-===================================================== -->
+<section class="section" id="hombre">
 
-<section>
+    <h2>Perfumes para Hombre</h2>
 
-    <div class="titulo-seccion">
-
-        <h2>Decants para Hombre</h2>
-
-        <p>
-            Elegí tu tamaño y probá el perfume.
-        </p>
-
-    </div>
+    <p class="descripcion">
+        Fragancias masculinas
+    </p>
 
     <div class="productos">
 
+        <!-- STRONGER -->
 
-        <!-- STRONGER WITH YOU INTENSELY -->
+        <div class="producto" data-nombre="Stronger With You Intensely" data-categoria="hombre">
 
-        <div class="producto hombre"
-             data-categoria="hombre"
-             data-nombre="Stronger With You Intensely">
-
-            <img
-                src="Stronger.jpg.AVIF"
-                alt="Stronger With You Intensely"
-            >
-
-            <h3>Stronger With You Intensely</h3>
-
-            <p>Decant</p>
-
-            <div class="tamanos">
-
-                <button class="tamano seleccionado"
-                        data-ml="5"
-                        data-precio="490">
-                    5 ml
-                </button>
-
-                <button class="tamano"
-                        data-ml="10"
-                        data-precio="850">
-                    10 ml
-                </button>
-
+            <div class="foto">
+                <img src="Stronger.jpg.AVIF" alt="Stronger With You Intensely">
             </div>
 
-            <div class="precio">$490</div>
+            <div class="info">
 
-            <button class="agregar">
-                Agregar al carrito
-            </button>
+                <h3>Stronger With You Intensely</h3>
 
-            <button class="consultar"
-                    data-perfume="Stronger With You Intensely">
-                Consultar por WhatsApp
-            </button>
+                <div class="tamanos">
 
+                    <button type="button" class="tamano activo"
+                        data-perfume="Stronger With You Intensely"
+                        data-tamano="5 ml"
+                        data-precio="490">
+                        5 ml
+                    </button>
+
+                    <button type="button" class="tamano"
+                        data-perfume="Stronger With You Intensely"
+                        data-tamano="10 ml"
+                        data-precio="850">
+                        10 ml
+                    </button>
+
+                </div>
+
+                <div class="precio-seleccionado">$490</div>
+
+                <button type="button" class="agregar">
+                    🛒 Agregar al carrito
+                </button>
+
+                <a class="comprar" href="#">
+                    Consultar por WhatsApp
+                </a>
+
+            </div>
         </div>
 
+        <!-- ACQUA -->
 
-        <!-- ACQUA DI GIO -->
+        <div class="producto" data-nombre="Acqua di Giò" data-categoria="hombre">
 
-        <div class="producto hombre"
-             data-categoria="hombre"
-             data-nombre="Acqua di Giò">
+            <div class="foto">
+                <img src="acqua.jpg.AVIF" alt="Acqua di Giò">
+            </div>
 
-            <img
-                src="acqua.jpg.AVIF"
-                alt="Acqua di Giò"
-            >
+            <div class="info">
 
-            <h3>Acqua di Giò</h3>
+                <h3>Acqua di Giò</h3>
 
-            <p>Decant</p>
+                <div class="tamanos">
 
-            <div class="tamanos">
-
-                <button class="tamano seleccionado"
-                        data-ml="5"
+                    <button type="button" class="tamano activo"
+                        data-perfume="Acqua di Giò"
+                        data-tamano="5 ml"
                         data-precio="450">
-                    5 ml
-                </button>
+                        5 ml
+                    </button>
 
-                <button class="tamano"
-                        data-ml="10"
+                    <button type="button" class="tamano"
+                        data-perfume="Acqua di Giò"
+                        data-tamano="10 ml"
                         data-precio="790">
-                    10 ml
+                        10 ml
+                    </button>
+
+                </div>
+
+                <div class="precio-seleccionado">$450</div>
+
+                <button type="button" class="agregar">
+                    🛒 Agregar al carrito
                 </button>
 
+                <a class="comprar" href="#">
+                    Consultar por WhatsApp
+                </a>
+
             </div>
-
-            <div class="precio">$450</div>
-
-            <button class="agregar">
-                Agregar al carrito
-            </button>
-
-            <button class="consultar"
-                    data-perfume="Acqua di Giò">
-                Consultar por WhatsApp
-            </button>
-
         </div>
 
+        <!-- VALENTINO UOMO -->
 
-        <!-- VALENTINO UOMO INTENSE -->
+        <div class="producto" data-nombre="Valentino Uomo Intense" data-categoria="hombre">
 
-        <div class="producto hombre"
-             data-categoria="hombre"
-             data-nombre="Valentino Uomo Intense">
+            <div class="foto">
+                <img src="valentino.jpg.AVIF" alt="Valentino Uomo Intense">
+            </div>
 
-            <img
-                src="valentino.jpg.AVIF"
-                alt="Valentino Uomo Intense"
-            >
+            <div class="info">
 
-            <h3>Valentino Uomo Intense</h3>
+                <h3>Valentino Uomo Intense</h3>
 
-            <p>Decant</p>
+                <div class="tamanos">
 
-            <div class="tamanos">
-
-                <button class="tamano seleccionado"
-                        data-ml="5"
+                    <button type="button" class="tamano activo"
+                        data-perfume="Valentino Uomo Intense"
+                        data-tamano="5 ml"
                         data-precio="490">
-                    5 ml
+                        5 ml
+                    </button>
+
+                    <button type="button" class="tamano"
+                        data-perfume="Valentino Uomo Intense"
+                        data-tamano="10 ml"
+                        data-precio="850">
+                        10 ml
+                    </button>
+
+                </div>
+
+                <div class="precio-seleccionado">$490</div>
+
+                <button type="button" class="agregar">
+                    🛒 Agregar al carrito
                 </button>
 
-                <button class="tamano"
-                        data-ml="10"
-                        data-precio="850">
-                    10 ml
-                </button>
+                <a class="comprar" href="#">
+                    Consultar por WhatsApp
+                </a>
 
             </div>
-
-            <div class="precio">$490</div>
-
-            <button class="agregar">
-                Agregar al carrito
-            </button>
-
-            <button class="consultar"
-                    data-perfume="Valentino Uomo Intense">
-                Consultar por WhatsApp
-            </button>
-
         </div>
 
+        <!-- JPG -->
 
-        <!-- JPG LE BEAU -->
+        <div class="producto" data-nombre="JPG Le Beau Le Parfum" data-categoria="hombre">
 
-        <div class="producto hombre"
-             data-categoria="hombre"
-             data-nombre="JPG Le Beau Le Parfum">
+            <div class="foto">
+                <img src="jpg.jpg.AVIF" alt="JPG Le Beau Le Parfum">
+            </div>
 
-            <img
-                src="jpg.jpg.AVIF"
-                alt="JPG Le Beau Le Parfum"
-            >
+            <div class="info">
 
-            <h3>JPG Le Beau Le Parfum</h3>
+                <h3>JPG Le Beau Le Parfum</h3>
 
-            <p>Decant</p>
+                <div class="tamanos">
 
-            <div class="tamanos">
-
-                <button class="tamano seleccionado"
-                        data-ml="5"
+                    <button type="button" class="tamano activo"
+                        data-perfume="JPG Le Beau Le Parfum"
+                        data-tamano="5 ml"
                         data-precio="490">
-                    5 ml
+                        5 ml
+                    </button>
+
+                    <button type="button" class="tamano"
+                        data-perfume="JPG Le Beau Le Parfum"
+                        data-tamano="10 ml"
+                        data-precio="850">
+                        10 ml
+                    </button>
+
+                </div>
+
+                <div class="precio-seleccionado">$490</div>
+
+                <button type="button" class="agregar">
+                    🛒 Agregar al carrito
                 </button>
 
-                <button class="tamano"
-                        data-ml="10"
-                        data-precio="850">
-                    10 ml
-                </button>
+                <a class="comprar" href="#">
+                    Consultar por WhatsApp
+                </a>
 
             </div>
-
-            <div class="precio">$490</div>
-
-            <button class="agregar">
-                Agregar al carrito
-            </button>
-
-            <button class="consultar"
-                    data-perfume="JPG Le Beau Le Parfum">
-                Consultar por WhatsApp
-            </button>
-
         </div>
 
+        <!-- 212 -->
 
-        <!-- 212 HOMBRE -->
+        <div class="producto" data-nombre="212 Carolina Herrera Hombre" data-categoria="hombre">
 
-        <div class="producto hombre"
-             data-categoria="hombre"
-             data-nombre="212 Carolina Herrera Hombre">
+            <div class="foto">
+                <img src="212.jpg.AVIF" alt="212 Carolina Herrera Hombre">
+            </div>
 
-            <img
-                src="212.jpg.AVIF"
-                alt="212 Carolina Herrera Hombre"
-            >
+            <div class="info">
 
-            <h3>212 Carolina Herrera Hombre</h3>
+                <h3>212 Carolina Herrera Hombre</h3>
 
-            <p>Decant</p>
+                <div class="tamanos">
 
-            <div class="tamanos">
-
-                <button class="tamano seleccionado"
-                        data-ml="5"
+                    <button type="button" class="tamano activo"
+                        data-perfume="212 Carolina Herrera Hombre"
+                        data-tamano="5 ml"
                         data-precio="450">
-                    5 ml
+                        5 ml
+                    </button>
+
+                    <button type="button" class="tamano"
+                        data-perfume="212 Carolina Herrera Hombre"
+                        data-tamano="10 ml"
+                        data-precio="790">
+                        10 ml
+                    </button>
+
+                </div>
+
+                <div class="precio-seleccionado">$450</div>
+
+                <button type="button" class="agregar">
+                    🛒 Agregar al carrito
                 </button>
 
-                <button class="tamano"
-                        data-ml="10"
-                        data-precio="790">
-                    10 ml
-                </button>
+                <a class="comprar" href="#">
+                    Consultar por WhatsApp
+                </a>
 
             </div>
-
-            <div class="precio">$450</div>
-
-            <button class="agregar">
-                Agregar al carrito
-            </button>
-
-            <button class="consultar"
-                    data-perfume="212 Carolina Herrera Hombre">
-                Consultar por WhatsApp
-            </button>
-
         </div>
-
 
         <!-- EROS FLAME -->
 
-        <div class="producto hombre"
-             data-categoria="hombre"
-             data-nombre="Versace Eros Flame">
+        <div class="producto" data-nombre="Versace Eros Flame" data-categoria="hombre">
 
-            <img
-                src="eros-flame.jpg.AVIF"
-                alt="Versace Eros Flame"
-            >
+            <div class="foto">
+                <img src="eros-flame.jpg.AVIF" alt="Versace Eros Flame">
+            </div>
 
-            <h3>Versace Eros Flame</h3>
+            <div class="info">
 
-            <p>Decant</p>
+                <h3>Versace Eros Flame</h3>
 
-            <div class="tamanos">
+                <div class="tamanos">
 
-                <button class="tamano seleccionado"
-                        data-ml="5"
+                    <button type="button" class="tamano activo"
+                        data-perfume="Versace Eros Flame"
+                        data-tamano="5 ml"
                         data-precio="450">
-                    5 ml
-                </button>
+                        5 ml
+                    </button>
 
-                <button class="tamano"
-                        data-ml="10"
+                    <button type="button" class="tamano"
+                        data-perfume="Versace Eros Flame"
+                        data-tamano="10 ml"
                         data-precio="790">
-                    10 ml
+                        10 ml
+                    </button>
+
+                </div>
+
+                <div class="precio-seleccionado">$450</div>
+
+                <button type="button" class="agregar">
+                    🛒 Agregar al carrito
                 </button>
 
+                <a class="comprar" href="#">
+                    Consultar por WhatsApp
+                </a>
+
             </div>
-
-            <div class="precio">$450</div>
-
-            <button class="agregar">
-                Agregar al carrito
-            </button>
-
-            <button class="consultar"
-                    data-perfume="Versace Eros Flame">
-                Consultar por WhatsApp
-            </button>
-
         </div>
 
+        <!-- ASAD ACTUALIZADO -->
 
-        <!-- ASAD BOURBON -->
+        <div class="producto" data-nombre="Asad Bourbon" data-categoria="hombre">
 
-        <div class="producto hombre"
-             data-categoria="hombre"
-             data-nombre="Asad Bourbon">
+            <div class="foto">
+                <img src="asad-bourbon.jpg.AVIF" alt="Asad Bourbon">
+            </div>
 
-            <img
-                src="asad-bourbon.jpg.AVIF"
-                alt="Asad Bourbon"
-            >
+            <div class="info">
 
-            <h3>Asad Bourbon</h3>
+                <h3>Asad Bourbon</h3>
 
-            <p>Decant</p>
+                <div class="tamanos">
 
-            <div class="tamanos">
-
-                <button class="tamano seleccionado"
-                        data-ml="5"
+                    <button type="button" class="tamano activo"
+                        data-perfume="Asad Bourbon"
+                        data-tamano="5 ml"
                         data-precio="490">
-                    5 ml
+                        5 ml
+                    </button>
+
+                    <button type="button" class="tamano"
+                        data-perfume="Asad Bourbon"
+                        data-tamano="10 ml"
+                        data-precio="850">
+                        10 ml
+                    </button>
+
+                </div>
+
+                <div class="precio-seleccionado">$490</div>
+
+                <button type="button" class="agregar">
+                    🛒 Agregar al carrito
                 </button>
 
-                <button class="tamano"
-                        data-ml="10"
-                        data-precio="850">
-                    10 ml
-                </button>
+                <a class="comprar" href="#">
+                    Consultar por WhatsApp
+                </a>
 
             </div>
-
-            <div class="precio">$490</div>
-
-            <button class="agregar">
-                Agregar al carrito
-            </button>
-
-            <button class="consultar"
-                    data-perfume="Asad Bourbon">
-                Consultar por WhatsApp
-            </button>
-
         </div>
-
 
         <!-- SCANDAL -->
 
-        <div class="producto hombre"
-             data-categoria="hombre"
-             data-nombre="Scandal">
+        <div class="producto" data-nombre="Scandal" data-categoria="hombre">
 
-            <img
-                src="scandal.jpg.AVIF"
-                alt="Scandal"
-            >
-
-            <h3>Scandal</h3>
-
-            <p>Decant</p>
-
-            <div class="tamanos">
-
-                <button class="tamano seleccionado"
-                        data-ml="5"
-                        data-precio="490">
-                    5 ml
-                </button>
-
-                <button class="tamano"
-                        data-ml="10"
-                        data-precio="850">
-                    10 ml
-                </button>
-
+            <div class="foto">
+                <img src="scandal.jpg.AVIF" alt="Scandal">
             </div>
 
-            <div class="precio">$490</div>
+            <div class="info">
 
-            <button class="agregar">
-                Agregar al carrito
-            </button>
+                <h3>Scandal</h3>
 
-            <button class="consultar"
-                    data-perfume="Scandal">
-                Consultar por WhatsApp
-            </button>
+                <div class="tamanos">
 
+                    <button type="button" class="tamano activo"
+                        data-perfume="Scandal"
+                        data-tamano="5 ml"
+                        data-precio="490">
+                        5 ml
+                    </button>
+
+                    <button type="button" class="tamano"
+                        data-perfume="Scandal"
+                        data-tamano="10 ml"
+                        data-precio="850">
+                        10 ml
+                    </button>
+
+                </div>
+
+                <div class="precio-seleccionado">$490</div>
+
+                <button type="button" class="agregar">
+                    🛒 Agregar al carrito
+                </button>
+
+                <a class="comprar" href="#">
+                    Consultar por WhatsApp
+                </a>
+
+            </div>
         </div>
 
+        <!-- GUESS UOMO INTENSO - AHORA DECANT -->
 
-        <!-- GUESS UOMO INTENSO -->
-        <!-- PASÓ DE STOCK A DECANTS -->
+        <div class="producto" data-nombre="Guess Uomo Intenso EDP" data-categoria="hombre">
 
-        <div class="producto hombre"
-             data-categoria="hombre"
-             data-nombre="Guess Uomo Intenso EDP">
-
-            <img
-                src="guess.jpg.AVIF"
-                alt="Guess Uomo Intenso EDP"
-            >
-
-            <h3>Guess Uomo Intenso EDP</h3>
-
-            <p>Decant</p>
-
-            <div class="tamanos">
-
-                <button class="tamano seleccionado"
-                        data-ml="5"
-                        data-precio="350">
-                    5 ml
-                </button>
-
-                <button class="tamano"
-                        data-ml="10"
-                        data-precio="790">
-                    10 ml
-                </button>
-
+            <div class="foto">
+                <img src="guess.jpg.AVIF" alt="Guess Uomo Intenso EDP">
             </div>
 
-            <div class="precio">$350</div>
+            <div class="info">
 
-            <button class="agregar">
-                Agregar al carrito
-            </button>
+                <h3>Guess Uomo Intenso EDP</h3>
 
-            <button class="consultar"
-                    data-perfume="Guess Uomo Intenso EDP">
-                Consultar por WhatsApp
-            </button>
+                <div class="tamanos">
 
+                    <button type="button" class="tamano activo"
+                        data-perfume="Guess Uomo Intenso EDP"
+                        data-tamano="5 ml"
+                        data-precio="350">
+                        5 ml
+                    </button>
+
+                    <button type="button" class="tamano"
+                        data-perfume="Guess Uomo Intenso EDP"
+                        data-tamano="10 ml"
+                        data-precio="790">
+                        10 ml
+                    </button>
+
+                </div>
+
+                <div class="precio-seleccionado">$350</div>
+
+                <button type="button" class="agregar">
+                    🛒 Agregar al carrito
+                </button>
+
+                <a class="comprar" href="#">
+                    Consultar por WhatsApp
+                </a>
+
+            </div>
         </div>
 
     </div>
 
 </section>
 
+<!-- =========================
+     MUJER
+========================= -->
 
-<!-- =====================================================
-     STOCK
-===================================================== -->
+<section class="section" id="mujer">
 
-<section class="stock-section">
+    <h2>Perfumes para Mujer</h2>
 
-    <div class="titulo-seccion">
-
-        <h2>Perfumes en Stock</h2>
-
-        <p>
-            Perfumes disponibles para entrega.
-        </p>
-
-    </div>
+    <p class="descripcion">
+        Fragancias femeninas
+    </p>
 
     <div class="productos">
 
+        <!-- NOBLE BLUSH -->
 
-        <!-- HALLOWEEN -->
+        <div class="producto" data-nombre="Lattafa Noble Blush" data-categoria="mujer">
 
-        <div class="stock-card producto stock"
-             data-categoria="stock"
-             data-nombre="Set Halloween Women EDT">
-
-            <img
-                src="halloween.jpg.AVIF"
-                alt="Set Halloween Women"
-            >
-
-            <h3>Set Halloween Women EDT</h3>
-
-            <p class="descripcion">
-                100 ml + 30 ml
-            </p>
-
-            <div class="precio">
-                $3290
+            <div class="foto">
+                <img src="noble-blush.jpg.AVIF" alt="Lattafa Noble Blush">
             </div>
 
-            <button
-                class="agregar agregar-stock"
-                data-nombre="Set Halloween Women EDT"
-                data-precio="3290">
-                Agregar al carrito
-            </button>
+            <div class="info">
 
-            <button
-                class="consultar stock-whatsapp"
-                data-perfume="Set Halloween Women EDT">
-                Consultar por WhatsApp
-            </button>
+                <h3>Lattafa Noble Blush</h3>
 
-        </div>
+                <div class="tamanos">
 
+                    <button type="button" class="tamano activo"
+                        data-perfume="Lattafa Noble Blush"
+                        data-tamano="5 ml"
+                        data-precio="350">
+                        5 ml
+                    </button>
 
-        <!-- LA VIE EST BELLE STOCK -->
-
-        <div class="stock-card producto stock"
-             data-categoria="stock"
-             data-nombre="La Vie Est Belle EDP">
-
-            <img
-                src="la-vie-est-belle.jpg.AVIF"
-                alt="La Vie Est Belle EDP"
-            >
-
-            <h3>La Vie Est Belle EDP</h3>
-
-            <p class="descripcion">
-                Perfume original
-            </p>
-
-            <div class="precio">
-                $4390
-            </div>
-
-            <button
-                class="agregar agregar-stock"
-                data-nombre="La Vie Est Belle EDP"
-                data-precio="4390">
-                Agregar al carrito
-            </button>
-
-            <button
-                class="consultar stock-whatsapp"
-                data-perfume="La Vie Est Belle EDP">
-                Consultar por WhatsApp
-            </button>
-
-        </div>
-
-
-        <!-- SCANDAL INTENSE -->
-
-        <div class="stock-card producto stock"
-             data-categoria="stock"
-             data-nombre="Scandal Intense Jean Paul Gaultier">
-
-            <img
-                src="ScandalIntenseJeanPaulGaultier.jpg.AVIF"
-                alt="Scandal Intense Jean Paul Gaultier"
-            >
-
-            <h3>Scandal Intense Jean Paul Gaultier</h3>
-
-            <p class="descripcion">
-                Perfume original
-            </p>
-
-
-            <div class="acordes">
-
-                <h4>Acordes principales</h4>
-
-                <div class="acordes-lista">
-
-                    <span class="acorde">
-                        Avainillado
-                    </span>
-
-                    <span class="acorde">
-                        Floral amarillo
-                    </span>
-
-                    <span class="acorde">
-                        Dulce
-                    </span>
-
-                    <span class="acorde">
-                        Cálido especiado
-                    </span>
-
-                    <span class="acorde">
-                        Amaderado
-                    </span>
-
-                    <span class="acorde">
-                        Atalcado
-                    </span>
+                    <button type="button" class="tamano"
+                        data-perfume="Lattafa Noble Blush"
+                        data-tamano="10 ml"
+                        data-precio="590">
+                        10 ml
+                    </button>
 
                 </div>
 
+                <div class="precio-seleccionado">$350</div>
+
+                <button type="button" class="agregar">
+                    🛒 Agregar al carrito
+                </button>
+
+                <a class="comprar" href="#">
+                    Consultar por WhatsApp
+                </a>
+
             </div>
-
-
-            <div class="precio">
-                $3490
-            </div>
-
-            <button
-                class="agregar agregar-stock"
-                data-nombre="Scandal Intense Jean Paul Gaultier"
-                data-precio="3490">
-                Agregar al carrito
-            </button>
-
-            <button
-                class="consultar stock-whatsapp"
-                data-perfume="Scandal Intense Jean Paul Gaultier">
-                Consultar por WhatsApp
-            </button>
-
         </div>
 
+        <!-- LA VIE EST BELLE -->
 
-        <!-- 212 SEXY -->
+        <div class="producto" data-nombre="La Vie Est Belle" data-categoria="mujer">
 
-        <div class="stock-card producto stock"
-             data-categoria="stock"
-             data-nombre="212 Sexy Carolina Herrera">
+            <div class="foto">
+                <img src="la-vie-est-belle.jpg.AVIF" alt="La Vie Est Belle">
+            </div>
 
-            <img
-                src="212SexyCarolina Herrera.jpg.AVIF"
-                alt="212 Sexy Carolina Herrera"
-            >
+            <div class="info">
 
-            <h3>212 Sexy Carolina Herrera</h3>
+                <h3>La Vie Est Belle</h3>
 
-            <p class="descripcion">
-                Perfume original
-            </p>
+                <div class="tamanos">
 
+                    <button type="button" class="tamano activo"
+                        data-perfume="La Vie Est Belle"
+                        data-tamano="5 ml"
+                        data-precio="490">
+                        5 ml
+                    </button>
 
-            <div class="acordes">
-
-                <h4>Acordes principales</h4>
-
-                <div class="acordes-lista">
-
-                    <span class="acorde">
-                        Dulce
-                    </span>
-
-                    <span class="acorde">
-                        Atalcado
-                    </span>
-
-                    <span class="acorde">
-                        Almizclado
-                    </span>
-
-                    <span class="acorde">
-                        Especiado suave
-                    </span>
-
-                    <span class="acorde">
-                        Caramelo
-                    </span>
-
-                    <span class="acorde">
-                        Avainillado
-                    </span>
-
-                    <span class="acorde">
-                        Florales
-                    </span>
-
-                    <span class="acorde">
-                        Cítrico
-                    </span>
-
-                    <span class="acorde">
-                        Floral blanco
-                    </span>
-
-                    <span class="acorde">
-                        Amaderado
-                    </span>
+                    <button type="button" class="tamano"
+                        data-perfume="La Vie Est Belle"
+                        data-tamano="10 ml"
+                        data-precio="850">
+                        10 ml
+                    </button>
 
                 </div>
 
+                <div class="precio-seleccionado">$490</div>
+
+                <button type="button" class="agregar">
+                    🛒 Agregar al carrito
+                </button>
+
+                <a class="comprar" href="#">
+                    Consultar por WhatsApp
+                </a>
+
+            </div>
+        </div>
+
+        <!-- CALVIN KLEIN -->
+
+        <div class="producto" data-nombre="Calvin Klein" data-categoria="mujer">
+
+            <div class="foto">
+                <img src="calvin-klein.jpg.AVIF" alt="Calvin Klein">
             </div>
 
+            <div class="info">
 
-            <div class="precio">
-                $3390
+                <h3>Calvin Klein</h3>
+
+                <div class="tamanos">
+
+                    <button type="button" class="tamano activo"
+                        data-perfume="Calvin Klein"
+                        data-tamano="5 ml"
+                        data-precio="450">
+                        5 ml
+                    </button>
+
+                    <button type="button" class="tamano"
+                        data-perfume="Calvin Klein"
+                        data-tamano="10 ml"
+                        data-precio="790">
+                        10 ml
+                    </button>
+
+                </div>
+
+                <div class="precio-seleccionado">$450</div>
+
+                <button type="button" class="agregar">
+                    🛒 Agregar al carrito
+                </button>
+
+                <a class="comprar" href="#">
+                    Consultar por WhatsApp
+                </a>
+
+            </div>
+        </div>
+
+        <!-- CORAL FANTASY -->
+
+        <div class="producto" data-nombre="Valentino Donna Coral Fantasy" data-categoria="mujer">
+
+            <div class="foto">
+                <img src="coral.jpg.AVIF" alt="Valentino Donna Coral Fantasy">
             </div>
 
-            <button
-                class="agregar agregar-stock"
-                data-nombre="212 Sexy Carolina Herrera"
-                data-precio="3390">
-                Agregar al carrito
-            </button>
+            <div class="info">
 
-            <button
-                class="consultar stock-whatsapp"
-                data-perfume="212 Sexy Carolina Herrera">
-                Consultar por WhatsApp
-            </button>
+                <h3>Valentino Donna Coral Fantasy</h3>
 
+                <div class="tamanos">
+
+                    <button type="button" class="tamano activo"
+                        data-perfume="Valentino Donna Coral Fantasy"
+                        data-tamano="5 ml"
+                        data-precio="490">
+                        5 ml
+                    </button>
+
+                    <button type="button" class="tamano"
+                        data-perfume="Valentino Donna Coral Fantasy"
+                        data-tamano="10 ml"
+                        data-precio="850">
+                        10 ml
+                    </button>
+
+                </div>
+
+                <div class="precio-seleccionado">$490</div>
+
+                <button type="button" class="agregar">
+                    🛒 Agregar al carrito
+                </button>
+
+                <a class="comprar" href="#">
+                    Consultar por WhatsApp
+                </a>
+
+            </div>
+        </div>
+
+        <!-- KENZO NUEVO -->
+
+        <div class="producto" data-nombre="Flower Ikebana Kenzo" data-categoria="mujer">
+
+            <div class="foto">
+                <img src="FlowerIkebanaKenzo.jpg.AVIF" alt="Flower Ikebana Kenzo">
+            </div>
+
+            <div class="info">
+
+                <h3>Flower Ikebana Kenzo</h3>
+
+                <div class="tamanos">
+
+                    <button type="button" class="tamano activo"
+                        data-perfume="Flower Ikebana Kenzo"
+                        data-tamano="5 ml"
+                        data-precio="390">
+                        5 ml
+                    </button>
+
+                    <button type="button" class="tamano"
+                        data-perfume="Flower Ikebana Kenzo"
+                        data-tamano="10 ml"
+                        data-precio="690">
+                        10 ml
+                    </button>
+
+                </div>
+
+                <div class="precio-seleccionado">$390</div>
+
+                <button type="button" class="agregar">
+                    🛒 Agregar al carrito
+                </button>
+
+                <a class="comprar" href="#">
+                    Consultar por WhatsApp
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ONE MILLION NUEVO -->
+
+        <div class="producto" data-nombre="One Million" data-categoria="mujer">
+
+            <div class="foto">
+                <img src="one.jpg.AVIF" alt="One Million">
+            </div>
+
+            <div class="info">
+
+                <h3>One Million</h3>
+
+                <div class="tamanos">
+
+                    <button type="button" class="tamano activo"
+                        data-perfume="One Million"
+                        data-tamano="5 ml"
+                        data-precio="490">
+                        5 ml
+                    </button>
+
+                    <button type="button" class="tamano"
+                        data-perfume="One Million"
+                        data-tamano="10 ml"
+                        data-precio="850">
+                        10 ml
+                    </button>
+
+                </div>
+
+                <div class="precio-seleccionado">$490</div>
+
+                <button type="button" class="agregar">
+                    🛒 Agregar al carrito
+                </button>
+
+                <a class="comprar" href="#">
+                    Consultar por WhatsApp
+                </a>
+
+            </div>
         </div>
 
     </div>
 
 </section>
 
+<div class="separador"></div>
+
+<!-- =========================
+     STOCK
+========================= -->
+
+<section class="section" id="stock">
+
+    <h2>Perfumes en Stock</h2>
+
+    <p class="descripcion">
+        Perfumes originales disponibles para entrega.
+    </p>
+
+    <div class="productos">
+
+        <!-- HALLOWEEN -->
+
+        <div class="producto" data-nombre="Set Halloween Women EDT" data-categoria="stock">
+
+            <div class="foto">
+                <img src="halloween.jpg.AVIF" alt="Set Halloween Women">
+            </div>
+
+            <div class="info">
+
+                <h3>Set Halloween Women EDT</h3>
+
+                <p style="color:#777; margin-bottom:15px;">
+                    100 ml + 30 ml
+                </p>
+
+                <div class="acordes-box">
+
+                    <div class="acordes-titulo">
+                        Acordes principales
+                    </div>
+
+                    <div class="acordes">
+                        Violeta · Atalcado · Marino ·
+                        Florales · Verde · Aromático ·
+                        Fresco · Floral blanco ·
+                        Amaderado · Ámbar
+                    </div>
+
+                </div>
+
+                <div class="precio-seleccionado">
+                    $3290
+                </div>
+
+                <button
+                    type="button"
+                    class="agregar-stock"
+                    data-nombre="Set Halloween Women EDT 100 ml + 30 ml"
+                    data-precio="3290"
+                >
+                    🛒 Agregar al carrito
+                </button>
+
+                <a
+                    class="comprar stock-whatsapp"
+                    href="#"
+                    data-nombre="Set Halloween Women EDT 100 ml + 30 ml"
+                    data-precio="3290"
+                >
+                    Consultar por WhatsApp
+                </a>
+
+            </div>
+        </div>
+
+        <!-- LA VIE STOCK -->
+
+        <div class="producto" data-nombre="La Vie Est Belle 100 ml" data-categoria="stock">
+
+            <div class="foto">
+                <img src="la-vie-est-belle.jpg.AVIF" alt="La Vie Est Belle">
+            </div>
+
+            <div class="info">
+
+                <h3>La Vie Est Belle</h3>
+
+                <p style="color:#777; margin-bottom:15px;">
+                    Eau de Parfum · 100 ml
+                </p>
+
+                <div class="acordes-box">
+
+                    <div class="acordes-titulo">
+                        Acordes principales
+                    </div>
+
+                    <div class="acordes">
+                        Dulce · Avainillado · Afrutados ·
+                        Pachulí · Amaderado · Floral blanco ·
+                        Atalcado · Iris · Terrosos ·
+                        Cálido especiado
+                    </div>
+
+                </div>
+
+                <div class="precio-seleccionado">
+                    $4390
+                </div>
+
+                <button
+                    type="button"
+                    class="agregar-stock"
+                    data-nombre="La Vie Est Belle 100 ml"
+                    data-precio="4390"
+                >
+                    🛒 Agregar al carrito
+                </button>
+
+                <a
+                    class="comprar stock-whatsapp"
+                    href="#"
+                    data-nombre="La Vie Est Belle 100 ml"
+                    data-precio="4390"
+                >
+                    Consultar por WhatsApp
+                </a>
+
+            </div>
+        </div>
+
+        <!-- SCANDAL INTENSE NUEVO -->
+
+        <div class="producto" data-nombre="Scandal Intense Jean Paul Gaultier" data-categoria="stock">
+
+            <div class="foto">
+                <img src="ScandalIntenseJeanPaulGaultier.jpg.AVIF" alt="Scandal Intense Jean Paul Gaultier">
+            </div>
+
+            <div class="info">
+
+                <h3>Scandal Intense Jean Paul Gaultier</h3>
+
+                <p style="color:#777; margin-bottom:15px;">
+                    Perfume original
+                </p>
+
+                <div class="acordes-box">
+
+                    <div class="acordes-titulo">
+                        Acordes principales
+                    </div>
+
+                    <div class="acordes">
+                        Avainillado · Floral amarillo · Dulce ·
+                        Cálido especiado · Amaderado · Atalcado
+                    </div>
+
+                </div>
+
+                <div class="precio-seleccionado">
+                    $3490
+                </div>
+
+                <button
+                    type="button"
+                    class="agregar-stock"
+                    data-nombre="Scandal Intense Jean Paul Gaultier"
+                    data-precio="3490"
+                >
+                    🛒 Agregar al carrito
+                </button>
+
+                <a
+                    class="comprar stock-whatsapp"
+                    href="#"
+                    data-nombre="Scandal Intense Jean Paul Gaultier"
+                    data-precio="3490"
+                >
+                    Consultar por WhatsApp
+                </a>
+
+            </div>
+        </div>
+
+        <!-- 212 SEXY NUEVO -->
+
+        <div class="producto" data-nombre="212 Sexy Carolina Herrera" data-categoria="stock">
+
+            <div class="foto">
+                <img src="212SexyCarolina Herrera.jpg.AVIF" alt="212 Sexy Carolina Herrera">
+            </div>
+
+            <div class="info">
+
+                <h3>212 Sexy Carolina Herrera</h3>
+
+                <p style="color:#777; margin-bottom:15px;">
+                    Perfume original
+                </p>
+
+                <div class="acordes-box">
+
+                    <div class="acordes-titulo">
+                        Acordes principales
+                    </div>
+
+                    <div class="acordes">
+                        Dulce · Atalcado · Almizclado ·
+                        Especiado suave · Caramelo · Avainillado ·
+                        Florales · Cítrico · Floral blanco ·
+                        Amaderado
+                    </div>
+
+                </div>
+
+                <div class="precio-seleccionado">
+                    $3390
+                </div>
+
+                <button
+                    type="button"
+                    class="agregar-stock"
+                    data-nombre="212 Sexy Carolina Herrera"
+                    data-precio="3390"
+                >
+                    🛒 Agregar al carrito
+                </button>
+
+                <a
+                    class="comprar stock-whatsapp"
+                    href="#"
+                    data-nombre="212 Sexy Carolina Herrera"
+                    data-precio="3390"
+                >
+                    Consultar por WhatsApp
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
 
 <!-- =========================
      CONTACTO
 ========================= -->
 
-<section class="contacto" id="contacto">
+<section class="section contacto" id="contacto">
 
-    <h2>Contacto</h2>
+    <h2>¿Querés hacer una consulta?</h2>
 
-    <p>
-        Escribinos por Instagram. Estamos para ayudarte.
-    </p>
+<p>
+    Escribinos por Instagram. Estamos para ayudarte.
+</p>
 
+ 
     <a
-        class="instagram-btn"
+        class="btn"
         href="https://www.instagram.com/drperfumes.sg/"
-        target="_blank">
-        Instagram
+        target="_blank"
+        rel="noopener"
+    >
+        📸 Visitar Instagram
     </a>
 
 </section>
-
 
 <!-- =========================
      FOOTER
@@ -1685,625 +1835,638 @@ footer p {
 
 <footer>
 
+    <p><strong>DrPerfumes</strong></p>
+
+    <p>Perfumes & Decants</p>
+
     <p>
-        © 2026 DrPerfumes. Todos los derechos reservados.
+        Instagram:
+        <a
+            href="https://www.instagram.com/drperfumes.sg/"
+            target="_blank"
+            rel="noopener"
+        >
+            @drperfumes.sg
+        </a>
     </p>
+
+    <br>
+
+    <p>© 2026 DrPerfumes</p>
 
 </footer>
 
-
-<!-- =====================================================
-     CARRITO
-===================================================== -->
-
-<div class="carrito-panel" id="carritoPanel">
-
-    <div class="carrito-header">
-
-        <h2>Tu carrito</h2>
-
-        <button
-            class="cerrar-carrito"
-            onclick="cerrarCarrito()">
-            ×
-        </button>
-
-    </div>
-
-
-    <div
-        class="carrito-contenido"
-        id="carritoContenido">
-
-        <p>
-            Tu carrito está vacío.
-        </p>
-
-    </div>
-
-
-    <div class="carrito-footer">
-
-        <div class="total">
-
-            <span>Total:</span>
-
-            <span>
-                $<span id="totalCarrito">0</span>
-            </span>
-
-        </div>
-
-
-        <button
-            class="btn-whatsapp-carrito"
-            onclick="realizarPedido()">
-
-            Pedir por WhatsApp
-
-        </button>
-
-
-        <button
-            class="btn-instagram-carrito"
-            onclick="consultarInstagram()">
-
-            Consultar por Instagram
-
-        </button>
-
-    </div>
-
-</div>
-
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
 
-/* =========================
-   CARRITO
-========================= */
+document.addEventListener("DOMContentLoaded", function () {
 
-let carrito = [];
+    let carrito = [];
+    let filtroActual = "todos";
 
-let filtroActual = "todos";
+    const carritoPanel = document.getElementById("carritoPanel");
+    const overlay = document.getElementById("overlay");
+    const contador = document.getElementById("contador");
+    const carritoContenido = document.getElementById("carritoContenido");
+    const totalElemento = document.getElementById("total");
+    const buscador = document.getElementById("buscador");
 
+    /* =========================
+       CARRITO ABRIR
+    ========================= */
 
-/* =========================
-   ABRIR / CERRAR CARRITO
-========================= */
+    function abrirCarrito() {
+        carritoPanel.classList.add("abierto");
+        overlay.classList.add("activo");
+    }
 
-function abrirCarrito() {
+    /* =========================
+       CARRITO CERRAR
+    ========================= */
+
+    function cerrarCarrito() {
+        carritoPanel.classList.remove("abierto");
+        overlay.classList.remove("activo");
+    }
 
     document
-        .getElementById("carritoPanel")
-        .classList.add("abierto");
-
-}
-
-
-function cerrarCarrito() {
+        .getElementById("abrirCarritoBtn")
+        .addEventListener("click", abrirCarrito);
 
     document
-        .getElementById("carritoPanel")
-        .classList.remove("abierto");
+        .getElementById("cerrarCarritoBtn")
+        .addEventListener("click", cerrarCarrito);
 
-}
+    overlay.addEventListener("click", cerrarCarrito);
 
+    /* =========================
+       TAMAÑOS
+    ========================= */
 
-/* =========================
-   TAMAÑOS
-========================= */
+    document
+        .querySelectorAll(".producto")
+        .forEach(function (producto) {
 
-document.querySelectorAll(".producto").forEach(producto => {
+            const botones = producto.querySelectorAll(".tamano");
 
-    const botones = producto.querySelectorAll(".tamano");
+            botones.forEach(function (boton) {
 
-    botones.forEach(boton => {
+                boton.addEventListener("click", function () {
 
-        boton.addEventListener("click", () => {
+                    botones.forEach(function (b) {
+                        b.classList.remove("activo");
+                    });
 
-            botones.forEach(b =>
-                b.classList.remove("seleccionado")
-            );
+                    boton.classList.add("activo");
 
-            boton.classList.add("seleccionado");
+                    const precio = boton.dataset.precio;
 
-            const precio =
-                boton.dataset.precio;
+                    const precioElemento =
+                        producto.querySelector(".precio-seleccionado");
 
-            const precioElemento =
-                producto.querySelector(".precio");
+                    if (precioElemento) {
+                        precioElemento.textContent = "$" + precio;
+                    }
 
-            if (precioElemento) {
-                precioElemento.textContent =
-                    "$" + precio;
-            }
+                });
+
+            });
 
         });
 
-    });
+    /* =========================
+       AGREGAR DECANTS
+    ========================= */
 
-});
+    document
+        .querySelectorAll(".producto")
+        .forEach(function (producto) {
 
+            const botonAgregar =
+                producto.querySelector(".agregar");
 
-/* =========================
-   AGREGAR DECANTS
-========================= */
+            if (!botonAgregar) return;
 
-document.querySelectorAll(".producto .agregar:not(.agregar-stock)")
-.forEach(boton => {
+            botonAgregar.addEventListener("click", function () {
 
-    boton.addEventListener("click", () => {
+                const seleccionado =
+                    producto.querySelector(".tamano.activo");
 
-        const producto =
-            boton.closest(".producto");
+                if (!seleccionado) {
+                    alert("Elegí un tamaño.");
+                    return;
+                }
 
-        const nombre =
-            producto.dataset.nombre;
+                const nombre =
+                    seleccionado.dataset.perfume;
 
-        const tamanoSeleccionado =
-            producto.querySelector(
-                ".tamano.seleccionado"
-            );
+                const tamano =
+                    seleccionado.dataset.tamano;
 
-        if (!tamanoSeleccionado) {
-            return;
+                const precio =
+                    Number(seleccionado.dataset.precio);
+
+                agregarAlCarrito(
+                    nombre,
+                    tamano,
+                    precio
+                );
+
+            });
+
+        });
+
+    /* =========================
+       AGREGAR STOCK
+    ========================= */
+
+    document
+        .querySelectorAll(".agregar-stock")
+        .forEach(function (boton) {
+
+            boton.addEventListener("click", function () {
+
+                const nombre =
+                    boton.dataset.nombre;
+
+                const precio =
+                    Number(boton.dataset.precio);
+
+                agregarAlCarrito(
+                    nombre,
+                    "Stock",
+                    precio
+                );
+
+            });
+
+        });
+
+    /* =========================
+       AGREGAR AL CARRITO
+    ========================= */
+
+    function agregarAlCarrito(nombre, tamano, precio) {
+
+        const existente =
+            carrito.find(function (item) {
+
+                return (
+                    item.nombre === nombre &&
+                    item.tamano === tamano
+                );
+
+            });
+
+        if (existente) {
+
+            existente.cantidad++;
+
+        } else {
+
+            carrito.push({
+                nombre: nombre,
+                tamano: tamano,
+                precio: precio,
+                cantidad: 1
+            });
+
         }
 
-        const ml =
-            tamanoSeleccionado.dataset.ml;
-
-        const precio =
-            Number(
-                tamanoSeleccionado.dataset.precio
-            );
-
-        agregarAlCarrito(
-            nombre,
-            `${ml} ml`,
-            precio
-        );
-
-    });
-
-});
-
-
-/* =========================
-   AGREGAR STOCK
-========================= */
-
-document.querySelectorAll(".agregar-stock")
-.forEach(boton => {
-
-    boton.addEventListener("click", () => {
-
-        const nombre =
-            boton.dataset.nombre;
-
-        const precio =
-            Number(boton.dataset.precio);
-
-        agregarAlCarrito(
-            nombre,
-            "Stock",
-            precio
-        );
-
-    });
-
-});
-
-
-/* =========================
-   AGREGAR AL CARRITO
-========================= */
-
-function agregarAlCarrito(
-    nombre,
-    variante,
-    precio
-) {
-
-    const existente =
-        carrito.find(
-            item =>
-                item.nombre === nombre &&
-                item.variante === variante
-        );
-
-    if (existente) {
-
-        existente.cantidad++;
-
-    } else {
-
-        carrito.push({
-
-            nombre: nombre,
-            variante: variante,
-            precio: precio,
-            cantidad: 1
-
-        });
-
+        actualizarCarrito();
+        abrirCarrito();
     }
 
-    actualizarCarrito();
+    /* =========================
+       ACTUALIZAR CARRITO
+    ========================= */
 
-    abrirCarrito();
+    function actualizarCarrito() {
 
-}
+        carritoContenido.innerHTML = "";
 
+        let total = 0;
+        let cantidadTotal = 0;
 
-/* =========================
-   ACTUALIZAR CARRITO
-========================= */
+        if (carrito.length === 0) {
 
-function actualizarCarrito() {
+            carritoContenido.innerHTML =
+                "<p>Tu carrito está vacío.</p>";
 
-    const contenido =
-        document.getElementById(
-            "carritoContenido"
-        );
+        }
 
-    const cantidad =
-        document.getElementById(
-            "cantidadCarrito"
-        );
+        carrito.forEach(function (item, index) {
 
-    const totalElemento =
-        document.getElementById(
-            "totalCarrito"
-        );
+            const subtotal =
+                item.precio * item.cantidad;
 
+            total += subtotal;
+            cantidadTotal += item.cantidad;
 
-    if (carrito.length === 0) {
+            const elemento =
+                document.createElement("div");
 
-        contenido.innerHTML =
-            "<p>Tu carrito está vacío.</p>";
+            elemento.className = "item-carrito";
 
-        cantidad.textContent = "0";
-
-        totalElemento.textContent = "0";
-
-        return;
-
-    }
-
-
-    let total = 0;
-
-    let cantidadTotal = 0;
-
-
-    contenido.innerHTML = "";
-
-
-    carrito.forEach((item, index) => {
-
-        const subtotal =
-            item.precio * item.cantidad;
-
-        total += subtotal;
-
-        cantidadTotal += item.cantidad;
-
-
-        const div =
-            document.createElement("div");
-
-        div.className =
-            "item-carrito";
-
-
-        div.innerHTML = `
-
-            <div class="item-info">
+            elemento.innerHTML = `
 
                 <strong>
                     ${item.nombre}
                 </strong>
 
                 <small>
-                    ${item.variante} · $${item.precio}
+                    ${item.tamano} · $${item.precio}
                 </small>
 
-            </div>
+                <div class="controles">
 
-            <div class="cantidad">
+                    <button
+                        type="button"
+                        class="menos"
+                    >
+                        −
+                    </button>
 
-                <button
-                    onclick="cambiarCantidad(${index}, -1)">
-                    −
-                </button>
+                    <span>
+                        ${item.cantidad}
+                    </span>
 
-                <span>
-                    ${item.cantidad}
-                </span>
+                    <button
+                        type="button"
+                        class="mas"
+                    >
+                        +
+                    </button>
 
-                <button
-                    onclick="cambiarCantidad(${index}, 1)">
-                    +
-                </button>
+                    <button
+                        type="button"
+                        class="eliminar"
+                    >
+                        Eliminar
+                    </button>
 
-                <button
-                    class="eliminar"
-                    onclick="eliminarProducto(${index})">
-                    🗑️
-                </button>
+                </div>
+            `;
 
-            </div>
+            elemento
+                .querySelector(".menos")
+                .addEventListener("click", function () {
 
-        `;
+                    cambiarCantidad(index, -1);
 
+                });
 
-        contenido.appendChild(div);
+            elemento
+                .querySelector(".mas")
+                .addEventListener("click", function () {
 
-    });
+                    cambiarCantidad(index, 1);
 
+                });
 
-    cantidad.textContent =
-        cantidadTotal;
+            elemento
+                .querySelector(".eliminar")
+                .addEventListener("click", function () {
 
-    totalElemento.textContent =
-        total;
+                    eliminarProducto(index);
 
-}
+                });
 
-
-/* =========================
-   CAMBIAR CANTIDAD
-========================= */
-
-function cambiarCantidad(index, cambio) {
-
-    carrito[index].cantidad += cambio;
-
-    if (carrito[index].cantidad <= 0) {
-
-        carrito.splice(index, 1);
-
-    }
-
-    actualizarCarrito();
-
-}
-
-
-/* =========================
-   ELIMINAR PRODUCTO
-========================= */
-
-function eliminarProducto(index) {
-
-    carrito.splice(index, 1);
-
-    actualizarCarrito();
-
-}
-
-
-/* =========================
-   BUSCADOR
-========================= */
-
-const buscador =
-    document.getElementById("buscador");
-
-
-buscador.addEventListener(
-    "input",
-    filtrarProductos
-);
-
-
-/* =========================
-   FILTROS
-========================= */
-
-document.querySelectorAll(".filtro")
-.forEach(boton => {
-
-    boton.addEventListener("click", () => {
-
-        document
-            .querySelectorAll(".filtro")
-            .forEach(b =>
-                b.classList.remove("activo")
-            );
-
-        boton.classList.add("activo");
-
-        filtroActual =
-            boton.dataset.filtro;
-
-        filtrarProductos();
-
-    });
-
-});
-
-
-function filtrarProductos() {
-
-    const texto =
-        buscador.value
-        .toLowerCase()
-        .trim();
-
-
-    document
-        .querySelectorAll(".producto")
-        .forEach(producto => {
-
-            const nombre =
-                producto.dataset.nombre
-                .toLowerCase();
-
-            const categoria =
-                producto.dataset.categoria;
-
-
-            const coincideTexto =
-                nombre.includes(texto);
-
-
-            const coincideFiltro =
-                filtroActual === "todos" ||
-                categoria === filtroActual;
-
-
-            if (
-                coincideTexto &&
-                coincideFiltro
-            ) {
-
-                producto.style.display = "";
-
-            } else {
-
-                producto.style.display = "none";
-
-            }
+            carritoContenido.appendChild(elemento);
 
         });
 
-}
+        contador.textContent = cantidadTotal;
 
-
-/* =========================
-   WHATSAPP
-========================= */
-
-function abrirWhatsApp(mensaje) {
-
-    const numero =
-        "59892033401";
-
-    const url =
-        "https://wa.me/" +
-        numero +
-        "?text=" +
-        encodeURIComponent(mensaje);
-
-    window.open(
-        url,
-        "_blank"
-    );
-
-}
-
-
-/* =========================
-   CONSULTAS POR PRODUCTO
-========================= */
-
-document.querySelectorAll(".consultar")
-.forEach(boton => {
-
-    boton.addEventListener("click", () => {
-
-        const perfume =
-            boton.dataset.perfume;
-
-        const mensaje =
-            `Hola! Quería consultar por el perfume ${perfume}.`;
-
-        abrirWhatsApp(mensaje);
-
-    });
-
-});
-
-
-/* =========================
-   PEDIDO POR WHATSAPP
-========================= */
-
-function realizarPedido() {
-
-    if (carrito.length === 0) {
-
-        alert(
-            "Tu carrito está vacío."
-        );
-
-        return;
+        totalElemento.textContent =
+            "$" + total;
 
     }
 
+    /* =========================
+       CAMBIAR CANTIDAD
+    ========================= */
 
-    let mensaje =
-        "Hola! Quiero hacer un pedido:%0A%0A";
+    function cambiarCantidad(index, cambio) {
 
+        if (!carrito[index]) return;
 
-    carrito.forEach(item => {
+        carrito[index].cantidad += cambio;
 
-        mensaje +=
-            `• ${item.nombre} - ${item.variante} x${item.cantidad} - $${item.precio * item.cantidad}%0A`;
-
-    });
-
-
-    const total =
-        carrito.reduce(
-            (suma, item) =>
-                suma +
-                item.precio *
-                item.cantidad,
-            0
-        );
-
-
-    mensaje +=
-        `%0ATotal: $${total}`;
-
-
-    abrirWhatsApp(
-        decodeURIComponent(mensaje)
-    );
-
-}
-
-
-/* =========================
-   INSTAGRAM
-========================= */
-
-function consultarInstagram() {
-
-    window.open(
-        "https://www.instagram.com/drperfumes.sg/",
-        "_blank"
-    );
-
-}
-
-
-/* =========================
-   ESCAPE
-========================= */
-
-document.addEventListener(
-    "keydown",
-    event => {
-
-        if (event.key === "Escape") {
-
-            cerrarCarrito();
-
+        if (carrito[index].cantidad <= 0) {
+            carrito.splice(index, 1);
         }
 
+        actualizarCarrito();
     }
-);
 
+    /* =========================
+       ELIMINAR
+    ========================= */
 
-/* =========================
-   INICIAR
-========================= */
+    function eliminarProducto(index) {
 
-actualizarCarrito();
+        if (!carrito[index]) return;
+
+        carrito.splice(index, 1);
+
+        actualizarCarrito();
+    }
+
+    /* =========================
+       VACIAR
+    ========================= */
+
+    document
+        .getElementById("vaciarBtn")
+        .addEventListener("click", function () {
+
+            carrito = [];
+
+            actualizarCarrito();
+
+        });
+
+    /* =========================
+       BUSCADOR
+    ========================= */
+
+    function filtrarProductos() {
+
+        const texto =
+            buscador.value
+                .toLowerCase()
+                .trim();
+
+        document
+            .querySelectorAll(".producto")
+            .forEach(function (producto) {
+
+                const nombre =
+                    (
+                        producto.dataset.nombre || ""
+                    ).toLowerCase();
+
+                const categoria =
+                    producto.dataset.categoria || "";
+
+                const coincideNombre =
+                    nombre.includes(texto);
+
+                const coincideCategoria =
+                    filtroActual === "todos" ||
+                    categoria === filtroActual;
+
+                if (
+                    coincideNombre &&
+                    coincideCategoria
+                ) {
+
+                    producto.style.display = "";
+
+                } else {
+
+                    producto.style.display = "none";
+
+                }
+
+            });
+
+    }
+
+    buscador.addEventListener(
+        "input",
+        filtrarProductos
+    );
+
+    /* =========================
+       FILTROS
+    ========================= */
+
+    document
+        .querySelectorAll(".filtro")
+        .forEach(function (boton) {
+
+            boton.addEventListener("click", function () {
+
+                document
+                    .querySelectorAll(".filtro")
+                    .forEach(function (b) {
+
+                        b.classList.remove("activo");
+
+                    });
+
+                boton.classList.add("activo");
+
+                filtroActual =
+                    boton.dataset.filtro;
+
+                filtrarProductos();
+
+            });
+
+        });
+
+    /* =========================
+       WHATSAPP DE CADA PERFUME
+    ========================= */
+
+    document
+        .querySelectorAll(".producto")
+        .forEach(function (producto) {
+
+            const botonWhatsApp =
+                producto.querySelector(
+                    ".comprar:not(.stock-whatsapp)"
+                );
+
+            if (!botonWhatsApp) return;
+
+            botonWhatsApp.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    const seleccionado =
+                        producto.querySelector(
+                            ".tamano.activo"
+                        );
+
+                    if (!seleccionado) {
+
+                        alert("Elegí un tamaño.");
+
+                        return;
+                    }
+
+                    const nombre =
+                        seleccionado.dataset.perfume;
+
+                    const tamano =
+                        seleccionado.dataset.tamano;
+
+                    const precio =
+                        seleccionado.dataset.precio;
+
+                    const mensaje =
+                        "Hola! Quiero consultar por " +
+                        nombre +
+                        ". " +
+                        tamano +
+                        ": $" +
+                        precio +
+                        ".";
+
+                    abrirWhatsApp(mensaje);
+
+                }
+            );
+
+        });
+
+    /* =========================
+       WHATSAPP STOCK
+    ========================= */
+
+    document
+        .querySelectorAll(".stock-whatsapp")
+        .forEach(function (boton) {
+
+            boton.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    const nombre =
+                        boton.dataset.nombre;
+
+                    const precio =
+                        boton.dataset.precio;
+
+                    const mensaje =
+                        "Hola! Quiero consultar por " +
+                        nombre +
+                        ". Precio: $" +
+                        precio +
+                        ".";
+
+                    abrirWhatsApp(mensaje);
+
+                }
+            );
+
+        });
+
+    /* =========================
+       ABRIR WHATSAPP
+    ========================= */
+
+    function abrirWhatsApp(mensaje) {
+
+        const enlace =
+            "https://wa.me/59892033401?text=" +
+            encodeURIComponent(mensaje);
+
+        window.open(
+            enlace,
+            "_blank",
+            "noopener,noreferrer"
+        );
+
+    }
+
+    /* =========================
+       PEDIDO COMPLETO WHATSAPP
+    ========================= */
+
+    document
+        .getElementById("pedidoBtn")
+        .addEventListener("click", function () {
+
+            if (carrito.length === 0) {
+
+                alert("Tu carrito está vacío.");
+
+                return;
+            }
+
+            let mensaje =
+                "Hola! Quiero hacer este pedido en DrPerfumes:\n\n";
+
+            let total = 0;
+
+            carrito.forEach(function (item) {
+
+                const subtotal =
+                    item.precio * item.cantidad;
+
+                total += subtotal;
+
+                mensaje +=
+                    "• " +
+                    item.nombre +
+                    " - " +
+                    item.tamano +
+                    " x" +
+                    item.cantidad +
+                    " = $" +
+                    subtotal +
+                    "\n";
+
+            });
+
+            mensaje +=
+                "\n💰 Total: $" +
+                total;
+
+            abrirWhatsApp(mensaje);
+
+        });
+
+    /* =========================
+       INSTAGRAM
+    ========================= */
+
+    document
+        .getElementById("instagramPedidoBtn")
+        .addEventListener("click", function () {
+
+            window.open(
+                "https://www.instagram.com/drperfumes.sg/",
+                "_blank",
+                "noopener,noreferrer"
+            );
+
+        });
+
+    /* =========================
+       ESCAPE
+    ========================= */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key === "Escape") {
+                cerrarCarrito();
+            }
+
+        }
+    );
+
+    /* =========================
+       INICIAR
+    ========================= */
+
+    actualizarCarrito();
+
+});
 
 </script>
 
